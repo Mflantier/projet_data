@@ -7,6 +7,7 @@
         crossorigin="anonymous">
     <title>{% block title %}Welcome!{% endblock %}</title>
     {% block stylesheets %}{% endblock %}
+    <link rel="stylesheet" href="./build/app.css">
 </head>
 
 <body>
@@ -18,6 +19,8 @@
         crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut"
         crossorigin="anonymous"></script>
+        <script src="./build/runtime.js"></script>
+        <script src="./build/app.js"></script>
 </body>
 
 </html>

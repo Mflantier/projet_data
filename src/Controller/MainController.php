@@ -15,10 +15,10 @@ class MainController extends AbstractController{
     }
     
     /**
-     * @Route("/jeu", name="jeu")
+     * @Route("/flags", name="flags")
      */
-    public function jeu(){
-        return $this->render('views/jeu.html.twig', ['title' => 'Jeu']);
+    public function flags(){
+        return $this->render('views/flags.html.twig', ['title' => 'Drapeaux']);
     }
 
 }

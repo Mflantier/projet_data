@@ -7,95 +7,13 @@
 
 // any CSS you require will output into a single css file (app.css in this case)
 require('../scss/app.scss');
-require('../js/flags.js');
+require('./flags.js');
 require('./home.js');
+require('./list.js');
+require('./infoPays.js');
 
 // Need jQuery? Install it with "yarn add jquery", then uncomment to require it.
 // const $ = require('jquery');
-
-
-
-// Affichage liste de tous les pays
-const pays = document.querySelector('#pays');
-
-fetch(`https://restcountries.eu/rest/v2/all`)
-    .then((res) => {
-        return res.json();
-    })
-    .then((res) => {
-        console.log(res);
-
-        for (i = 0; i < 250; i++) {
-            let li = document.createElement("li");
-            li.innerHTML = res[i]['translations']['fr'];
-            li.classList.add("liste-pays");
-            li.id = res[i]['alpha3Code'].toLowerCase();
-            pays.appendChild(li);
-        };
-    })
-    .catch((err) => {
-        if (err) {
-            console.log(err);
-        };
-    })
-
-
-// Affichage liste du pays selectionné
-const choice = document.querySelector('#choix');
-
-window.addEventListener('click', function (e) {
-
-    let aCode = e.target.id;
-
-    fetch(`https://restcountries.eu/rest/v2/alpha/` + aCode)
-        .then((response) => {
-            return response.json();
-        })
-        .then((response) => {
-            while (choice.firstChild) {
-                choice.removeChild(choice.firstChild);
-            }
-            let nom = document.createElement("li");
-            let drapeau = document.createElement("li");
-            let continent = document.createElement("li");
-            let capitale = document.createElement("li");
-            let population = document.createElement("li");
-            let superficie = document.createElement("li");
-            let langue = document.createElement("li");
-            let devise = document.createElement("li");
-            let voisins = document.createElement("li");
-
-            nom.innerHTML = response['translations']['fr'];
-            drapeau.innerHTML = '<img src"' + response['flag'] + '" width="150" height="150">';
-            continent.innerHTML = 'Continent : ' + response['region'];
-            capitale.innerHTML = 'Capitale : ' + response['capital'];
-            population.innerHTML = 'Population : ' + response['population'];
-            superficie.innerHTML = 'Superficie : ' + response['area'];
-            langue.innerHTML = 'Langue : ' + response['languages'][0]['nativeName'];
-            devise.innerHTML = 'Devise : ' + response['currencies'][0]['name'];
-            voisins.innerHTML = 'Pays voisins : ' + response['borders'];
-
-            choice.appendChild(nom);
-            fetch(response['flag'])
-                .then(response => response.text())
-                .then(svg => choice.insertAdjacentHTML("afterbegin",svg));
-            choice.appendChild(continent);
-            choice.appendChild(capitale);
-            choice.appendChild(population);
-            choice.appendChild(superficie);
-            choice.appendChild(langue);
-            choice.appendChild(devise);
-            choice.appendChild(voisins);
-        })
-        .catch((err) => {
-            if (err) {
-                console.log(err);
-            };
-        })
-
-
-
-})
 
 
 // {

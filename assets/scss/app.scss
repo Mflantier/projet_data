@@ -5,9 +5,6 @@
 //     background-color: rgb(255, 255, 255);
 // }
 
-// https://chat.accesscodeschool.fr/home
-
-
 body{
     background:url(img/bg-world.jpeg) 0 0 no-repeat;
     background-position: center;
@@ -139,6 +136,15 @@ body{
         p{
             font-size: 1.5rem;
             color: black;
+        }
+    }
+    #pays {
+        display: none;
+    }
+    #choix{
+        svg {
+            width: 150px;
+            height: 150px;
         }
     }
 }

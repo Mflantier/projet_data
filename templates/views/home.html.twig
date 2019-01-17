@@ -2,35 +2,46 @@
 
 {% block body %}
 
-<h1>{{ title }}</h1>
+{# <h1>{{ title }}</h1> #}
 
  <header class="d-flex flex-column justify-content-around align-items-center">
-         <span class="hamburger">
-            <div></div>
-            <div></div>
-         </span>
-         <h1 class="text-center">World Discover</h1>
-         <!-- <h2 class="btn-pays">Pays <i class="fas fa-caret-down"></i></h2> -->
-         <div class="notice">
-               <p>
-                   Obtenez les informations sur le pays de votre choix en cliquant dessus
-               </p>
-            </div>
-     </header>
-     <div class="bg-filter"></div>
-         <div class="showmenu d-flex flex-column justify-content-around align-items-center">
-            <div class="menu-liste  d-flex flex-column justify-content-around align-items-center">
-               <p class="closeBtn text-left">X</p>
-               <p class="pl-4 option"><i class="fas fa-globe-africa"></i> Mappemonde</p>
-               <p class="pl-4 option"><i class="fas fa-list-ul"></i> liste des pays</p>
-               <p class="pl-4 option"><i class="far fa-flag"></i>  Gallerie des drapeaux</p>
-               <p class="pl-4 option"><i class="fas fa-archway"></i>  Liste des capitales</p>
-            </div>
-            <div class="footer">
-               <p></p>
-            </div>
-         </div>
-     <div class="map container-fluid d-flex flex-column justify-content-center align-items-center" id="map">
+        <span class="hamburger">
+        <div></div>
+        <div></div>
+        </span>
+        <h1 class="text-center">World Discover</h1>
+        <!-- <h2 class="btn-pays">Pays <i class="fas fa-caret-down"></i></h2> -->
+        <div class="notice">
+        <p>
+                Obtenez les informations sur le pays de votre choix en cliquant dessus
+        </p>
+        </div>
+        
+</header>
+<div class="bg-filter"></div>
+<div class="showmenu d-flex flex-column justify-content-around align-items-center">
+        <div class="menu-liste  d-flex flex-column justify-content-around align-items-center">
+                <p class="closeBtn text-left">X</p>
+                <p class="pl-4 option"><i class="fas fa-globe-africa"></i> Mappemonde</p>
+                <ul class="pl-4 option btn-continent"><i class="fas fa-list-ul"></i> liste des pays</ul>
+                <div class="sous-menu-continents">
+                        <li class="text-center continent">Tout les pays</li>
+                        <li class="text-center continent">Amérique</li>
+                        <li class="text-center continent">Afrique</li>
+                        <li class="text-center continent">Europe</li>
+                        <li class="text-center continent">Asie</li>
+                        <li class="text-center continent">Océanie</li>
+                </div>
+                <p class="pl-4 option"><i class="far fa-flag"></i>  Gallerie des drapeaux</p>
+                <p class="pl-4 option"><i class="fas fa-archway"></i>  Liste des capitales</p>
+        </div>
+        <div class="footer">
+                <p></p>
+        </div>
+</div>
+
+<div class="map container-fluid d-flex flex-column justify-content-center align-items-center" id="map">
+
         <div class="map__image">
                 <svg xmlns="http://www.w3.org/2000/svg" xmlns:amcharts="http://amcharts.com/ammap" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 1000 670">
                     <g>

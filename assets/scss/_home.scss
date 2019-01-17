@@ -63,16 +63,20 @@ body{
         .menu-liste{
             width: 100%;
             .closeBtn{
-                font-size: 1.5rem;
-                color: #ffffffc4;
-                padding: 10px 0px;
+                font-size: 1.1rem;
+                font-weight: bold;
+                color: #ffffff85;
+                padding: 0px 8px;
                 position: relative;
-                bottom: 100px;
+                bottom: 75px;
                 left: 140px;
                 transition: 0.3s ease;
+                border: solid 2px #79797973;
+                border-radius: 50%;
                 &:hover{
-                    transform: scale(1.2);
-                    color: black;
+                    transform: scale(1.1);
+                    color: #4D0000ed;
+                    background-color: rgb(184, 184, 184);
                     cursor: pointer;
                 }
             }
@@ -82,11 +86,35 @@ body{
                 padding: 10px 0px;
                 transition: 0.3s;
                 width: 100%;
+                transition: 0.3s ease;
                 &:hover{
                     transform: translateY(-5px);
-                    background-color: #535353;
+                    background-color: #ffff;
+                    color: #4D0000ed;
                     cursor: pointer;
                 }
+            }
+            .sous-menu-continents{
+                margin-bottom: 0 !important; 
+                width: 100%;
+                transition: 1s;
+                height: 0;
+                overflow: hidden;
+                .continent{
+                    font-size: 1.2rem;
+                    color: #ffffffc4;
+                    padding: 5px 0px;
+                    transition: 0.3s;
+                    width: 100%;
+                    list-style: none;
+                    transition: 0.3s ease;
+                    &:hover{
+                        transform: translateY(-5px);
+                        background-color: #ffff;
+                        color: #4D0000ed;
+                        cursor: pointer;
+                    }
+                } 
             }
         }
     }

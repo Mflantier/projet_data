@@ -47,10 +47,10 @@ monhamberger.addEventListener("click", function(showmenu){
 //     document.querySelector(".hamburger").style.visibility = "visible";
 // })
 
-// btnContinent.addEventListener("click", function(showmenu){
-//     document.querySelector(".sous-menu-continents").style.height = "100%";
-//     document.querySelector(".btnContinent").style.background = "#fff";
-// })
+btnContinent.addEventListener("click", function(showmenu){
+    document.querySelector(".sous-menu-continents").style.visibility = "visible";
+    document.querySelector(".btnContinent").style.background = "#fff";
+})
 
 // menupays.addEventListener("click", function(hidemenu){
 

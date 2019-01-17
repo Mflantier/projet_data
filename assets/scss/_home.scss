@@ -94,15 +94,11 @@ body{
                     cursor: pointer;
                 }
             }
-            .btn-continent:hover + .sous-menu-continents{
-                height: 100%;
-            }
             .sous-menu-continents{
                 margin-bottom: 0 !important; 
                 width: 100%;
-                transition: 1s;
-                height: 0;
-                overflow: hidden;
+                transition: visibility 1s;
+                visibility: hidden;
                 
                 .continent{
                     font-size: 1.2rem;

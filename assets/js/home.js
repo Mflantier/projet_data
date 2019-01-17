@@ -3,26 +3,6 @@ var paths = map.querySelectorAll('.map__image a');
 var links = map.querySelectorAll('.map__list a');
 
 
-if(NodeList.prototype.forEach === undefined){
-
-    NodeList.prototype.forEach = function (callback){
-
-        [].forEach.call(this, callback)
-    }
-}
-
-paths.forEach(function(path){
-
-    path.addEventListener('mouseenter', function (e){
-
-           var id = this.id.replace('FR-', '');
-           document.querySelector('#list-' + id).classList.add('is-active');
-           document.querySelector('#region-' + id).classList.add('is-active');
-
-    })
-
-})
-
 const monmenu = document.querySelector(".showmenu");
 const monhamberger = document.querySelector(".hamburger");
 const close = document.querySelector(".closeBtn");
@@ -49,24 +29,8 @@ monmenu.addEventListener("click", function(event){
     
 })
 
-btnContinent.addEventListener("click", function(showmenu){
-    document.querySelector(".sous-menu-continents").style.visibility = "visible";
-    document.querySelector(".btnContinent").style.background = "#fff";
-})
-
-
-requestURL = "https://restcountries.eu/rest/v2/alpha/col" ; 
-
-fetch(requestURL)
-    .then((response)=>{
-            return response.json();
-    })
-    .then((response) => {
-        console.log(response);
-    })
-    .catch((error) => {
-        console.log(error);
-    });
-
-    // collapse menu
+// btnContinent.addEventListener("click", function(showmenu){
+//     document.querySelector(".sous-menu-continents").style.visibility = "visible";
+//     document.querySelector(".btnContinent").style.background = "#fff";
+// })
 

@@ -1,8 +1,11 @@
 // Affichage liste du pays selectionné
 const choice = document.querySelector('#choix');
 
+console.log(choice.style);
+    if(choice.classList.contains("")){
+        console.log('Passe');
+    }
 window.addEventListener('click', function (e) {
-
     let aCode = e.target.id;
 
     fetch(`https://restcountries.eu/rest/v2/alpha/` + aCode)

@@ -40,9 +40,6 @@ const choice = document.querySelector('#choix');
 window.addEventListener('click', function (e) {
 
     let aCode = e.target.id;
-    let clas = e.target.classList;
-    console.log("Id de l'element : " + aCode);
-    console.log("Class de l'element : " + clas.value);
 
     fetch(`https://restcountries.eu/rest/v2/alpha/` + aCode)
         .then((res) => {
@@ -52,7 +49,6 @@ window.addEventListener('click', function (e) {
             while(choice.firstChild){
                 choice.removeChild(choice.firstChild);
             }
-            console.log(res);
             let nom = document.createElement("li");
             let continent = document.createElement("li");
             let habitant = document.createElement("li");

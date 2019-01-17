@@ -12,28 +12,27 @@
 // const $ = require('jquery');
 
 
-// const flag = document.querySelector('#flag');
+const flag = document.querySelector('#flag');
 
-// fetch(`https://restcountries.eu/rest/v2/all`)
-//     .then((res) => {
-//         return res.json();
-//     })
-    // .then((res) => {
-    //     console.log(res);
-    //     console.log('coucou');
+fetch(`https://restcountries.eu/rest/v2/all`)
+    .then((res) => {
+        return res.json();
+    })
+    .then((res) => {
+        console.log(res);
 
-    //     for (i = 0; i < 250; i++) {
-    //         let li = document.createElement("li");
-    //         li.innerHTML = res[i]["flag"]["https://restcountries.eu/data/[i].svg"];
-    //         li.classList.add("liste-pays");
-    //         flag.appendChild(li);
-    //     };
-    // })
-    // .catch((err) => {
-    //     if (err) {
-    //         console.log(err);
-    //     };
-    // })
+        for (i = 0; i < 250; i++) {
+            let ul = document.createElement("ul");
+            ul.innerHTML = '<img src="' + res[i]['flag'] + '" width="100" height="75">' +" "+ res[i]['translations']['fr'];
+            ul.classList.add("liste-flag");
+            flag.appendChild(ul);
+        };
+    })
+    .catch((err) => {
+        if (err) {
+            console.log(err);
+        };
+    })
 
 
 

@@ -7,12 +7,15 @@
 
 // any CSS you require will output into a single css file (app.css in this case)
 require('../scss/app.scss');
+require('../js/flags.js');
 require('./home.js');
 
 // Need jQuery? Install it with "yarn add jquery", then uncomment to require it.
 // const $ = require('jquery');
 
 
+
+// Affichage liste de tous les pays
 const pays = document.querySelector('#pays');
 
 fetch(`https://restcountries.eu/rest/v2/all`)
@@ -36,33 +39,53 @@ fetch(`https://restcountries.eu/rest/v2/all`)
         };
     })
 
+
+// Affichage liste du pays selectionné
 const choice = document.querySelector('#choix');
 
 window.addEventListener('click', function (e) {
 
     let aCode = e.target.id;
-    let clas = e.target.classList;
-    console.log("Id de l'element : " + aCode);
-    console.log("Class de l'element : " + clas.value);
 
     fetch(`https://restcountries.eu/rest/v2/alpha/` + aCode)
-        .then((res) => {
-            return res.json();
+        .then((response) => {
+            return response.json();
         })
-        .then((res) => {
-            while(choice.firstChild){
+        .then((response) => {
+            while (choice.firstChild) {
                 choice.removeChild(choice.firstChild);
             }
-            console.log(res);
             let nom = document.createElement("li");
+            let drapeau = document.createElement("li");
             let continent = document.createElement("li");
-            let habitant = document.createElement("li");
-            nom.innerHTML = res['translations']['fr'];
-            continent.innerHTML = res['region'];
-            habitant.innerHTML = res['population'];
+            let capitale = document.createElement("li");
+            let population = document.createElement("li");
+            let superficie = document.createElement("li");
+            let langue = document.createElement("li");
+            let devise = document.createElement("li");
+            let voisins = document.createElement("li");
+
+            nom.innerHTML = response['translations']['fr'];
+            drapeau.innerHTML = '<img src"' + response['flag'] + '" width="150" height="150">';
+            continent.innerHTML = 'Continent : ' + response['region'];
+            capitale.innerHTML = 'Capitale : ' + response['capital'];
+            population.innerHTML = 'Population : ' + response['population'];
+            superficie.innerHTML = 'Superficie : ' + response['area'];
+            langue.innerHTML = 'Langue : ' + response['languages'][0]['nativeName'];
+            devise.innerHTML = 'Devise : ' + response['currencies'][0]['name'];
+            voisins.innerHTML = 'Pays voisins : ' + response['borders'];
+
             choice.appendChild(nom);
+            fetch(response['flag'])
+                .then(response => response.text())
+                .then(svg => choice.insertAdjacentHTML("afterbegin",svg));
             choice.appendChild(continent);
-            choice.appendChild(habitant);
+            choice.appendChild(capitale);
+            choice.appendChild(population);
+            choice.appendChild(superficie);
+            choice.appendChild(langue);
+            choice.appendChild(devise);
+            choice.appendChild(voisins);
         })
         .catch((err) => {
             if (err) {

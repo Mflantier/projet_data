@@ -24,7 +24,7 @@ window.addEventListener('click', function (e) {
             let voisins = document.createElement("li");
 
             nom.innerHTML = response['translations']['fr'];
-            drapeau.innerHTML = '<img src"' + response['flag'] + '" width="150" height="150">';
+            drapeau.innerHTML = '<img src="' + response['flag'] + '" width="150" height="100">';
             continent.innerHTML = 'Continent : ' + response['region'];
             capitale.innerHTML = 'Capitale : ' + response['capital'];
             population.innerHTML = 'Population : ' + response['population'];
@@ -34,9 +34,7 @@ window.addEventListener('click', function (e) {
             voisins.innerHTML = 'Pays voisins : ' + response['borders'];
 
             choice.appendChild(nom);
-            fetch(response['flag'])
-                .then(response => response.text())
-                .then(svg => choice.insertAdjacentHTML("afterbegin",svg));
+            choice.appendChild(drapeau);
             choice.appendChild(continent);
             choice.appendChild(capitale);
             choice.appendChild(population);

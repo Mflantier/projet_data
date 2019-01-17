@@ -42,10 +42,10 @@ monhamberger.addEventListener("click", function(showmenu){
 //         document.querySelector(".showmenu").style.left = "-50vw";
 //         document.querySelector(".hamburger").style.display = "block";
 //  })
-//  monmenu.addEventListener("click", function(hidemenu){
-//     document.querySelector(".showmenu").style.left = "-50vw";
-//     document.querySelector(".hamburger").style.visibility = "visible";
-// })
+ monmenu.addEventListener("click", function(hidemenu){
+    document.querySelector(".showmenu").style.left = "-50vw";
+    document.querySelector(".hamburger").style.visibility = "visible";
+})
 
 btnContinent.addEventListener("click", function(showmenu){
     document.querySelector(".sous-menu-continents").style.visibility = "visible";

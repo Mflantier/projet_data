@@ -6,69 +6,39 @@
  */
 
 // any CSS you require will output into a single css file (app.css in this case)
-require('../scss/app.scss');
-require('../js/flags.js');
+// require('../scss/flags.scss');
 
 // Need jQuery? Install it with "yarn add jquery", then uncomment to require it.
 // const $ = require('jquery');
 
 
-const pays = document.querySelector('#pays');
+// const flag = document.querySelector('#flag');
 
-fetch(`https://restcountries.eu/rest/v2/all`)
-    .then((res) => {
-        return res.json();
-    })
-    .then((res) => {
-        console.log(res);
+// fetch(`https://restcountries.eu/rest/v2/all`)
+//     .then((res) => {
+//         return res.json();
+//     })
+    // .then((res) => {
+    //     console.log(res);
+    //     console.log('coucou');
 
-        for (i = 0; i < 250; i++) {
-            let li = document.createElement("li");
-            li.innerHTML = res[i]['translations']['fr'];
-            li.classList.add("liste-pays");
-            li.id = res[i]['alpha3Code'].toLowerCase();
-            pays.appendChild(li);
-        };
-    })
-    .catch((err) => {
-        if (err) {
-            console.log(err);
-        };
-    })
-
-const choice = document.querySelector('#choix');
-
-window.addEventListener('click', function (e) {
-
-    let aCode = e.target.id;
-
-    fetch(`https://restcountries.eu/rest/v2/alpha/` + aCode)
-        .then((res) => {
-            return res.json();
-        })
-        .then((res) => {
-            while(choice.firstChild){
-                choice.removeChild(choice.firstChild);
-            }
-            let nom = document.createElement("li");
-            let continent = document.createElement("li");
-            let habitant = document.createElement("li");
-            nom.innerHTML = res['translations']['fr'];
-            continent.innerHTML = res['region'];
-            habitant.innerHTML = res['population'];
-            choice.appendChild(nom);
-            choice.appendChild(continent);
-            choice.appendChild(habitant);
-        })
-        .catch((err) => {
-            if (err) {
-                console.log(err);
-            };
-        })
+    //     for (i = 0; i < 250; i++) {
+    //         let li = document.createElement("li");
+    //         li.innerHTML = res[i]["flag"]["https://restcountries.eu/data/[i].svg"];
+    //         li.classList.add("liste-pays");
+    //         flag.appendChild(li);
+    //     };
+    // })
+    // .catch((err) => {
+    //     if (err) {
+    //         console.log(err);
+    //     };
+    // })
 
 
 
-})
+
+
 
 
 // {

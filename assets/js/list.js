@@ -7,8 +7,6 @@ fetch(`https://restcountries.eu/rest/v2/all`)
         return res.json();
     })
     .then((res) => {
-        console.log(res);
-
         for (i = 0; i < 250; i++) {
             let li = document.createElement("li");
             li.innerHTML = res[i]['translations']['fr'];

@@ -140,4 +140,13 @@ body{
             color: black;
         }
     }
+    #pays {
+        display: none;
+    }
+    #choix{
+        svg {
+            width: 150px;
+            height: 150px;
+        }
+    }
 }

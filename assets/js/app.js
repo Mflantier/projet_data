@@ -7,10 +7,11 @@
 
 // any CSS you require will output into a single css file (app.css in this case)
 require('../scss/app.scss');
-require('./flags.js');
-require('./home.js');
-require('./list.js');
+// require('./flags.js');
+require('./menu.js');
 require('./infoPays.js');
+// require('./list.js');
+require('./listCapitale.js');
 
 // Need jQuery? Install it with "yarn add jquery", then uncomment to require it.
 // const $ = require('jquery');

@@ -20,5 +20,11 @@ class MainController extends AbstractController{
     public function flags(){
         return $this->render('views/flags.html.twig', ['title' => 'Drapeaux']);
     }
-
+    
+    /**
+     * @Route("/list", name="listePays")
+     */
+    public function listePays(){
+        return $this->render('views/listPays.html.twig', ['title' => 'Pays']);
+    }
 }

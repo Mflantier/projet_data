@@ -1,8 +1,9 @@
 // Affichage liste du pays selectionné
-const choice = document.querySelector('#choix');
-
+const choice = document.querySelector('.modal-body');
+const fenetre = document.querySelector('#choix');
+console.log(fenetre.attributes);
 window.addEventListener('click', function (e) {
-
+    if(fenetre.hasAttribute('aria-hidden')){
         let aCode = e.target.id;
 
         fetch(`https://restcountries.eu/rest/v2/alpha/` + aCode)
@@ -13,17 +14,17 @@ window.addEventListener('click', function (e) {
                 while (choice.firstChild) {
                     choice.removeChild(choice.firstChild);
                 }
-                let nom = document.createElement("h5");
-                let drapeau = document.createElement("li");
-                let continent = document.createElement("li");
-                let capitale = document.createElement("li");
-                let population = document.createElement("li");
-                let superficie = document.createElement("li");
-                let langue = document.createElement("li");
-                let devise = document.createElement("li");
+                let nom = document.querySelector('.modal-title');
+                let drapeau = document.createElement("p");
+                let continent = document.createElement("p");
+                let capitale = document.createElement("p");
+                let population = document.createElement("p");
+                let superficie = document.createElement("p");
+                let langue = document.createElement("p");
+                let devise = document.createElement("p");
                 let voisins = document.createElement("ul");
 
-                nom.innerHTML = response['translations']['fr'];
+                nom.textContent = response['translations']['fr'];
                 drapeau.innerHTML = '<img src="' + response['flag'] + '" width="150" height="100">';
                 continent.innerHTML = 'Continent : ' + response['region'];
                 capitale.innerHTML = 'Capitale : ' + response['capital'];
@@ -44,8 +45,6 @@ window.addEventListener('click', function (e) {
                         voisins.appendChild(voisin);
                     })
                 }
-
-                choice.appendChild(nom);
                 choice.appendChild(drapeau);
                 choice.appendChild(continent);
                 choice.appendChild(capitale);
@@ -60,4 +59,5 @@ window.addEventListener('click', function (e) {
                     console.log(err);
                 };
             })
+        }
 })

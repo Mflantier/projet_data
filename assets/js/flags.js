@@ -34,12 +34,6 @@ fetch(`https://restcountries.eu/rest/v2/all`)
         };
     })
 
-
-
-
-
-
-
 // {
 //     "name": "France",
 //     "topLevelDomain": [".fr"],

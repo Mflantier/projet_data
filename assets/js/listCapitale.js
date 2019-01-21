@@ -8,11 +8,12 @@ fetch(`https://restcountries.eu/rest/v2/all`)
     })
     .then((res) => {
         for (i = 0; i < 250; i++) {
-            let li = document.createElement("li");
-            li.innerHTML = res[i]['capital'];
-            li.classList.add("liste-capitale");
-            li.id = res[i]['alpha3Code'].toLowerCase();
-            pays.appendChild(li);
+            let p = document.createElement("p");
+            p.innerHTML = "<b>Pays : </b>"+res[i]['translations']['fr']+" <b>Capitale : </b>"+res[i]['capital'];
+            p.classList.add("liste-capitale");
+            p.classList.add("col-3");
+            p.id = res[i]['alpha3Code'].toLowerCase();
+            pays.appendChild(p);
         };
     })
     .catch((err) => {

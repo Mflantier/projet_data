@@ -1,14 +1,11 @@
 @import 'home';
 @import 'flags';
-
+@import 'capitale';
     .notice{
         p{
             font-size: 1.5rem;
             color: black;
         }
-    }
-    #pays {
-        display: none;
     }
     .fichePays {
         display: none;

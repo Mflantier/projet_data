@@ -1,22 +1,20 @@
 @import 'home';
 @import 'flags';
-
+@import 'capitale';
     .notice{
         p{
             font-size: 1.5rem;
             color: black;
         }
     }
-    #pays {
-        display: none;
-    }
-    .fichePays {
-        display: none;
-    }
     #choix{
-        background-color:aquamarine;
+        // background-color:aquamarine;
         svg {
             width: 150px;
             height: 150px;
         }
+    }
+    .modal-dialog{
+        position: relative;
+        top: 30vh;
     }

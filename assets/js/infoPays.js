@@ -15,7 +15,7 @@ window.addEventListener('click', function (e) {
                 while (choice.firstChild) {
                     choice.removeChild(choice.firstChild);
                 }
-                let nom = document.createElement("li");
+                let nom = document.createElement("h5");
                 let drapeau = document.createElement("li");
                 let continent = document.createElement("li");
                 let capitale = document.createElement("li");
@@ -23,7 +23,7 @@ window.addEventListener('click', function (e) {
                 let superficie = document.createElement("li");
                 let langue = document.createElement("li");
                 let devise = document.createElement("li");
-                let voisins = document.createElement("li");
+                let voisins = document.createElement("ul");
 
                 nom.innerHTML = response['translations']['fr'];
                 drapeau.innerHTML = '<img src="' + response['flag'] + '" width="150" height="100">';
@@ -33,7 +33,19 @@ window.addEventListener('click', function (e) {
                 superficie.innerHTML = 'Superficie : ' + response['area'];
                 langue.innerHTML = 'Langue : ' + response['languages'][0]['nativeName'];
                 devise.innerHTML = 'Devise : ' + response['currencies'][0]['name'];
-                voisins.innerHTML = 'Pays voisins : ' + response['borders'];
+                voisins.innerHTML = 'Pays voisins : ';
+                
+                for(i=0; i < response['borders'].length; i++){
+                    fetch(`https://restcountries.eu/rest/v2/alpha/` + response['borders'][i])
+                    .then((response) => {
+                        return response.json();
+                    })
+                    .then((response) => {
+                        let voisin = document.createElement("li");
+                        voisin.innerHTML = response['translations']['fr'];
+                        voisins.appendChild(voisin);
+                    })
+                }
 
                 choice.appendChild(nom);
                 choice.appendChild(drapeau);

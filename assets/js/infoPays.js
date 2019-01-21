@@ -2,6 +2,7 @@
 const choice = document.querySelector('.modal-body');
 const fenetre = document.querySelector('#choix');
 const node = document.querySelectorAll('.land');
+
 for (i = 0; i < node.length; i++) {
     node[i].addEventListener('click', function (e) {
         if (fenetre.hasAttribute('aria-hidden')) {

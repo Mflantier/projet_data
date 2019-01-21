@@ -23,7 +23,7 @@ fetch(`https://restcountries.eu/rest/v2/all`)
 
         for (i = 0; i < 250; i++) {
             let ul = document.createElement("ul");
-            ul.innerHTML = '<img src="' + res[i]['flag'] + '" width="100" height="75">' +" "+ res[i]['translations']['fr'];
+            ul.innerHTML = '<img class="lb" src="' + res[i]['flag'] + '" width="100" height="75">' +"<br>"+ res[i]['translations']['fr'] +"<br>"+ '<button>En savoir plus</button>';
             ul.classList.add("liste-flag");
             flag.appendChild(ul);
         };
@@ -33,6 +33,8 @@ fetch(`https://restcountries.eu/rest/v2/all`)
             console.log(err);
         };
     })
+
+
 
 
 

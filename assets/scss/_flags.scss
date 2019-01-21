@@ -1,14 +1,33 @@
-h1{
+h1 {
     text-align: center;
 }
+
 .flags {
 
-    width:70%;
+    width: 80%;
     margin-left: 20%;
-    
-}
-ul{
-    width:25%;
-    padding-bottom: 1.5rem;
+    margin-right: 15%;
+
 
 }
+
+ul {
+    width: 20%;
+    padding-bottom: 1.5rem;
+    margin-left: 2%;
+    margin-right: 2%;
+
+}
+
+button {
+    background-color: #4D0000ed;
+    border-radius: 5%;
+    color: #ffffffc4;
+    border-color: #4D0000ed;
+}
+
+button:active {
+    background-color: #ffffffc4;
+    color: #4D0000ed;
+}
+

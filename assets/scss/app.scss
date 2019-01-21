@@ -7,13 +7,14 @@
             color: black;
         }
     }
-    .fichePays {
-        display: none;
-    }
     #choix{
-        background-color:aquamarine;
+        // background-color:aquamarine;
         svg {
             width: 150px;
             height: 150px;
         }
+    }
+    .modal-dialog{
+        position: relative;
+        top: 30vh;
     }

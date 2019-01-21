@@ -12,8 +12,8 @@
 <body>
     <header class="d-flex flex-column justify-content-around align-items-center">
         <span class="hamburger">
-        <div></div>
-        <div></div>
+                <div></div>
+                <div></div>
         </span>
         <h1 class="text-center"><a href="/">World Discover</a></h1>
         <!-- <h2 class="btn-pays">Pays <i class="fas fa-caret-down"></i></h2> -->
@@ -28,7 +28,7 @@
 <div class="showmenu">
         <div class="menu-liste  d-flex flex-column justify-content-around align-items-center">
                 <p class="closeBtn text-left">X</p>
-                <a href="/" class="pl-4 option"><i class="fas fa-globe-africa"></i>Mappemonde</a>
+                <a href="/" class="pl-4 option"><i class="fas fa-globe-africa"></i> Mappemonde</a>
                 <ul class="pl-4 option btn-continent" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample"><i class="fas fa-list-ul"></i> liste des pays</ul>
                 <div class="sous-menu-continents collapse" id="collapseExample">
                         <li class="text-left pl-5 continent">Tous les pays</li>
@@ -45,12 +45,6 @@
                 <p></p>
         </div>
 </div>
-<!-- 
-
-<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#choix">
-  Launch demo modal
-</button>
-
 <div class="modal fade fichePays" id="choix" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
         <div class="modal-dialog modal-lg" role="document">
                 <div class="modal-content">
@@ -69,7 +63,6 @@
                 </div>
         </div>
 </div>
--->
     {% block body %}{% endblock %}
     <script src="./build/menu.js"></script>
     {% block javascripts %}{% endblock %}

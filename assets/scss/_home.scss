@@ -27,11 +27,24 @@ body{
                 transition: .2s ease-out;
             }
         }
-        h1{
-            color: #3478A8;
-            font-family: 'Roboto', sans-serif;
-            font-size: 5rem;
-        }
+            a{
+                text-decoration: none;
+                color: #3478A8;
+                &:hover{
+                    text-decoration: none;
+                    color: #3478A8;
+                }
+            }
+            h1{
+                color: #3478A8;
+                font-family: 'Roboto', sans-serif;
+                font-size: 5rem;
+                transition: 0.1s;
+                &:hover{
+                    transform: scale(1.05);
+                }
+            }
+      
         h2{
             i{
                 color: #005904;
@@ -90,6 +103,7 @@ body{
                 transition: 0.3s;
                 width: 100%;
                 transition: 0.3s ease;
+                text-decoration: none;
                 &:hover{
                     transform: translateY(-2px);
                     background-color: #ffff;

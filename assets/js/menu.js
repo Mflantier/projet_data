@@ -1,6 +1,3 @@
-var paths = map.querySelectorAll('.map__image a');
-var links = map.querySelectorAll('.map__list a');
-
 const monmenu = document.querySelector(".showmenu");
 const monhamberger = document.querySelector(".hamburger");
 const close = document.querySelector(".closeBtn");

@@ -27,4 +27,11 @@ class MainController extends AbstractController{
     public function listePays(){
         return $this->render('views/listPays.html.twig', ['title' => 'Pays']);
     }
+
+     /**
+    * @Route("/capital", name="listeCapitale")
+    */
+    public function listeCapitale(){
+        return $this->render('views/capitals.html.twig', ['title' => 'Capitales']);
+    }
 }

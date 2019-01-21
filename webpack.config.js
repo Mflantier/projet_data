@@ -21,6 +21,7 @@ Encore
     .addEntry('flags', './assets/js/flags.js')
     .addEntry('listPays', './assets/js/list.js')
     .addEntry('menu', './assets/js/menu.js')
+    .addEntry('listCapital', './assets/js/listCapitale.js')
     //.addEntry('page2', './assets/js/page2.js')
 
     // will require an extra script tag for runtime.js

@@ -14,7 +14,7 @@ monmenu.addEventListener("click", function(event){
      if(event.target.classList.contains("btn-continent")){
 
      } else {
-        document.querySelector(".showmenu").style.left = "-50vw";
+        document.querySelector(".showmenu").style.left = "-105vw";
         document.querySelector(".hamburger").style.visibility = "visible";
      }
     

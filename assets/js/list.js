@@ -1,4 +1,3 @@
-
 // Affichage liste de tous les pays
 const pays = document.querySelector('#pays');
 

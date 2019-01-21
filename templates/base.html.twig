@@ -2,71 +2,87 @@
 <html lang="fr">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>{% block title %}Discover the world !{% endblock %}</title>
-    {% block stylesheets %}{% endblock %}
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>{% block title %}Discover the world !{% endblock %}</title>
+        {% block stylesheets %}{% endblock %}
 </head>
 
 <body>
-    <header class="d-flex flex-column justify-content-around align-items-center">
-        <span class="hamburger">
-                <div></div>
-                <div></div>
-        </span>
-        <h1 class="text-center"><a href="/">World Discover</a></h1>
-        <!-- <h2 class="btn-pays">Pays <i class="fas fa-caret-down"></i></h2> -->
-        <div class="notice">
-        <p>
-                Obtenez les informations sur le pays de votre choix en cliquant dessus
-        </p>
-        </div>
-        
-</header>
-<div class="bg-filter"></div>
-<div class="showmenu">
-        <div class="menu-liste  d-flex flex-column justify-content-around align-items-center">
-                <p class="closeBtn text-left">X</p>
-                <a href="/" class="pl-4 option"><i class="fas fa-globe-africa"></i> Mappemonde</a>
-                <ul class="pl-4 option btn-continent" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample"><i class="fas fa-list-ul"></i> liste des pays</ul>
-                <div class="sous-menu-continents collapse" id="collapseExample">
-                        <li class="text-left pl-5 continent">Tous les pays</li>
-                        <li class="text-left pl-5 continent">Amérique</li>
-                        <li class="text-left pl-5 continent">Afrique</li>
-                        <li class="text-left pl-5 continent">Europe</li>
-                        <li class="text-left pl-5 continent">Asie</li>
-                        <li class="text-left pl-5 continent">Océanie</li>
+        <header class="d-flex flex-column justify-content-around align-items-center">
+                <span class="hamburger">
+                        <div></div>
+                        <div></div>
+                </span>
+                <h1 class="text-center"><a href="/">World Discover</a></h1>
+                <!-- <h2 class="btn-pays">Pays <i class="fas fa-caret-down"></i></h2> -->
+                <div class="notice">
+                        <p>
+                                Obtenez les informations sur le pays de votre choix en cliquant dessus
+                        </p>
                 </div>
-                <a href="/flags" class="pl-4 option"><i class="far fa-flag"></i>  Gallerie des drapeaux</a>
-                <a href="/capital" class="pl-4 option"><i class="fas fa-archway"></i>  Liste des capitales</a>
-        </div>
-        <div class="footer">
-                <p></p>
-        </div>
-</div>
-<div class="modal fade fichePays" id="choix" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-        <div class="modal-dialog modal-lg" role="document">
-                <div class="modal-content">
-                        <div class="modal-header">
-                                <h5 class="modal-title" id="exampleModalCenterTitle"></h5>
-                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                        <span aria-hidden="true">&times;</span>
-                                </button>
-                        </div>
-                        <div class="modal-body d-flex flex-column justify-content-center align-items-center">
 
+        </header>
+        <div class="bg-filter"></div>
+        <div class="showmenu">
+                <div class="menu-liste  d-flex flex-column justify-content-around align-items-center">
+                        <p class="closeBtn text-left">X</p>
+                        <a href="/" class="pl-4 option"><i class="fas fa-globe-africa"></i> Mappemonde</a>
+                        <ul class="pl-4 option btn-continent" data-toggle="collapse" href="#collapseExample" role="button"
+                                aria-expanded="false" aria-controls="collapseExample"><i class="fas fa-list-ul"></i>
+                                liste des pays</ul>
+                        <div class="sous-menu-continents collapse" id="collapseExample">
+                                <a href="/continent/tous">
+                                        <li class="text-left pl-5 continent">Tous les pays</li>
+                                </a>
+                                <a href="/continent/amerique">
+                                        <li class="text-left pl-5 continent">Amérique</li>
+                                </a>
+                                <a href="/continent/afrique">
+                                        <li class="text-left pl-5 continent">Afrique</li>
+                                </a>
+                                <a href="/continent/europe">
+                                        <li class="text-left pl-5 continent">Europe</li>
+                                </a>
+                                <a href="/continent/asie">
+                                        <li class="text-left pl-5 continent">Asie</li>
+                                </a>
+                                <a href="/continent/oceanie">
+                                        <li class="text-left pl-5 continent">Océanie</li>
+                                </a>
                         </div>
-                        <div class="modal-footer">
-                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <a href="/flags" class="pl-4 option"><i class="far fa-flag"></i> Gallerie des drapeaux</a>
+                        <a href="/capital" class="pl-4 option"><i class="fas fa-archway"></i> Liste des capitales</a>
+                </div>
+                <div class="footer">
+                        <p></p>
+                </div>
+        </div>
+        <div class="modal fade fichePays" id="choix" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+                aria-hidden="true">
+                <div class="modal-dialog modal-lg" role="document">
+                        <div class="modal-content">
+                                <div class="modal-header">
+                                        <h5 class="modal-title" id="exampleModalCenterTitle"></h5>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                <span aria-hidden="true">&times;</span>
+                                        </button>
+                                </div>
+                                <div class="modal-body d-flex flex-column justify-content-center align-items-center">
+
+                                </div>
+                                <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                </div>
                         </div>
                 </div>
         </div>
-</div>
-    {% block body %}{% endblock %}
-    <script src="./build/menu.js"></script>
-    {% block javascripts %}{% endblock %}
-        
+        {% block body %}{% endblock %}
+        {% block javascripts %}
+        <script src="./build/menu.js"></script>
+        {% endblock %}
+
 
 </body>
 

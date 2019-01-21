@@ -22,6 +22,7 @@ Encore
     .addEntry('listPays', './assets/js/list.js')
     .addEntry('menu', './assets/js/menu.js')
     .addEntry('listCapital', './assets/js/listCapitale.js')
+    .addEntry('listContinent', './assets/js/listContinent.js')
     //.addEntry('page2', './assets/js/page2.js')
 
     // will require an extra script tag for runtime.js

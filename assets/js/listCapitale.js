@@ -11,6 +11,7 @@ fetch(`https://restcountries.eu/rest/v2/all`)
             let p = document.createElement("p");
             p.innerHTML = "<b>Pays : </b>"+res[i]['translations']['fr']+" <b>Capitale : </b>"+res[i]['capital'];
             p.classList.add("liste-capitale");
+            p.classList.add("col-3");
             p.id = res[i]['alpha3Code'].toLowerCase();
             pays.appendChild(p);
         };

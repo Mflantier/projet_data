@@ -8,7 +8,7 @@ fetch(`https://restcountries.eu/rest/v2/all`)
     })
     .then((res) => {
         for (i = 0; i < 250; i++) {
-            let li = document.createElement("li");
+            let li = document.createElement("p");
             li.innerHTML = res[i]['translations']['fr'];
             li.classList.add("liste-pays","text-center");
             li.id = res[i]['alpha3Code'].toLowerCase();

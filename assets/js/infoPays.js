@@ -1,8 +1,10 @@
 // Affichage liste du pays selectionné
 const choice = document.querySelector('.modal-body');
 const fenetre = document.querySelector('#choix');
-console.log(fenetre.attributes);
-window.addEventListener('click', function (e) {
+const node = document.querySelectorAll('.land');
+console.log(node);
+for(i=0;i<node.length;i++){
+node[i].addEventListener('click', function (e) {
     if(fenetre.hasAttribute('aria-hidden')){
         let aCode = e.target.id;
 
@@ -61,3 +63,4 @@ window.addEventListener('click', function (e) {
             })
         }
 })
+}

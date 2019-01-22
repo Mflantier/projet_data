@@ -12,6 +12,7 @@ function leFetch(callBack) {
             for (i = 0; i < 250; i++) {
                 if (url == '/continent/europe') {
                     // Europe
+                    document.querySelector("h2").textContent = "Europe";
                     if (res[i]['region'] == 'Europe') {
                         let li = document.createElement("li");
                         li.innerHTML = res[i]['translations']['fr'];
@@ -23,6 +24,7 @@ function leFetch(callBack) {
                     }
                 } else if (url == '/continent/asie') {
                     // Asie
+                    document.querySelector("h2").textContent = "Asie";
                     if (res[i]['region'] == 'Asia') {
                         let li = document.createElement("li");
                         li.innerHTML = res[i]['translations']['fr'];
@@ -34,6 +36,7 @@ function leFetch(callBack) {
                     }
                 } else if (url == '/continent/amerique') {
                     // Amérique
+                    document.querySelector("h2").textContent = "Amérique";
                     if (res[i]['region'] == 'Americas') {
                         let li = document.createElement("li");
                         li.innerHTML = res[i]['translations']['fr'];
@@ -45,6 +48,7 @@ function leFetch(callBack) {
                     }
                 } else if (url == '/continent/afrique') {
                     // Afrique
+                    document.querySelector("h2").textContent = "Afrique";
                     if (res[i]['region'] == 'Africa') {
                         let li = document.createElement("li");
                         li.innerHTML = res[i]['translations']['fr'];
@@ -56,6 +60,7 @@ function leFetch(callBack) {
                     }
                 } else if (url == '/continent/oceanie') {
                     // Océanie
+                    document.querySelector("h2").textContent = "Océanie";
                     if (res[i]['region'] == 'Oceania') {
                         let li = document.createElement("li");
                         li.innerHTML = res[i]['translations']['fr'];
@@ -66,6 +71,8 @@ function leFetch(callBack) {
                         affiche.appendChild(li);
                     }
                 } else if (url == '/continent/tous') {
+                    // Tous les pays
+                    document.querySelector("h2").textContent = "Tous les pays";
                     let li = document.createElement("li");
                     li.innerHTML = res[i]['translations']['fr'];
                     li.classList.add("liste-pays");

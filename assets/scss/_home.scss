@@ -27,11 +27,24 @@ body{
                 transition: .2s ease-out;
             }
         }
-        h1{
-            color: #3478A8;
-            font-family: 'Roboto', sans-serif;
-            font-size: 5rem;
-        }
+            a{
+                text-decoration: none;
+                color: #3478A8;
+                &:hover{
+                    text-decoration: none;
+                    color: #3478A8;
+                }
+            }
+            h1{
+                color: #3478A8;
+                font-family: 'Roboto', sans-serif;
+                font-size: 5rem;
+                transition: 0.1s;
+                &:hover{
+                    transform: scale(1.05);
+                }
+            }
+      
         h2{
             i{
                 color: #005904;
@@ -90,6 +103,7 @@ body{
                 transition: 0.3s;
                 width: 100%;
                 transition: 0.3s ease;
+                text-decoration: none;
                 &:hover{
                     transform: translateY(-2px);
                     background-color: #ffff;
@@ -99,20 +113,23 @@ body{
             }
             .sous-menu-continents{
                 margin-bottom: 0 !important; 
-                width: 100%;               
-                .continent{
-                    font-size: 1rem;
-                    color: #ffffffc4;
-                    padding: 5px 0px;
-                    transition: 0.3s;
-                    width: 100%;
+                width: 100%;
+                a{
                     list-style: none;
-                    transition: 0.3s ease;
-                    &:hover{
-                        transform: translateY(-2px);
-                        background-color: #ffff;
-                        color: #4D0000ed;
-                        cursor: pointer;
+                    .continent{
+                        font-size: 1rem;
+                        color: #ffffffc4;
+                        padding: 5px 0px;
+                        transition: 0.3s;
+                        width: 100%;
+                        list-style: none;
+                        transition: 0.3s ease;
+                        &:hover{
+                            transform: translateY(-2px);
+                            background-color: #ffff;
+                            color: #4D0000ed;
+                            cursor: pointer;
+                        }
                     }
                 } 
             }

@@ -11,7 +11,7 @@ require('../scss/app.scss');
 require('./menu.js');
 require('./infoPays.js');
 // require('./list.js');
-require('./listCapitale.js');
+// require('./listCapitale.js');
 
 // Need jQuery? Install it with "yarn add jquery", then uncomment to require it.
 // const $ = require('jquery');

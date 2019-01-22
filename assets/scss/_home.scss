@@ -11,20 +11,20 @@ body{
               padding-bottom: 2vh;
         }
         @media (min-width: 576px) and (max-width: 767px) and (orientation: portrait) { 
-           padding-top: 15vh;
-           padding-bottom: 15vh;
+           padding-top: 10vh;
+           
         }
         @media (min-width: 576px) and (max-width: 767px) and (orientation:landscape) { 
-            padding-top: 15vh;
-            padding-bottom: 5vh;
+            padding-top: 5vh;
+            
         }
         @media (min-width: 768px) and (max-width: 991px) { 
-            padding-top: 15vh;
-            padding-bottom: 5vh;
+            padding-top: 10vh;
+            
         }
         @media (min-width: 992px) and (max-width: 1199px) { 
-            padding-top: 15vh;
-            padding-bottom: 5vh;
+            padding-top: 12vh;
+            
         }    
         .hamburger {
             position: fixed;
@@ -45,6 +45,16 @@ body{
                 top: 5%;
                 left: 3%;   
             }
+            @media (min-width: 768px) and (max-width: 991px) { 
+                top: 5%;
+                left: 5%; 
+                
+            }
+            @media (min-width: 992px) and (max-width: 1199px) { 
+                top: 5%;
+                left: 5%; 
+                
+            }  
             &:hover div {
                 background-color: #0000009d;
                 transform: scale(1.2);
@@ -134,10 +144,11 @@ body{
         top: 0;
         left: -105vw;
         height: 100vh;
-        width: 15vw;
+        width: auto;
         background-color: #4d0000fa;
         transition: 1.5s;
         box-shadow: 2px 0px 2px 1px rgba(88, 88, 88, 0.59);
+        z-index: 2;
         @media (max-width: 575px) { 
              width: 100vw;
         }
@@ -149,16 +160,20 @@ body{
     
     
         @media (min-width: 768px) and (max-width: 991px) { 
-            width: 100vw;
+            width: auto;
             }
     
     
         @media (min-width: 992px) and (max-width: 1199px) { 
-            width: 100vw;
+            width: auto;
+            }
+        @media (min-width: 1200px) { 
+               width: auto;
             }
         .menu-liste{
             width: 100%;
             padding-top: 15vh;
+            margin-right: 2vw;
             .closeBtn{
                 font-size: 1.1rem;
                 font-weight: bold;
@@ -178,7 +193,7 @@ body{
                 }
             }
             .option{
-                font-size: 1.3rem;
+                font-size: 1.15rem;
                 color: #ffffffc4;
                 padding: 10px 0px;
                 margin: 0;
@@ -186,6 +201,32 @@ body{
                 width: 100%;
                 transition: 0.3s ease;
                 text-decoration: none;
+                @media (max-width: 575px) { 
+                     padding: 10px 50px !important;
+                     font-size: 1.2rem;
+                }
+          
+          
+                @media (min-width: 576px) and (max-width: 767px) { 
+                    padding: 10px 50px !important;
+                    font-size: 1.3rem;
+                   }
+           
+           
+                @media (min-width: 768px) and (max-width: 991px) { 
+                    padding: 10px 50px !important;
+                   font-size: 1.3rem;
+                   }
+           
+           
+                @media (min-width: 992px) and (max-width: 1199px) { 
+                   padding: 10px 30px !important;
+                   font-size: 1.3rem;
+                   }
+                @media (min-width: 1200px)  and (max-width: 1585px) { 
+                    padding: 10px 0px;
+                    font-size: 1.1rem;
+                }
                 &:hover{
                     transform: translateY(-2px);
                     background-color: #ffff;

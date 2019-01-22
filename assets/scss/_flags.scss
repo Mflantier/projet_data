@@ -33,7 +33,8 @@ ul {
 }
 
 
-// .lb:hover{
-//     transform:scale(8);
+.lb:active{
+    transform:scale(10);
+    transform-origin: 10 10;
     
-//     }
+    }

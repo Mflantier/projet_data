@@ -19,15 +19,21 @@ ul {
 
 }
 
-button {
+.bouton {
     background-color: #4D0000ed;
     border-radius: 5%;
     color: #ffffffc4;
     border-color: #4D0000ed;
+    margin-top: 2rem;
 }
 
-button:active {
+.bouton:active {
     background-color: #ffffffc4;
     color: #4D0000ed;
 }
 
+
+// .lb:hover{
+//     transform:scale(8);
+    
+//     }

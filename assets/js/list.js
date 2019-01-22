@@ -27,7 +27,7 @@ function leFetch(callBack) {
     }, 1000);
 }
 // Affichage liste du pays selectionné
-function leAffichage() {
+function affichage() {
     const nom = document.querySelector('.modal-title');
     const choice = document.querySelector('.modal-body');
     const node = document.querySelectorAll('.land');
@@ -91,4 +91,4 @@ function leAffichage() {
     }
 }
 
-leFetch(leAffichage);
+leFetch(affichage);

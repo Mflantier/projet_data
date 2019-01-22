@@ -10,86 +10,58 @@ function leFetch(callBack) {
         })
         .then((res) => {
             for (i = 0; i < 250; i++) {
-                if (url == '/continent/europe') {
-                    // Europe
-                    document.querySelector("h2").textContent = "Europe";
-                    if (res[i]['region'] == 'Europe') {
-                        let li = document.createElement("li");
-                        li.innerHTML = res[i]['translations']['fr'];
-                        li.classList.add("liste-pays");
-                        li.setAttribute('data-toggle', 'modal');
-                        li.setAttribute('data-target', '#choix');
-                        li.id = res[i]['alpha3Code'].toLowerCase();
-                        affiche.appendChild(li);
-                    }
-                } else if (url == '/continent/asie') {
-                    // Asie
-                    document.querySelector("h2").textContent = "Asie";
-                    if (res[i]['region'] == 'Asia') {
-                        let li = document.createElement("li");
-                        li.innerHTML = res[i]['translations']['fr'];
-                        li.classList.add("liste-pays");
-                        li.setAttribute('data-toggle', 'modal');
-                        li.setAttribute('data-target', '#choix');
-                        li.id = res[i]['alpha3Code'].toLowerCase();
-                        affiche.appendChild(li);
-                    }
-                } else if (url == '/continent/amerique') {
-                    // Amérique
-                    document.querySelector("h2").textContent = "Amérique";
-                    if (res[i]['region'] == 'Americas') {
-                        let li = document.createElement("li");
-                        li.innerHTML = res[i]['translations']['fr'];
-                        li.classList.add("liste-pays");
-                        li.setAttribute('data-toggle', 'modal');
-                        li.setAttribute('data-target', '#choix');
-                        li.id = res[i]['alpha3Code'].toLowerCase();
-                        affiche.appendChild(li);
-                    }
-                } else if (url == '/continent/afrique') {
-                    // Afrique
-                    document.querySelector("h2").textContent = "Afrique";
-                    if (res[i]['region'] == 'Africa') {
-                        let li = document.createElement("li");
-                        li.innerHTML = res[i]['translations']['fr'];
-                        li.classList.add("liste-pays");
-                        li.setAttribute('data-toggle', 'modal');
-                        li.setAttribute('data-target', '#choix');
-                        li.id = res[i]['alpha3Code'].toLowerCase();
-                        affiche.appendChild(li);
-                    }
-                } else if (url == '/continent/oceanie') {
-                    // Océanie
-                    document.querySelector("h2").textContent = "Océanie";
-                    if (res[i]['region'] == 'Oceania') {
-                        let li = document.createElement("li");
-                        li.innerHTML = res[i]['translations']['fr'];
-                        li.classList.add("liste-pays");
-                        li.setAttribute('data-toggle', 'modal');
-                        li.setAttribute('data-target', '#choix');
-                        li.id = res[i]['alpha3Code'].toLowerCase();
-                        affiche.appendChild(li);
-                    }
-                } else if (url == '/continent/tous') {
-                    // Tous les pays
-                    document.querySelector("h2").textContent = "Tous les pays";
-                    let li = document.createElement("li");
-                    li.innerHTML = res[i]['translations']['fr'];
-                    li.classList.add("liste-pays");
-                    li.setAttribute('data-toggle', 'modal');
-                    li.setAttribute('data-target', '#choix');
-                    li.id = res[i]['alpha3Code'].toLowerCase();
-                    affiche.appendChild(li);
-                } else {
-                    affiche.innerHTML("Un problème est survenu lors du chargement des données");
-                }
+            tableau = [];
+            tableauTous.push(res[i]['translations']['fr'] + "-" + res[i]['alpha3Code'].toLowerCase());
             };
-        })
-        .catch((err) => {
-            if (err) {
-                console.log(err);
-            };
-        })
+            for()
+        });
+    for (i = 0; i < 250; i++) {
+        if (url == '/continent/europe') {
+            // Europe
+            document.querySelector("h2").textContent = "Europe";
+            if (res[i]['region'] == 'Europe') {
+                tableauEurope.push(res[i]['translations']['fr'] + "-" + res[i]['alpha3Code'].toLowerCase());
+            }
+        } else if (url == '/continent/asie') {
+            // Asie
+            document.querySelector("h2").textContent = "Asie";
+            if (res[i]['region'] == 'Asia') {
+                tableauAsia.push(res[i]['translations']['fr'] + "-" + res[i]['alpha3Code'].toLowerCase());
+
+            }
+        } else if (url == '/continent/amerique') {
+            // Amérique
+            document.querySelector("h2").textContent = "Amérique";
+            if (res[i]['region'] == 'Americas') {
+                tableauAmericas.push(res[i]['translations']['fr'] + "-" + res[i]['alpha3Code'].toLowerCase());
+
+            }
+        } else if (url == '/continent/afrique') {
+            // Afrique
+            document.querySelector("h2").textContent = "Afrique";
+            if (res[i]['region'] == 'Africa') {
+                tableauAfrica.push(res[i]['translations']['fr'] + "-" + res[i]['alpha3Code'].toLowerCase());
+
+            }
+        } else if (url == '/continent/oceanie') {
+            // Océanie
+            document.querySelector("h2").textContent = "Océanie";
+            if (res[i]['region'] == 'Oceania') {
+                tableauOceania.push(res[i]['translations']['fr'] + "-" + res[i]['alpha3Code'].toLowerCase());
+
+            }
+        } else if (url == '/continent/tous') {
+            // Tous les pays
+            document.querySelector("h2").textContent = "Tous les pays";
+        };
+        tableau.sort();
+        console.log(tableau);
+    };
+    .catch((err) => {
+        if (err) {
+            console.log(err);
+        };
+    })
     setTimeout(function () {
         callBack();
     }, 1000);

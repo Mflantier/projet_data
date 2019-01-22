@@ -3,6 +3,7 @@ body{
     // background-position: center;
     // background-size: cover;
     overflow-x: hidden;
+    font-family: 'Signika', sans-serif;
     header{
         padding-top: 2vh;
         padding-bottom: 0vh;
@@ -81,7 +82,6 @@ body{
                 }
             }
         }
-        .haut-de-page{
 
             a{
                 text-decoration: none;
@@ -95,20 +95,28 @@ body{
             h1{
                 // color:  #ffffffc4;
                 color: black;
-                font-family: 'Roboto', sans-serif;
+                font-family: 'Viga', sans-serif;
                 font-size: 5rem;
                 transition: 0.1s;
-                @media (max-width: 575px) { 
-                     font-size: 2.5rem;   
-                }
-           
-           
-               @media (min-width: 576px) and (max-width: 767px) { 
-                    font-size: 3rem;
-                }
-           
+                
                 &:hover{
                     transform: scale(1.05);
+                }
+                a{
+                    i{
+                        font-size: 3.5rem;
+                    }
+                    span {
+                        font-family: 'Caveat', cursive;
+                    }
+                }
+                @media (max-width: 575px) { 
+                     font-size: 2.5rem;
+                }
+            
+            
+                @media (min-width: 576px) and (max-width: 767px) { 
+                    font-size: 3rem;
                 }
             }
       
@@ -127,7 +135,7 @@ body{
                     }
                 }
             }
-        }
+        
     }
     .bg-filter{
         position: fixed;

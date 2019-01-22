@@ -1,11 +1,11 @@
 // Affichage liste du pays selectionné
-const choice = document.querySelector('.modal-body');
-const fenetre = document.querySelector('#choix');
-const node = document.querySelectorAll('.land');
-
-for (i = 0; i < node.length; i++) {
-    node[i].addEventListener('click', function (e) {
-        if (fenetre.hasAttribute('aria-hidden')) {
+document.addEventListener('DOMContentLoaded', function () {
+    const nom = document.querySelector('.modal-title');
+    const choice = document.querySelector('.modal-body');
+    const fenetre = document.querySelector('.modal-dialog');
+    const node = document.querySelectorAll('.land');
+    for (i = 0; i < node.length; i++) {
+        node[i].addEventListener('click', function (e) {
             let aCode = e.target.id;
 
             fetch(`https://restcountries.eu/rest/v2/alpha/` + aCode)
@@ -16,7 +16,6 @@ for (i = 0; i < node.length; i++) {
                     while (choice.firstChild) {
                         choice.removeChild(choice.firstChild);
                     }
-                    let nom = document.querySelector('.modal-title');
                     let drapeau = document.createElement("p");
                     let continent = document.createElement("p");
                     let capitale = document.createElement("p");
@@ -61,6 +60,6 @@ for (i = 0; i < node.length; i++) {
                         console.log(err);
                     };
                 })
-        }
-    })
-}
+        })
+    }
+})

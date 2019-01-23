@@ -19,8 +19,7 @@ function leFetch(callBack) {
                     document.querySelector("h2").textContent = "Europe";
                     tableau.push(res[i]['translations']['fr'] + "#" + res[i]['alpha3Code'].toLowerCase());
                     region = "Europe";
-                }
-                if (url == 'asie' && res[i]['region'] == 'Asia') {
+                } else if (url == 'asie' && res[i]['region'] == 'Asia') {
                     // Asie
                     document.querySelector("h2").textContent = "Asie";
                     tableau.push(res[i]['translations']['fr'] + "#" + res[i]['alpha3Code'].toLowerCase());
@@ -44,6 +43,17 @@ function leFetch(callBack) {
                     // Tous les pays
                     document.querySelector("h2").textContent = "Tous les pays";
                     tableau.push(res[i]['translations']['fr'] + "#" + res[i]['alpha3Code'].toLowerCase());
+                    if (res[i]['region'] == 'Europe') {
+                        region = "Europe";
+                    } else if (res[i]['region'] == 'Asia') {
+                        region = "Asie";
+                    } else if (res[i]['region'] == 'Americas') {
+                        region = "Amérique";
+                    } else if (res[i]['region'] == 'Africa') {
+                        region = "Afrique";
+                    } else if (res[i]['region'] == 'Oceania') {
+                        region = "Océanie";
+                    }
                 }
             }
             afficheListe(tableau);

@@ -100,7 +100,7 @@ function loadInfo(aCode) {
             continent.innerHTML = 'Continent : ' + response['region'];
             capitale.innerHTML = 'Capitale : ' + response['capital'];
             population.innerHTML = 'Population : ' + response['population'];
-            superficie.innerHTML = 'Superficie : ' + response['area'];
+            superficie.innerHTML = 'Superficie : ' + response['area'] +' '+ 'km2';
             langue.innerHTML = 'Langue : ' + response['languages'][0]['nativeName'];
             devise.innerHTML = 'Devise : ' + response['currencies'][0]['name'];
             voisins.innerHTML = 'Pays voisins : ';

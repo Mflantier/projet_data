@@ -1,6 +1,11 @@
 h1 {
     text-align: center;
 }
+.textimg{
+    margin-top: .8 rem;
+    font-size: 16px;
+    font-weight: 600;
+}
 
 .flags {
 
@@ -24,7 +29,8 @@ ul {
     border-radius: 5%;
     color: #ffffffc4;
     border-color: #4D0000ed;
-    margin-top: 2rem;
+    margin-top: .5rem;
+
 }
 
 .bouton:active {
@@ -34,7 +40,10 @@ ul {
 
 
 .lb:active{
-    transform:scale(10);
-    transform-origin: 10 10;
+    transform:scale(8); 
+    transform-box: border-box;
+   
     
     }
+
+    

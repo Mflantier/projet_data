@@ -3,6 +3,7 @@ body{
     // background-position: center;
     // background-size: cover;
     overflow-x: hidden;
+    font-family: 'Signika', sans-serif;
     header{
         padding-top: 2vh;
         padding-bottom: 0vh;
@@ -81,7 +82,6 @@ body{
                 }
             }
         }
-        .haut-de-page{
 
             a{
                 text-decoration: none;
@@ -95,20 +95,28 @@ body{
             h1{
                 // color:  #ffffffc4;
                 color: black;
-                font-family: 'Roboto', sans-serif;
+                font-family: 'Viga', sans-serif;
                 font-size: 5rem;
                 transition: 0.1s;
-                @media (max-width: 575px) { 
-                     font-size: 2.5rem;   
-                }
-           
-           
-               @media (min-width: 576px) and (max-width: 767px) { 
-                    font-size: 3rem;
-                }
-           
+                
                 &:hover{
                     transform: scale(1.05);
+                }
+                a{
+                    i{
+                        font-size: 3.5rem;
+                    }
+                    span {
+                        font-family: 'Caveat', cursive;
+                    }
+                }
+                @media (max-width: 575px) { 
+                     font-size: 2.5rem;
+                }
+            
+            
+                @media (min-width: 576px) and (max-width: 767px) { 
+                    font-size: 3rem;
                 }
             }
       
@@ -127,7 +135,7 @@ body{
                     }
                 }
             }
-        }
+        
     }
     .bg-filter{
         position: fixed;
@@ -137,7 +145,7 @@ body{
         width: 100%;
         padding: 5rem;
         z-index: -1;
-        background: linear-gradient(217deg, rgba(255, 82, 0, 0.7), rgba(0, 73, 136, 0.18) 70.71%), linear-gradient(127deg, rgb(0, 173, 255), rgba(177, 177, 177, 0) 70.71%), linear-gradient(336deg, rgba(0, 234, 50, 0.19), rgba(255, 255, 255, 0.68) 70.71%);   
+        // background: linear-gradient(217deg, rgba(255, 82, 0, 0.7), rgba(0, 73, 136, 0.18) 70.71%), linear-gradient(127deg, rgb(0, 173, 255), rgba(177, 177, 177, 0) 70.71%), linear-gradient(336deg, rgba(0, 234, 50, 0.19), rgba(255, 255, 255, 0.68) 70.71%);   
         // background:linear-gradient(#0000004f, #00000021), url(img/bg-world.jpeg) no-repeat;
         // background-position: center;
         // background-size: cover;

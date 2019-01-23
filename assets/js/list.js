@@ -1,5 +1,6 @@
 // Affichage liste de tous les pays
 const pays = document.querySelector('#pays');
+let tableau = [];
 
 function leFetch(callBack) {
     fetch(`https://restcountries.eu/rest/v2/all`)
@@ -7,15 +8,10 @@ function leFetch(callBack) {
             return res.json();
         })
         .then((res) => {
-            for (i = 0; i < 250; i++) {
-                let li = document.createElement("p");
-                li.innerHTML = res[i]['translations']['fr'];
-                li.classList.add("liste-pays","text-center","col-12","col-sm-6","col-md-3","col-lg-3","col-xl-3");
-                li.setAttribute('data-toggle', 'modal');
-                li.setAttribute('data-target', '#choix');
-                li.id = res[i]['alpha3Code'].toLowerCase();
-                pays.appendChild(li);
+            for (i = 0; i < res.length; i++) {
+                tableau.push(res[i]['translations']['fr'] + "#" + res[i]['alpha3Code'].toLowerCase());
             };
+            afficheListe(res)
         })
         .catch((err) => {
             if (err) {
@@ -26,6 +22,7 @@ function leFetch(callBack) {
         callBack();
     }, 1000);
 }
+
 // Affichage liste du pays selectionné
 function affichage() {
     const nom = document.querySelector('.modal-title');
@@ -92,3 +89,18 @@ function affichage() {
 }
 
 leFetch(affichage);
+
+// Tri ordre alphabétique en français
+function afficheListe(tab) {
+    tab.sort();
+    for (t = 0; t < tab.length; t++) {
+        let nomId = tab[t].split("#")
+        let li = document.createElement("p");
+        li.innerHTML = nomId[0];
+        li.classList.add("liste-pays", "text-center", "col-12", "col-sm-6", "col-md-3", "col-lg-3", "col-xl-3");
+        li.setAttribute('data-toggle', 'modal');
+        li.setAttribute('data-target', '#choix');
+        li.id = nomId[1];
+        pays.appendChild(li);
+    }
+}

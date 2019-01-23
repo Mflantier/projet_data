@@ -1,7 +1,9 @@
 // Affichage liste de tous les pays par continents
 const affiche = document.querySelector('#selectContinent');
 const submenu = document.querySelectorAll(".continent");
-let url = window.location['pathname'];
+let url = (window.location['pathname'].split("/")).pop();
+let tableauReponseFetch = [];
+let region;
 
 function leFetch(callBack) {
     fetch(`https://restcountries.eu/rest/v2/all`)
@@ -9,94 +11,56 @@ function leFetch(callBack) {
             return res.json();
         })
         .then((res) => {
-            for (i = 0; i < 250; i++) {
-                if (url == '/continent/europe') {
-                    // Europe
+            tableau = [];
+            for (i = 0; i < res.length; i++) {
+                // Tri par continent
+                // Europe
+                if (url == 'europe' && res[i]['region'] == 'Europe') {
                     document.querySelector("h2").textContent = "Europe";
-                    if (res[i]['region'] == 'Europe') {
-                        let li = document.createElement("li");
-                        li.innerHTML = res[i]['translations']['fr'];
-                        li.classList.add("liste-pays");
-                        li.setAttribute('data-toggle', 'modal');
-                        li.setAttribute('data-target', '#choix');
-                        li.id = res[i]['alpha3Code'].toLowerCase();
-                        affiche.appendChild(li);
-                    }
-                } else if (url == '/continent/asie') {
+                    tableau.push(res[i]['translations']['fr'] + "#" + res[i]['alpha3Code'].toLowerCase());
+                    region = "Europe";
+                }
+                if (url == 'asie' && res[i]['region'] == 'Asia') {
                     // Asie
                     document.querySelector("h2").textContent = "Asie";
-                    if (res[i]['region'] == 'Asia') {
-                        let li = document.createElement("li");
-                        li.innerHTML = res[i]['translations']['fr'];
-                        li.classList.add("liste-pays");
-                        li.setAttribute('data-toggle', 'modal');
-                        li.setAttribute('data-target', '#choix');
-                        li.id = res[i]['alpha3Code'].toLowerCase();
-                        affiche.appendChild(li);
-                    }
-                } else if (url == '/continent/amerique') {
+                    tableau.push(res[i]['translations']['fr'] + "#" + res[i]['alpha3Code'].toLowerCase());
+                    region = "Asie";
+                } else if (url == 'amerique' && res[i]['region'] == 'Americas') {
                     // Amérique
                     document.querySelector("h2").textContent = "Amérique";
-                    if (res[i]['region'] == 'Americas') {
-                        let li = document.createElement("li");
-                        li.innerHTML = res[i]['translations']['fr'];
-                        li.classList.add("liste-pays");
-                        li.setAttribute('data-toggle', 'modal');
-                        li.setAttribute('data-target', '#choix');
-                        li.id = res[i]['alpha3Code'].toLowerCase();
-                        affiche.appendChild(li);
-                    }
-                } else if (url == '/continent/afrique') {
+                    tableau.push(res[i]['translations']['fr'] + "#" + res[i]['alpha3Code'].toLowerCase());
+                    region = "Amérique";
+                } else if (url == 'afrique' && res[i]['region'] == 'Africa') {
                     // Afrique
                     document.querySelector("h2").textContent = "Afrique";
-                    if (res[i]['region'] == 'Africa') {
-                        let li = document.createElement("li");
-                        li.innerHTML = res[i]['translations']['fr'];
-                        li.classList.add("liste-pays");
-                        li.setAttribute('data-toggle', 'modal');
-                        li.setAttribute('data-target', '#choix');
-                        li.id = res[i]['alpha3Code'].toLowerCase();
-                        affiche.appendChild(li);
-                    }
-                } else if (url == '/continent/oceanie') {
+                    tableau.push(res[i]['translations']['fr'] + "#" + res[i]['alpha3Code'].toLowerCase());
+                    region = "Afrique";
+                } else if (url == 'oceanie' && res[i]['region'] == 'Oceania') {
                     // Océanie
                     document.querySelector("h2").textContent = "Océanie";
-                    if (res[i]['region'] == 'Oceania') {
-                        let li = document.createElement("li");
-                        li.innerHTML = res[i]['translations']['fr'];
-                        li.classList.add("liste-pays");
-                        li.setAttribute('data-toggle', 'modal');
-                        li.setAttribute('data-target', '#choix');
-                        li.id = res[i]['alpha3Code'].toLowerCase();
-                        affiche.appendChild(li);
-                    }
-                } else if (url == '/continent/tous') {
+                    tableau.push(res[i]['translations']['fr'] + "#" + res[i]['alpha3Code'].toLowerCase());
+                    region = "Océanie";
+                } else if (url == 'tous') {
                     // Tous les pays
                     document.querySelector("h2").textContent = "Tous les pays";
-                    let li = document.createElement("li");
-                    li.innerHTML = res[i]['translations']['fr'];
-                    li.classList.add("liste-pays");
-                    li.setAttribute('data-toggle', 'modal');
-                    li.setAttribute('data-target', '#choix');
-                    li.id = res[i]['alpha3Code'].toLowerCase();
-                    affiche.appendChild(li);
-                } else {
-                    affiche.innerHTML("Un problème est survenu lors du chargement des données");
+                    tableau.push(res[i]['translations']['fr'] + "#" + res[i]['alpha3Code'].toLowerCase());
                 }
-            };
+            }
+            afficheListe(tableau);
         })
         .catch((err) => {
             if (err) {
                 console.log(err);
             };
         })
+
     setTimeout(function () {
         callBack();
     }, 1000);
 
 }
 
-function affichage() {
+function affichageLightBox() {
     const nom = document.querySelector('.modal-title');
     const choice = document.querySelector('.modal-body');
     const node = document.querySelectorAll('.liste-pays');
@@ -123,12 +87,12 @@ function affichage() {
 
                     nom.textContent = response['translations']['fr'];
                     drapeau.innerHTML = '<img src="' + response['flag'] + '" width="150" height="100">';
-                    continent.innerHTML = 'Continent : ' + response['region'];
-                    capitale.innerHTML = 'Capitale : ' + response['capital'];
-                    population.innerHTML = 'Population : ' + response['population'];
-                    superficie.innerHTML = 'Superficie : ' + response['area'];
-                    langue.innerHTML = 'Langue : ' + response['languages'][0]['nativeName'];
-                    devise.innerHTML = 'Devise : ' + response['currencies'][0]['name'];
+                    continent.textContent = 'Continent : ' + region;
+                    capitale.textContent = 'Capitale : ' + response['capital'];
+                    population.textContent = 'Population : ' + response['population'];
+                    superficie.textContent = 'Superficie : ' + response['area'];
+                    langue.textContent = 'Langue : ' + response['languages'][0]['nativeName'];
+                    devise.textContent = 'Devise : ' + response['currencies'][0]['name'];
                     voisins.innerHTML = 'Pays voisins : ';
 
                     for (i = 0; i < response['borders'].length; i++) {
@@ -160,4 +124,36 @@ function affichage() {
     }
 }
 
-leFetch(affichage);
+leFetch(affichageLightBox);
+
+// Tri ordre alphabétique en français
+function afficheListe(tab) {
+    tab.sort();
+    z = 0;
+    h = 0;
+    for (t = 0; t < tab.length; t++) {
+        let nomId = tab[t].split("#")
+        let li = document.createElement("p");
+        li.innerHTML = nomId[0];
+        li.classList.add("liste-pays", "text-center");
+        li.setAttribute('data-toggle', 'modal');
+        li.setAttribute('data-target', '#choix');
+        li.id = nomId[1];
+
+        if (z === 0) {
+            div = document.createElement('div');
+            div.classList.add("col-lg-3");
+            div.setAttribute('id', 'colonne-' + h);
+            affiche.appendChild(div);
+            idcolonne = 'colonne-' + h;
+        }
+        theColonne = document.querySelector('#' + idcolonne);
+        theColonne.appendChild(li);
+        if (z === Math.floor((tab.length) / 4)) {
+            z = 0;
+            h++;
+        } else {
+            z++
+        }
+    }
+}

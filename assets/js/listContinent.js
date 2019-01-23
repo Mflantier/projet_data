@@ -14,58 +14,37 @@ function leFetch(callBack) {
             tableau = [];
             for (i = 0; i < res.length; i++) {
                 // Tri par continent
-                if (url == 'europe') {
-                    // Europe
+                // Europe
+                if (url == 'europe' && res[i]['region'] == 'Europe') {
                     document.querySelector("h2").textContent = "Europe";
-                    if (res[i]['region'] == 'Europe') {
-                        tableau.push(res[i]['translations']['fr'] + "#" + res[i]['alpha3Code'].toLowerCase());
-                        region = "Europe";
-                    }
-                } else if (url == 'asie') {
+                    tableau.push(res[i]['translations']['fr'] + "#" + res[i]['alpha3Code'].toLowerCase());
+                    region = "Europe";
+                }
+                if (url == 'asie' && res[i]['region'] == 'Asia') {
                     // Asie
                     document.querySelector("h2").textContent = "Asie";
-                    if (res[i]['region'] == 'Asia') {
-                        tableau.push(res[i]['translations']['fr'] + "#" + res[i]['alpha3Code'].toLowerCase());
-                        region = "Asie";
-                    }
-                } else if (url == 'amerique') {
+                    tableau.push(res[i]['translations']['fr'] + "#" + res[i]['alpha3Code'].toLowerCase());
+                    region = "Asie";
+                } else if (url == 'amerique' && res[i]['region'] == 'Americas') {
                     // Amérique
                     document.querySelector("h2").textContent = "Amérique";
-                    if (res[i]['region'] == 'Americas') {
-                        tableau.push(res[i]['translations']['fr'] + "#" + res[i]['alpha3Code'].toLowerCase());
-                        region = "Amérique";
-                    }
-                } else if (url == 'afrique') {
+                    tableau.push(res[i]['translations']['fr'] + "#" + res[i]['alpha3Code'].toLowerCase());
+                    region = "Amérique";
+                } else if (url == 'afrique' && res[i]['region'] == 'Africa') {
                     // Afrique
                     document.querySelector("h2").textContent = "Afrique";
-                    if (res[i]['region'] == 'Africa') {
-                        tableau.push(res[i]['translations']['fr'] + "#" + res[i]['alpha3Code'].toLowerCase());
-                        region = "Afrique";
-                    }
-                } else if (url == 'oceanie') {
+                    tableau.push(res[i]['translations']['fr'] + "#" + res[i]['alpha3Code'].toLowerCase());
+                    region = "Afrique";
+                } else if (url == 'oceanie' && res[i]['region'] == 'Oceania') {
                     // Océanie
                     document.querySelector("h2").textContent = "Océanie";
-                    if (res[i]['region'] == 'Oceania') {
-                        tableau.push(res[i]['translations']['fr'] + "#" + res[i]['alpha3Code'].toLowerCase());
-                        region = "Océanie";
-                    }
+                    tableau.push(res[i]['translations']['fr'] + "#" + res[i]['alpha3Code'].toLowerCase());
+                    region = "Océanie";
                 } else if (url == 'tous') {
                     // Tous les pays
                     document.querySelector("h2").textContent = "Tous les pays";
                     tableau.push(res[i]['translations']['fr'] + "#" + res[i]['alpha3Code'].toLowerCase());
-
-                //     if (res[i]["region"] == "Europe") {
-                //         region = "Europe";
-                // } else if (res[i]["region"] == "Asia") {
-                //         region = "Asie";
-                // } else if (res[i]["region"] == "Americas") {
-                //         region = "Amérique";
-                // } else if (res[i]["region"] == "Africa") {
-                //         region = "Afrique";
-                // } else if (res[i]["region"] == "Oceania") {
-                //         region = "Océanie";
-                // }
-                };
+                }
             }
             afficheListe(tableau);
         })
@@ -150,14 +129,32 @@ leFetch(affichageLightBox);
 // Tri ordre alphabétique en français
 function afficheListe(tab) {
     tab.sort();
+    z = 0;
+    h = 0;
     for (t = 0; t < tab.length; t++) {
         let nomId = tab[t].split("#")
         let li = document.createElement("p");
         li.innerHTML = nomId[0];
-        li.classList.add("liste-pays", "text-center", "col-12", "col-sm-6", "col-md-3", "col-lg-3", "col-xl-3");
+        li.classList.add("liste-pays", "text-center");
         li.setAttribute('data-toggle', 'modal');
         li.setAttribute('data-target', '#choix');
         li.id = nomId[1];
-        affiche.appendChild(li);
+
+        if (z === 0) {
+            div = document.createElement('div');
+            div.classList.add("col-lg-3");
+            div.setAttribute('id', 'colonne-' + h);
+            affiche.appendChild(div);
+            idcolonne = 'colonne-' + h;
+        }
+        theColonne = document.querySelector('#' + idcolonne);
+        theColonne.appendChild(li);
+        console.log(Math.floor((tab.length) / 4));
+        if (z === Math.floor((tab.length) / 4)) {
+            z = 0;
+            h++;
+        } else {
+            z++
+        }
     }
 }

@@ -13,12 +13,12 @@
 {% block body %}
 
 
-<hr class="separation">
-
-<h1 class="text center">{{ title }}</h1>
+<div class="bgh2">
+       <h2 class="text-center">{{ title }}</h2>
+</div>
 
 <div class="container-fluid">
-    <div class="container">
+    <div class="container" id="appli">
         <div class="row d-flex justify-content-center">
             <div class="col-12 d-flex flex-wrap" id="pays"></div>
         </div>
@@ -35,5 +35,6 @@
     crossorigin="anonymous"></script>
 <script src="./build/runtime.js"></script>
 <script src="./build/listCapital.js"></script>
+<script src="./build/app.js"></script>
 {{ parent() }}
 {% endblock %}

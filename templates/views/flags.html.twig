@@ -13,12 +13,12 @@
 {% block body %}
 
 
-<hr class="separation">
-
-<h1 class="text-center mb-4">{{ title }}</h1>
+<div class="bgh2">
+       <h2 class="text-center mb-4">{{ title }}</h2>
+</div>
 
 <div class="container-fluid">
-    <div class="container">
+    <div class="container" id="appli">
         <div class="row d-flex justify-content-center align-items-center">
             <div class=" col-12 d-flex flex-wrap flags" id="flag">
             </div>
@@ -41,5 +41,6 @@
     crossorigin="anonymous"></script>
 <script src="./build/runtime.js"></script>
 <script src="./build/flags.js"></script>
+<script src="./build/app.js"></script>
 {{ parent() }}
 {% endblock %}

@@ -14,10 +14,27 @@
 
 {# <h1>{{ title }}</h1> #}
 
+       <header class="d-flex flex-column justify-content-around align-items-center">
+                {# <span class="hamburger">
+                        <div></div>
+                        <div></div>
+                </span> #}
+                <div class="haut-de-page d-flex flex-column justify-content-center align-items-center">   
+                                <h1 class="text-center"><a href="/">W<i class="fas fa-globe-africa"></i>rld <span>Discovery</span></a></h1>
+                        <div class="notice">
+                                <p class="text-center">
+                                        Obtenez les informations sur le pays de votre choix en cliquant dessus
+                                </p>
+                        </div>
+                        <a href="#appli" class="down"><i class="fas fa-angle-double-down"></i></a>
+                </div>
+                
+        </header>
+
 
 <div class="map container-fluid d-flex flex-column justify-content-center align-items-center" id="map">
 
-        <div class="map__image">
+        <div class="map__image" id="appli">
                 <svg xmlns="http://www.w3.org/2000/svg" xmlns:amcharts="http://amcharts.com/ammap" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 1000 670">
                     <g>
                      <a data-toggle="modal" data-target="#infospays" xlink:href="#" xlink:title="Emirats Arabes Unis"><path id="AE" title="United Arab Emirates" class="land" d="M619.87,393.72L620.37,393.57L620.48,394.41L622.67,393.93L624.99,394.01L626.68,394.1L628.6,392.03L630.7,390.05L632.47,388.15L633,389.2L633.38,391.64L631.95,391.65L631.72,393.65L632.22,394.07L630.95,394.67L630.94,395.92L630.12,397.18L630.05,398.39L629.48,399.03L621.06,397.51L619.98,394.43z"/></a>

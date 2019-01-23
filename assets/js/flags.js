@@ -11,9 +11,21 @@ function leFetch() {
 
             for (i = 0; i < 250; i++) {
                 let ul = document.createElement("ul");
-
+                let img = document.createElement("img");
                 let bouton = document.createElement("button");
-                ul.innerHTML = '<img class="lb" src="' + res[i]['flag'] + '" width="100" height="75">' + "<br>" + res[i]['translations']['fr'] + "<br>";
+                let text = document.createElement("text");
+
+                img.setAttribute("src", res[i]['flag']);
+                img.setAttribute("data-toggle", "modal");
+                img.setAttribute("data-target", "#choix");
+                img.setAttribute("width", "150");
+                img.setAttribute("height", "100");
+                img.setAttribute("id", res[i]['alpha3Code']);
+                img.classList.add("imagelb");
+
+                text.innerHTML = res[i]['translations']['fr'] + "<br/>";
+                text.classList.add("textimg");
+
                 bouton.textContent = 'En savoir plus';
                 bouton.setAttribute("data-toggle", "modal");
                 bouton.setAttribute("data-target", "#choix");
@@ -22,15 +34,17 @@ function leFetch() {
                 bouton.classList.add("bouton");
                 bouton.id = res[i]['alpha3Code'];
                 ul.classList.add("liste-flag");
+
+                ul.appendChild(img);
+                ul.appendChild(text);
+
                 ul.appendChild(bouton);
                 flag.appendChild(ul);
 
-
-
             };
-
+            addEventImage();
             addEventButton();
-
+           
         })
         .catch((err) => {
             if (err) {
@@ -40,6 +54,10 @@ function leFetch() {
 
 
 }
+
+
+
+
 // Bouton en savoir plus
 
 function addEventButton() {
@@ -52,9 +70,6 @@ function addEventButton() {
     }
 
 }
-
-
-
 
 function loadInfo(aCode) {
     const nom = document.querySelector('.modal-title');
@@ -80,6 +95,7 @@ function loadInfo(aCode) {
             let voisins = document.createElement("ul");
 
             nom.textContent = response['translations']['fr'];
+            console.log(response);
             drapeau.innerHTML = '<img src="' + response['flag'] + '" width="150" height="100">';
             continent.innerHTML = 'Continent : ' + response['region'];
             capitale.innerHTML = 'Capitale : ' + response['capital'];
@@ -117,5 +133,55 @@ function loadInfo(aCode) {
 
 
 }
+
+// Images
+
+function addEventImage() {
+    const imgs = document.querySelectorAll('.imagelb');
+    for (i = 0; i < imgs.length; i++) {
+        imgs[i].addEventListener('click', function (e) {
+            let aCode = e.target.id;
+            loadImage(aCode);
+        });
+    }
+
+}
+
+function loadImage(aCode) {
+   
+    const name = document.querySelector('.modal-title');
+    const choice = document.querySelector('.modal-body');
+    const fenetre = document.querySelector('#choix');
+
+    fetch(`https://restcountries.eu/rest/v2/alpha/` + aCode)
+    
+        .then((response) => {
+            return response.json();
+            
+        }) 
+        .then((response) => {
+                while (choice.firstChild) {
+                    choice.removeChild(choice.firstChild);
+                   
+                }
+                
+                let drapeau = document.createElement("p");
+               
+                name.textContent = response['translations']['fr'];
+
+                drapeau.innerHTML = '<img src="' + response['flag'] + '" width="100%" height="75%">';
+           
+            choice.appendChild(drapeau);
+
+        })
+.catch((err) => {
+    if (err) {
+        console.log(err);
+    };
+})
+
+
+}
+
 
 leFetch();

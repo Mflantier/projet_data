@@ -2,6 +2,7 @@
 const affiche = document.querySelector('#selectContinent');
 const submenu = document.querySelectorAll(".continent");
 let url = window.location['pathname'];
+let tableauReponseFetch = [];
 
 function leFetch(callBack) {
     fetch(`https://restcountries.eu/rest/v2/all`)
@@ -9,66 +10,59 @@ function leFetch(callBack) {
             return res.json();
         })
         .then((res) => {
-            for (i = 0; i < 250; i++) {
             tableau = [];
-            tableauTous.push(res[i]['translations']['fr'] + "-" + res[i]['alpha3Code'].toLowerCase());
+            for (i = 0; i < res.length; i++) {
+                if (url == '/continent/europe') {
+                    // Europe
+                    document.querySelector("h2").textContent = "Europe";
+                    if (res[i]['region'] == 'Europe') {
+                        tableau.push(res[i]['translations']['fr'] + "#" + res[i]['alpha3Code'].toLowerCase());
+                    }
+                } else if (url == '/continent/asie') {
+                    // Asie
+                    document.querySelector("h2").textContent = "Asie";
+                    if (res[i]['region'] == 'Asia') {
+                        tableau.push(res[i]['translations']['fr'] + "#" + res[i]['alpha3Code'].toLowerCase());
+                    }
+                } else if (url == '/continent/amerique') {
+                    // Amérique
+                    document.querySelector("h2").textContent = "Amérique";
+                    if (res[i]['region'] == 'Americas') {
+                        tableau.push(res[i]['translations']['fr'] + "#" + res[i]['alpha3Code'].toLowerCase());
+                    }
+                } else if (url == '/continent/afrique') {
+                    // Afrique
+                    document.querySelector("h2").textContent = "Afrique";
+                    if (res[i]['region'] == 'Africa') {
+                        tableau.push(res[i]['translations']['fr'] + "#" + res[i]['alpha3Code'].toLowerCase());
+                    }
+                } else if (url == '/continent/oceanie') {
+                    // Océanie
+                    document.querySelector("h2").textContent = "Océanie";
+                    if (res[i]['region'] == 'Oceania') {
+                        tableau.push(res[i]['translations']['fr'] + "#" + res[i]['alpha3Code'].toLowerCase());
+                    }
+                } else if (url == '/continent/tous') {
+                    // Tous les pays
+                    document.querySelector("h2").textContent = "Tous les pays";
+                    tableau.push(res[i]['translations']['fr'] + "#" + res[i]['alpha3Code'].toLowerCase());
+                };
+            }
+            afficheListe(tableau);
+        })
+        .catch((err) => {
+            if (err) {
+                console.log(err);
             };
-            for()
-        });
-    for (i = 0; i < 250; i++) {
-        if (url == '/continent/europe') {
-            // Europe
-            document.querySelector("h2").textContent = "Europe";
-            if (res[i]['region'] == 'Europe') {
-                tableauEurope.push(res[i]['translations']['fr'] + "-" + res[i]['alpha3Code'].toLowerCase());
-            }
-        } else if (url == '/continent/asie') {
-            // Asie
-            document.querySelector("h2").textContent = "Asie";
-            if (res[i]['region'] == 'Asia') {
-                tableauAsia.push(res[i]['translations']['fr'] + "-" + res[i]['alpha3Code'].toLowerCase());
+        })
 
-            }
-        } else if (url == '/continent/amerique') {
-            // Amérique
-            document.querySelector("h2").textContent = "Amérique";
-            if (res[i]['region'] == 'Americas') {
-                tableauAmericas.push(res[i]['translations']['fr'] + "-" + res[i]['alpha3Code'].toLowerCase());
-
-            }
-        } else if (url == '/continent/afrique') {
-            // Afrique
-            document.querySelector("h2").textContent = "Afrique";
-            if (res[i]['region'] == 'Africa') {
-                tableauAfrica.push(res[i]['translations']['fr'] + "-" + res[i]['alpha3Code'].toLowerCase());
-
-            }
-        } else if (url == '/continent/oceanie') {
-            // Océanie
-            document.querySelector("h2").textContent = "Océanie";
-            if (res[i]['region'] == 'Oceania') {
-                tableauOceania.push(res[i]['translations']['fr'] + "-" + res[i]['alpha3Code'].toLowerCase());
-
-            }
-        } else if (url == '/continent/tous') {
-            // Tous les pays
-            document.querySelector("h2").textContent = "Tous les pays";
-        };
-        tableau.sort();
-        console.log(tableau);
-    };
-    .catch((err) => {
-        if (err) {
-            console.log(err);
-        };
-    })
     setTimeout(function () {
         callBack();
     }, 1000);
 
 }
 
-function affichage() {
+function affichageLightBox() {
     const nom = document.querySelector('.modal-title');
     const choice = document.querySelector('.modal-body');
     const node = document.querySelectorAll('.liste-pays');
@@ -132,4 +126,20 @@ function affichage() {
     }
 }
 
-leFetch(affichage);
+leFetch(affichageLightBox);
+
+function afficheListe(tab) {
+    tab.sort();
+    for (t = 0; t < tab.length; t++) {
+        let nomId = tab[t].split("#")
+        console.log(nomId);
+        console.log(nomId[0]);
+        let li = document.createElement("p");
+        li.innerHTML = nomId[0];
+        li.classList.add("liste-pays", "text-center", "col-12", "col-sm-6", "col-md-3", "col-lg-3", "col-xl-3");
+        li.setAttribute('data-toggle', 'modal');
+        li.setAttribute('data-target', '#choix');
+        li.id = nomId[1];
+        affiche.appendChild(li);
+    }
+}

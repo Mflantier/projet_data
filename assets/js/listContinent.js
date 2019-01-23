@@ -182,3 +182,4 @@ function affichage() {
 }
 
 leFetch(affichage);
+

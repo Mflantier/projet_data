@@ -4,8 +4,12 @@ body{
     // background-size: cover;
     overflow-x: hidden;
     header{
-        padding-top: 2vh;
-        padding-bottom: 0vh;
+        // padding-top: 10vh;
+        // padding-bottom: 10vh;
+        height: 100vh;
+        background: linear-gradient(#002c339c, #5600007d), url(img/bg-world.jpeg) no-repeat;
+        background-position: center;
+        background-size: cover;
         @media (max-width: 575px) { 
               padding-top: 15vh;
               padding-bottom: 2vh;
@@ -26,6 +30,91 @@ body{
             padding-top: 12vh;
             
         }    
+        
+        .haut-de-page{
+            
+            a{
+                text-decoration: none;
+                // color:  #ffffffc4;
+                color: #ffff;
+                &:hover{
+                    text-decoration: none;
+                    color:  #ffff;
+                }
+            }
+                h1{
+                // color:  #ffffffc4;
+                color: #ffff;
+                font-family: 'Roboto', sans-serif;
+                font-size: 5rem;
+                text-shadow: 9px 5px 20px rgb(0, 0, 0);
+                transition: 0.1s;
+                @media (max-width: 575px) { 
+                     font-size: 2.5rem;   
+                }
+           
+           
+               @media (min-width: 576px) and (max-width: 767px) { 
+                    font-size: 3rem;
+                }
+           
+                &:hover{
+                    transform: scale(1.05);
+                }
+            }
+      
+            .notice{
+                p{
+                    font-size: 1.5rem;
+                    // color:  #ffffffc4;
+                    color: #ffff;
+                    text-shadow: 9px 5px 20px rgb(0, 0, 0);
+                    @media (max-width: 575px) { 
+                        font-size: 1rem;   
+                    }
+              
+              
+                  @media (min-width: 576px) and (max-width: 767px) { 
+                       font-size: 1.3rem;
+                    }
+                }
+            }
+            .down{
+                font-size: 2.5rem;
+                padding-top: 5vh;
+                transition: .8s;
+                animation: go-down 1s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+            @keyframes go-down {
+                0% {
+                transform: scale(1);
+                opacity: 0;
+                }
+                50% {
+                transform: scale(1.05);   
+                opacity: 1;
+                    }
+                100% {
+                transform: scale(1);
+                opacity: 0;
+                }
+            }
+
+            }
+        }
+    }
+    .bg-filter{
+        position: fixed;
+        top: 0;
+        right: 0;
+        height: 10vh;
+        width: 100%;
+        padding: 5rem;
+        z-index: -1;
+        // background: linear-gradient(217deg, rgba(255, 82, 0, 0.7), rgba(0, 73, 136, 0.18) 70.71%), linear-gradient(127deg, rgb(0, 173, 255), rgba(177, 177, 177, 0) 70.71%), linear-gradient(336deg, rgba(0, 234, 50, 0.19), rgba(255, 255, 255, 0.68) 70.71%);   
+        // background:linear-gradient(#0000004f, #00000021), url(img/bg-world.jpeg) no-repeat;
+        // background-position: center;
+        // background-size: cover;
+        }
         .hamburger {
             position: fixed;
             top: 10%;
@@ -67,6 +156,7 @@ body{
                 border-radius: 5px;
                 margin: 5px 0px;
                 transition: .2s ease-out;
+                box-shadow: 0px 5px 16px #000000e8;
                 @media (max-width: 575px) { 
                     width: 32px;
                     height: 3px; 
@@ -80,67 +170,6 @@ body{
                     margin: 4px 0px;
                 }
             }
-        }
-        .haut-de-page{
-
-            a{
-                text-decoration: none;
-                // color:  #ffffffc4;
-                color: black;
-                &:hover{
-                    text-decoration: none;
-                    color:  #ffff;
-                }
-            }
-            h1{
-                // color:  #ffffffc4;
-                color: black;
-                font-family: 'Roboto', sans-serif;
-                font-size: 5rem;
-                transition: 0.1s;
-                @media (max-width: 575px) { 
-                     font-size: 2.5rem;   
-                }
-           
-           
-               @media (min-width: 576px) and (max-width: 767px) { 
-                    font-size: 3rem;
-                }
-           
-                &:hover{
-                    transform: scale(1.05);
-                }
-            }
-      
-            .notice{
-                p{
-                    font-size: 1.5rem;
-                    // color:  #ffffffc4;
-                    color: black;
-                    @media (max-width: 575px) { 
-                        font-size: 1rem;   
-                    }
-              
-              
-                  @media (min-width: 576px) and (max-width: 767px) { 
-                       font-size: 1.3rem;
-                    }
-                }
-            }
-        }
-    }
-    .bg-filter{
-        position: fixed;
-        top: 0;
-        right: 0;
-        height: 100%;
-        width: 100%;
-        padding: 5rem;
-        z-index: -1;
-        // background: linear-gradient(217deg, rgba(255, 82, 0, 0.7), rgba(0, 73, 136, 0.18) 70.71%), linear-gradient(127deg, rgb(0, 173, 255), rgba(177, 177, 177, 0) 70.71%), linear-gradient(336deg, rgba(0, 234, 50, 0.19), rgba(255, 255, 255, 0.68) 70.71%);   
-        // background:linear-gradient(#0000004f, #00000021), url(img/bg-world.jpeg) no-repeat;
-        // background-position: center;
-        // background-size: cover;
         }
         .showmenu{
         position: fixed;
@@ -173,6 +202,16 @@ body{
         @media (min-width: 1200px) { 
                width: auto;
             }
+
+        .separation {
+            border: 0; 
+            height: 1px; 
+            width: 100%;
+            background-image: -webkit-linear-gradient(left, #f0f0f0, #8c8b8b, #f0f0f0);
+            background-image: -moz-linear-gradient(left, #f0f0f0, #8c8b8b, #f0f0f0);
+            background-image: -ms-linear-gradient(left, #f0f0f0, #8c8b8b, #f0f0f0);
+            background-image: -o-linear-gradient(left, #f0f0f0, #8c8b8b, #f0f0f0); 
+        }
         .menu-liste{
             width: 100%;
             padding-top: 15vh;
@@ -242,6 +281,7 @@ body{
                 width: 100%;
                 a{
                     list-style: none;
+                    text-decoration: none;
                     .continent{
                         font-size: 1rem;
                         color: #ffffffc4;
@@ -260,13 +300,24 @@ body{
                 } 
             }
         }
+        .menu-footer{
+            position: absolute;
+            bottom: 5vh;
+            width: 100%;
+            p{
+                color: rgba(255, 255, 255, 0.685);
+                font-size: .8777rem;
+            }
+        }
     }
+   
     .map{
         // width: 80vw;
         // height: 80vh;
         // background: linear-gradient(217deg, rgba(0, 137, 255, 0.64), rgba(236, 0, 0, 0.18) 70.71%), linear-gradient(127deg, rgba(255, 106, 0, 0.67), rgba(0,255,0,0) 70.71%), linear-gradient(336deg, rgba(0, 0, 0, 0.95), rgba(255, 255, 255, 0.68) 70.71%);
         padding-top: 5vh;
         padding-bottom: 5vh;
+        min-height: 100vh;
         .map__image{
             width: 60%;
             float: left;

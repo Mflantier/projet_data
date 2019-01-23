@@ -1,14 +1,8 @@
 
 
-.separation {
-    height: 10px;
-    width: 40%;
-	border: 0;
-	box-shadow: 0 10px 10px -10px #8c8b8b inset;
-}
 
 #selectContinent, #pays, #flag{
-    max-height: 67vh;
+    max-height: 65vh;
     overflow: auto;
     padding-top: 10px;
     @media (max-width: 575px) { 

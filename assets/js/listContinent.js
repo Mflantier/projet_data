@@ -149,7 +149,6 @@ function afficheListe(tab) {
         }
         theColonne = document.querySelector('#' + idcolonne);
         theColonne.appendChild(li);
-        console.log(Math.floor((tab.length) / 4));
         if (z === Math.floor((tab.length) / 4)) {
             z = 0;
             h++;

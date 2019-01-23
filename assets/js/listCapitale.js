@@ -94,6 +94,8 @@ leFetch(affichageLightBox);
 // Tri ordre alphabétique en français
 function afficheListe(tab) {
     tab.sort();
+    z = 0;
+    h = 0;
     for (t = 0; t < tab.length; t++) {
         let nomId = tab[t].split("#");
         fetch(`https://restcountries.eu/rest/v2/alpha/` + nomId[1])
@@ -104,11 +106,26 @@ function afficheListe(tab) {
                 let capitale = res['capital'];
                 let newP = document.createElement("p");
                 newP.innerHTML = nomId[0] + " - " + capitale;
-                newP.classList.add("liste-capitale", "text-center", "col-12", "col-sm-6", "col-md-3", "col-lg-3", "col-xl-3");
+                newP.classList.add("liste-capitale", "text-center");
                 newP.setAttribute('data-toggle', 'modal');
                 newP.setAttribute('data-target', '#choix');
                 newP.id = nomId[1];
-                pays.appendChild(newP);
+                
+        if (z === 0) {
+            div = document.createElement('div');
+            div.classList.add("col-lg-3");
+            div.setAttribute('id', 'colonne-' + h);
+            pays.appendChild(div);
+            idcolonne = 'colonne-' + h;
+        }
+        theColonne = document.querySelector('#' + idcolonne);
+        theColonne.appendChild(newP);
+        if (z === Math.floor((tab.length) / 4)) {
+            z = 0;
+            h++;
+        } else {
+            z++
+        }
             })
             .catch((err) => {
                 if (err) {

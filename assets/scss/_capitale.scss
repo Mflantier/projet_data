@@ -1,2 +1,9 @@
 .liste-capitale {
-}
+        list-style: none;
+        font-size: 1rem;
+        transition: .3s;
+        &:hover{
+            color: #dc3545;
+            transform: translateY(-5px);
+        }
+    }

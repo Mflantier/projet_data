@@ -1,8 +1,9 @@
 // Affichage liste de tous les pays par continents
 const affiche = document.querySelector('#selectContinent');
 const submenu = document.querySelectorAll(".continent");
-let url = window.location['pathname'];
+let url = (window.location['pathname'].split("/")).pop();
 let tableauReponseFetch = [];
+let region;
 
 function leFetch(callBack) {
     fetch(`https://restcountries.eu/rest/v2/all`)
@@ -12,40 +13,58 @@ function leFetch(callBack) {
         .then((res) => {
             tableau = [];
             for (i = 0; i < res.length; i++) {
-                if (url == '/continent/europe') {
+                // Tri par continent
+                if (url == 'europe') {
                     // Europe
                     document.querySelector("h2").textContent = "Europe";
                     if (res[i]['region'] == 'Europe') {
                         tableau.push(res[i]['translations']['fr'] + "#" + res[i]['alpha3Code'].toLowerCase());
+                        region = "Europe";
                     }
-                } else if (url == '/continent/asie') {
+                } else if (url == 'asie') {
                     // Asie
                     document.querySelector("h2").textContent = "Asie";
                     if (res[i]['region'] == 'Asia') {
                         tableau.push(res[i]['translations']['fr'] + "#" + res[i]['alpha3Code'].toLowerCase());
+                        region = "Asie";
                     }
-                } else if (url == '/continent/amerique') {
+                } else if (url == 'amerique') {
                     // Amérique
                     document.querySelector("h2").textContent = "Amérique";
                     if (res[i]['region'] == 'Americas') {
                         tableau.push(res[i]['translations']['fr'] + "#" + res[i]['alpha3Code'].toLowerCase());
+                        region = "Amérique";
                     }
-                } else if (url == '/continent/afrique') {
+                } else if (url == 'afrique') {
                     // Afrique
                     document.querySelector("h2").textContent = "Afrique";
                     if (res[i]['region'] == 'Africa') {
                         tableau.push(res[i]['translations']['fr'] + "#" + res[i]['alpha3Code'].toLowerCase());
+                        region = "Afrique";
                     }
-                } else if (url == '/continent/oceanie') {
+                } else if (url == 'oceanie') {
                     // Océanie
                     document.querySelector("h2").textContent = "Océanie";
                     if (res[i]['region'] == 'Oceania') {
                         tableau.push(res[i]['translations']['fr'] + "#" + res[i]['alpha3Code'].toLowerCase());
+                        region = "Océanie";
                     }
-                } else if (url == '/continent/tous') {
+                } else if (url == 'tous') {
                     // Tous les pays
                     document.querySelector("h2").textContent = "Tous les pays";
                     tableau.push(res[i]['translations']['fr'] + "#" + res[i]['alpha3Code'].toLowerCase());
+
+                //     if (res[i]["region"] == "Europe") {
+                //         region = "Europe";
+                // } else if (res[i]["region"] == "Asia") {
+                //         region = "Asie";
+                // } else if (res[i]["region"] == "Americas") {
+                //         region = "Amérique";
+                // } else if (res[i]["region"] == "Africa") {
+                //         region = "Afrique";
+                // } else if (res[i]["region"] == "Oceania") {
+                //         region = "Océanie";
+                // }
                 };
             }
             afficheListe(tableau);
@@ -89,12 +108,12 @@ function affichageLightBox() {
 
                     nom.textContent = response['translations']['fr'];
                     drapeau.innerHTML = '<img src="' + response['flag'] + '" width="150" height="100">';
-                    continent.innerHTML = 'Continent : ' + response['region'];
-                    capitale.innerHTML = 'Capitale : ' + response['capital'];
-                    population.innerHTML = 'Population : ' + response['population'];
-                    superficie.innerHTML = 'Superficie : ' + response['area'];
-                    langue.innerHTML = 'Langue : ' + response['languages'][0]['nativeName'];
-                    devise.innerHTML = 'Devise : ' + response['currencies'][0]['name'];
+                    continent.textContent = 'Continent : ' + region;
+                    capitale.textContent = 'Capitale : ' + response['capital'];
+                    population.textContent = 'Population : ' + response['population'];
+                    superficie.textContent = 'Superficie : ' + response['area'];
+                    langue.textContent = 'Langue : ' + response['languages'][0]['nativeName'];
+                    devise.textContent = 'Devise : ' + response['currencies'][0]['name'];
                     voisins.innerHTML = 'Pays voisins : ';
 
                     for (i = 0; i < response['borders'].length; i++) {
@@ -128,12 +147,11 @@ function affichageLightBox() {
 
 leFetch(affichageLightBox);
 
+// Tri ordre alphabétique en français
 function afficheListe(tab) {
     tab.sort();
     for (t = 0; t < tab.length; t++) {
         let nomId = tab[t].split("#")
-        console.log(nomId);
-        console.log(nomId[0]);
         let li = document.createElement("p");
         li.innerHTML = nomId[0];
         li.classList.add("liste-pays", "text-center", "col-12", "col-sm-6", "col-md-3", "col-lg-3", "col-xl-3");

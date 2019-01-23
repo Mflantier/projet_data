@@ -1,5 +1,6 @@
 // Affichage liste de toutes les capitales
 const pays = document.querySelector('#pays');
+let tableau = [];
 
 function leFetch(callBack) {
     fetch(`https://restcountries.eu/rest/v2/all`)
@@ -7,16 +8,11 @@ function leFetch(callBack) {
             return res.json();
         })
         .then((res) => {
+
             for (i = 0; i < 250; i++) {
-                let p = document.createElement("p");
-                p.innerHTML = "<b>Pays : </b>" + res[i]['translations']['fr'] + " <b>Capitale : </b>" + res[i]['capital'];
-                p.classList.add("liste-capitale");
-                p.setAttribute('data-toggle', 'modal');
-                p.setAttribute('data-target', '#choix');
-                p.classList.add("col-3");
-                p.id = res[i]['alpha3Code'].toLowerCase();
-                pays.appendChild(p);
+                tableau.push(res[i]['translations']['fr'] + "#" + res[i]['alpha3Code'].toLowerCase());
             };
+            afficheListe(tableau);
         })
         .catch((err) => {
             if (err) {
@@ -29,7 +25,7 @@ function leFetch(callBack) {
 
 }
 
-function affichage() {
+function affichageLightBox() {
     const nom = document.querySelector('.modal-title');
     const choice = document.querySelector('.modal-body');
     const node = document.querySelectorAll('.liste-capitale');
@@ -93,4 +89,31 @@ function affichage() {
     }
 }
 
-leFetch(affichage);
+leFetch(affichageLightBox);
+
+// Tri ordre alphabétique en français
+function afficheListe(tab) {
+    tab.sort();
+    for (t = 0; t < tab.length; t++) {
+        let nomId = tab[t].split("#");
+        fetch(`https://restcountries.eu/rest/v2/alpha/` + nomId[1])
+            .then((res) => {
+                return res.json();
+            })
+            .then((res) => {
+                let capitale = res['capital'];
+                let newP = document.createElement("p");
+                newP.innerHTML = nomId[0] + " - " + capitale;
+                newP.classList.add("liste-capitale", "text-center", "col-12", "col-sm-6", "col-md-3", "col-lg-3", "col-xl-3");
+                newP.setAttribute('data-toggle', 'modal');
+                newP.setAttribute('data-target', '#choix');
+                newP.id = nomId[1];
+                pays.appendChild(newP);
+            })
+            .catch((err) => {
+                if (err) {
+                    console.log(err);
+                };
+            });
+    }
+}

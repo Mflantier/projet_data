@@ -52,13 +52,13 @@ function affichageLightBox() {
 
                     nom.textContent = response['translations']['fr'];
                     drapeau.innerHTML = '<img src="' + response['flag'] + '" width="150" height="100">';
-                    continent.innerHTML = 'Continent : ' + response['region'];
-                    capitale.innerHTML = 'Capitale : ' + response['capital'];
-                    population.innerHTML = 'Population : ' + response['population'];
-                    superficie.innerHTML = 'Superficie : ' + response['area'];
-                    langue.innerHTML = 'Langue : ' + response['languages'][0]['nativeName'];
-                    devise.innerHTML = 'Devise : ' + response['currencies'][0]['name'];
-                    voisins.innerHTML = 'Pays voisins : ';
+                    continent.innerHTML = '<strong>Continent : </strong>' + response['region'];
+                    capitale.innerHTML = '<strong>Capitale : </strong>' + response['capital'];
+                    population.innerHTML = '<strong>Population : </strong>' + response['population'];
+                    superficie.innerHTML = '<strong>Superficie : </strong>' + response['area'] +' '+ 'km<sup>2</sup>';
+                    langue.innerHTML = '<strong>Langue : </strong>' + response['languages'][0]['nativeName'];
+                    devise.innerHTML = '<strong>Devise : </strong>' + response['currencies'][0]['name'];
+                    voisins.innerHTML = '<strong>Pays voisins : </strong>';
 
                     for (i = 0; i < response['borders'].length; i++) {
                         fetch(`https://restcountries.eu/rest/v2/alpha/` + response['borders'][i])

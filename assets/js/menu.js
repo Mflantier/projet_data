@@ -22,19 +22,18 @@ monMenu.addEventListener("click", function(event){
     
 })
 
-// btn menu color 
-// document.querySelector(".section-appli").onmouseover= function (onmouseoverappli) {
-//       document.querySelector(".btn-menu").style.backgroundColor =  "#dc3545";
-
-// }
+//change hambuger menu color on red when i'm on section-appli
+var fullScreen = $(window).height();  
 $(document).ready(function(){
    $(window).scroll(function(){
       var scroll = $(window).scrollTop();
-      if (scroll > 879) {
+      if (scroll > fullScreen) {
         $(".btn-menu").css("backgroundColor" , "#dc3545");
       }
       else{
          $(".btn-menu").css("backgroundColor" , "white");  	
       }
    })
+   // console.log("coucou");
  })
+ 

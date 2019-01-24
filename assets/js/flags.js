@@ -79,8 +79,10 @@ function loadInfo(aCode) {
 
     fetch(`https://restcountries.eu/rest/v2/alpha/` + aCode)
         .then((response) => {
+            console.log(response);
             return response.json();
         })
+       
         .then((response) => {
             while (choice.firstChild) {
                 choice.removeChild(choice.firstChild);
@@ -95,12 +97,12 @@ function loadInfo(aCode) {
             let voisins = document.createElement("ul");
 
             nom.textContent = response['translations']['fr'];
-            console.log(response);
+           
             drapeau.innerHTML = '<img src="' + response['flag'] + '" width="150" height="100">';
             continent.innerHTML = '<strong>Continent : </strong>' + response['region'];
             capitale.innerHTML = '<strong>Capitale : </strong>' + response['capital'];
             population.innerHTML = '<strong>Population : </strong>' + response['population'];
-            superficie.innerHTML = '<strong>Superficie : </strong>' + response['area'] +' '+ 'km2';
+            superficie.innerHTML = '<strong>Superficie : </strong>' + response['area'] +' '+ 'km<sup>2</sup>';
             langue.innerHTML = '<strong>Langue : </strong>' + response['languages'][0]['nativeName'];
             devise.innerHTML = '<strong>Devise : </strong>' + response['currencies'][0]['name'];
             voisins.innerHTML = '<strong>Pays voisins : </strong>';
@@ -111,10 +113,17 @@ function loadInfo(aCode) {
                         return response.json();
                     })
                     .then((response) => {
+
+                        if (response == []) {
+                            let voisin = document.createElement("li");
+                        voisin.innerHTML = 'Aucun';
+                        voisins.appendChild(voisin);
+                          } 
+                          else { 
                         let voisin = document.createElement("li");
                         voisin.innerHTML = response['translations']['fr'];
                         voisins.appendChild(voisin);
-                    })
+                     } })
             }
             choice.appendChild(drapeau);
             choice.appendChild(continent);

@@ -39,6 +39,8 @@ class MainController extends AbstractController{
     * @Route("/continent/{id}", name="listeContinent")
     */
     public function listeContinent(){
-        return $this->render('views/continent.html.twig', ['title' => 'Continent']);
+        return $this->render('views/continent.html.twig', [
+            'title' => 'Continent',
+            'datas' => $this->callAPI()]);
     }
 }

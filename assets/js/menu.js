@@ -1,8 +1,10 @@
 const monMenu = document.querySelector(".showmenu");
 const monHamburger = document.querySelector(".hamburger");
+const btnMenu = document.querySelectorAll(".btn-menu");
 const close = document.querySelector(".closeBtn");
 const btnContinent = document.querySelector(".btn-continent");
 const sousMenuContinents = document.querySelector(".sous-menu-continents");
+const appli = document.querySelector(".section-appli");
 
 
 monHamburger.addEventListener("click", function(showmenu){
@@ -20,3 +22,19 @@ monMenu.addEventListener("click", function(event){
     
 })
 
+// btn menu color 
+// document.querySelector(".section-appli").onmouseover= function (onmouseoverappli) {
+//       document.querySelector(".btn-menu").style.backgroundColor =  "#dc3545";
+
+// }
+$(document).ready(function(){
+   $(window).scroll(function(){
+      var scroll = $(window).scrollTop();
+      if (scroll > 879) {
+        $(".btn-menu").css("backgroundColor" , "#dc3545");
+      }
+      else{
+         $(".btn-menu").css("backgroundColor" , "white");  	
+      }
+   })
+ })

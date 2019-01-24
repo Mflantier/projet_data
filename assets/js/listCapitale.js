@@ -1,5 +1,6 @@
 // Affichage liste de toutes les capitales
-const pays = document.querySelector('#pays');
+const affiche = document.querySelector('#pays');
+let newAPI = [];
 let tableau = [];
 
 function leFetch(callBack) {
@@ -8,11 +9,16 @@ function leFetch(callBack) {
             return res.json();
         })
         .then((res) => {
-
-            for (i = 0; i < 250; i++) {
-                tableau.push(res[i]['translations']['fr'] + "#" + res[i]['alpha3Code'].toLowerCase());
+            for (i = 0; i < res.length; i++) {
+                if (res[i]['alpha3Code'].toLowerCase() === "kos") {
+                    tableau.push('Kosovo', res[i]['alpha3Code'].toLowerCase(), res[i]['flag'], res[i]['region'], res[i]['capital'], res[i]['population'], res[i]['area'], res[i]['languages'][0]['nativeName'], res[i]['currencies'][0]['name'], res[i]['borders']);
+                } else {
+                    tableau.push(res[i]['translations']['fr'], res[i]['alpha3Code'].toLowerCase(), res[i]['flag'], res[i]['region'], res[i]['capital'], res[i]['population'], res[i]['area'], res[i]['languages'][0]['nativeName'], res[i]['currencies'][0]['name'], res[i]['borders']);
+                }
+                newAPI.push(tableau);
+                tableau = [];
             };
-            afficheListe(tableau);
+            afficheListe(newAPI);
         })
         .catch((err) => {
             if (err) {
@@ -20,26 +26,35 @@ function leFetch(callBack) {
             };
         });
     setTimeout(function () {
-        callBack();
+        callBack(newAPI);
     }, 1000);
-
 }
 
-function affichageLightBox() {
+// Affiche le pays selectionné
+function affichageLightBox(tab) {
     const nom = document.querySelector('.modal-title');
     const choice = document.querySelector('.modal-body');
-    const node = document.querySelectorAll('.liste-capitale');
+    const node = document.querySelectorAll('.liste-pays');
     for (i = 0; i < node.length; i++) {
+        currentAlpha = tab[i];
         node[i].addEventListener('click', function (e) {
             let aCode = e.target.id;
 
-            fetch(`https://restcountries.eu/rest/v2/alpha/` + aCode)
-                .then((response) => {
-                    return response.json();
-                })
-                .then((response) => {
+            for (p = 0; p < tab.length; p++) {
+                if (aCode == tab[p][1]) {
                     while (choice.firstChild) {
                         choice.removeChild(choice.firstChild);
+                    }
+                    if (tab[p][3] == "Europe") {
+                        region = "Europe";
+                    } else if (tab[p][3] == "Americas") {
+                        region = "Amérique";
+                    } else if (tab[p][3] == "Asia") {
+                        region = "Asie";
+                    } else if (tab[p][3] == "Africa") {
+                        region = "Afrique";
+                    } else if (tab[p][3] == "Oceania") {
+                        region = "Océanie";
                     }
                     let drapeau = document.createElement("p");
                     let continent = document.createElement("p");
@@ -50,18 +65,21 @@ function affichageLightBox() {
                     let devise = document.createElement("p");
                     let voisins = document.createElement("ul");
 
-                    nom.textContent = response['translations']['fr'];
-                    drapeau.innerHTML = '<img src="' + response['flag'] + '" width="150" height="100">';
-                    continent.innerHTML = '<strong>Continent : </strong>' + response['region'];
-                    capitale.innerHTML = '<strong>Capitale : </strong>' + response['capital'];
-                    population.innerHTML = '<strong>Population : </strong>' + response['population'];
-                    superficie.innerHTML = '<strong>Superficie : </strong>' + response['area'] +' '+ 'km<sup>2</sup>';
-                    langue.innerHTML = '<strong>Langue : </strong>' + response['languages'][0]['nativeName'];
-                    devise.innerHTML = '<strong>Devise : </strong>' + response['currencies'][0]['name'];
+                    nom.textContent = tab[p][0];
+                    drapeau.innerHTML = '<img src="' + tab[p][2] + '" width="150" height="100">';
+                    continent.innerHTML = 'Continent : ' + region;
+                    capitale.innerHTML = 'Capitale : ' + tab[p][4];
+                    population.innerHTML = 'Population : ' + tab[p][5];
+                    superficie.innerHTML = 'Superficie : ' + tab[p][6] + ' Km<sup>2</sup>';
+                    langue.innerHTML = 'Langue : ' + tab[p][7];
+                    devise.innerHTML = 'Devise : ' + tab[p][8];
                     voisins.innerHTML = '<strong>Pays voisins : </strong>';
 
-                    for (i = 0; i < response['borders'].length; i++) {
-                        fetch(`https://restcountries.eu/rest/v2/alpha/` + response['borders'][i])
+                    if (tab[p][9].length === 0) {
+                        voisins.innerHTML = '<strong>Pays voisins : </strong> Aucun';
+                    } else {
+                        for (n = 0; n < tab[p][9].length; n++) {
+                            fetch(`https://restcountries.eu/rest/v2/alpha/` + tab[p][9][n])
                             .then((response) => {
                                 return response.json();
                             })
@@ -70,6 +88,7 @@ function affichageLightBox() {
                                 voisin.innerHTML = response['translations']['fr'];
                                 voisins.appendChild(voisin);
                             })
+                        }
                     }
                     choice.appendChild(drapeau);
                     choice.appendChild(continent);
@@ -79,12 +98,8 @@ function affichageLightBox() {
                     choice.appendChild(langue);
                     choice.appendChild(devise);
                     choice.appendChild(voisins);
-                })
-                .catch((err) => {
-                    if (err) {
-                        console.log(err);
-                    };
-                })
+                }
+            }
         })
     }
 }
@@ -96,26 +111,19 @@ function afficheListe(tab) {
     tab.sort(Intl.Collator().compare);
     z = 0;
     h = 0;
-    for (t = 0; t < tab.length; t++) {
-        let nomId = tab[t].split("#");
-        fetch(`https://restcountries.eu/rest/v2/alpha/` + nomId[1])
-            .then((res) => {
-                return res.json();
-            })
-            .then((res) => {
-                let capitale = res['capital'];
-                let newP = document.createElement("p");
-                newP.innerHTML = nomId[0] + " - " + capitale;
-                newP.classList.add("liste-capitale", "text-left");
-                newP.setAttribute('data-toggle', 'modal');
-                newP.setAttribute('data-target', '#choix');
-                newP.id = nomId[1];
-                
+    for (i = 0; i < tab.length; i++) {
+        let newP = document.createElement("p");
+        newP.innerHTML = tab[i][0];
+        newP.classList.add("liste-pays", "text-left");
+        newP.setAttribute('data-toggle', 'modal');
+        newP.setAttribute('data-target', '#choix');
+        newP.id = tab[i][1];
+
         if (z === 0) {
             div = document.createElement('div');
             div.classList.add("col-lg-3");
             div.setAttribute('id', 'colonne-' + h);
-            pays.appendChild(div);
+            affiche.appendChild(div);
             idcolonne = 'colonne-' + h;
         }
         theColonne = document.querySelector('#' + idcolonne);
@@ -126,11 +134,6 @@ function afficheListe(tab) {
         } else {
             z++
         }
-            })
-            .catch((err) => {
-                if (err) {
-                    console.log(err);
-                };
-            });
+
     }
 }

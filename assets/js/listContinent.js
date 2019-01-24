@@ -23,8 +23,6 @@ function leFetch(callBack) {
                     } else {
                         tableau.push(res[i]['translations']['fr'], res[i]['alpha3Code'].toLowerCase(), res[i]['flag'], res[i]['region'], res[i]['capital'], res[i]['population'], res[i]['area'], res[i]['languages'][0]['nativeName'], res[i]['currencies'][0]['name'], res[i]['borders']);
                     }
-                    tableau.push(res[i]['translations']['fr'], res[i]['alpha3Code'].toLowerCase(), res[i]['flag'], res[i]['region'], res[i]['capital'], res[i]['population'], res[i]['area'], res[i]['languages'][0]['nativeName'], res[i]['currencies'][0]['name'], res[i]['borders']);
-
                 } else if (url == 'asie' && res[i]['region'] == 'Asia') {
                     // Asie
                     document.querySelector("h2").textContent = "Asie";
@@ -47,7 +45,11 @@ function leFetch(callBack) {
                 } else if (url == 'tous') {
                     // Tous les pays
                     document.querySelector("h2").textContent = "Tous les pays";
-                    tableau.push(res[i]['translations']['fr'], res[i]['alpha3Code'].toLowerCase(), res[i]['flag'], res[i]['region'], res[i]['capital'], res[i]['population'], res[i]['area'], res[i]['languages'][0]['nativeName'], res[i]['currencies'][0]['name'], res[i]['borders']);
+                    if (res[i]['alpha3Code'].toLowerCase() === "kos") {
+                        tableau.push('Kosovo', res[i]['alpha3Code'].toLowerCase(), res[i]['flag'], res[i]['region'], res[i]['capital'], res[i]['population'], res[i]['area'], res[i]['languages'][0]['nativeName'], res[i]['currencies'][0]['name'], res[i]['borders']);
+                    } else {
+                        tableau.push(res[i]['translations']['fr'], res[i]['alpha3Code'].toLowerCase(), res[i]['flag'], res[i]['region'], res[i]['capital'], res[i]['population'], res[i]['area'], res[i]['languages'][0]['nativeName'], res[i]['currencies'][0]['name'], res[i]['borders']);
+                    }
                 } else {
                     tableau.push(14);
                 }
@@ -55,7 +57,6 @@ function leFetch(callBack) {
 
                     tableau = [];
                 } else {
-
                     newAPI.push(tableau);
                     tableau = [];
                 }
@@ -67,11 +68,9 @@ function leFetch(callBack) {
                 console.log(err);
             };
         })
-
     setTimeout(function () {
         callBack(newAPI);
     }, 1000);
-
 }
 
 function affichageLightBox(tab) {
@@ -112,11 +111,11 @@ function affichageLightBox(tab) {
                     continent.innerHTML = '<strong>Continent : </strong>' + region;
                     capitale.innerHTML = '<strong>Capitale : </strong>' + tab[p][4];
                     population.innerHTML = '<strong>Population : </strong>' + tab[p][5];
-                    superficie.innerHTML = '<strong>Superficie : </strong>' + tab[p][6] + ' ' + 'km<sup>2</sup>';
+                    superficie.innerHTML = '<strong>Superficie : </strong>' + tab[p][6] + ' Km<sup>2</sup>';
                     langue.innerHTML = '<strong>Langue : </strong>' + tab[p][7];
                     devise.innerHTML = '<strong>Devise : </strong>' + tab[p][8];
                     voisins.innerHTML = '<strong>Pays voisins : </strong>';
-                    
+
                     if (tab[p][9].length === 0) {
                         voisins.innerHTML = '<strong>Pays voisins : </strong> Aucun';
                     } else {
@@ -155,12 +154,12 @@ function afficheListe(tab) {
     z = 0;
     h = 0;
     for (i = 0; i < tab.length; i++) {
-        let li = document.createElement("p");
-        li.innerHTML = tab[i][0];
-        li.classList.add("liste-pays", "text-left");
-        li.setAttribute('data-toggle', 'modal');
-        li.setAttribute('data-target', '#choix');
-        li.id = tab[i][1];
+        let newP = document.createElement("p");
+        newP.innerHTML = tab[i][0];
+        newP.classList.add("liste-pays", "text-left");
+        newP.setAttribute('data-toggle', 'modal');
+        newP.setAttribute('data-target', '#choix');
+        newP.id = tab[i][1];
 
         if (z === 0) {
             div = document.createElement('div');
@@ -170,7 +169,7 @@ function afficheListe(tab) {
             idcolonne = 'colonne-' + h;
         }
         theColonne = document.querySelector('#' + idcolonne);
-        theColonne.appendChild(li);
+        theColonne.appendChild(newP);
         if (z === Math.floor((tab.length) / 4)) {
             z = 0;
             h++;

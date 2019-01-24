@@ -30,7 +30,7 @@ function leFetch(callBack) {
     }, 1000);
 }
 
-// Affichage liste du pays selectionné
+// Affichage le pays selectionné
 function affichage(tab) {
     const nom = document.querySelector('.modal-title');
     const choice = document.querySelector('.modal-body');

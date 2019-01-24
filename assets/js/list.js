@@ -18,7 +18,7 @@ function leFetch(callBack) {
                 newAPI.push(tableau);
                 tableau = [];
             };
-            console.log(newAPI.push());
+            console.log(newAPI.sort(Intl.Collator().compare));
             afficheListe(newAPI);
         })
         .catch((err) => {
@@ -37,10 +37,11 @@ function affichage(tab) {
     const choice = document.querySelector('.modal-body');
     const node = document.querySelectorAll('.liste-pays');
     for (i = 0; i < node.length; i++) {
+        currentAlpha = tab[i][1];
         node[i].addEventListener('click', function (e) {
             let aCode = e.target.id;
-
-            if (aCode == tab[i][1]) {
+            console.log(aCode)
+            if (aCode == currentAlpha) {
                 while (choice.firstChild) {
                     choice.removeChild(choice.firstChild);
                 }
@@ -53,17 +54,17 @@ function affichage(tab) {
                 let devise = document.createElement("p");
                 let voisins = document.createElement("ul");
 
-                nom.textContent = tab[0];
-                drapeau.innerHTML = '<img src="' + tab[2] + '" width="150" height="100">';
-                continent.innerHTML = 'Continent : ' + tab[3];
-                capitale.innerHTML = 'Capitale : ' + tab[4];
-                population.innerHTML = 'Population : ' + tab[5];
-                superficie.innerHTML = 'Superficie : ' + tab[6];
-                langue.innerHTML = 'Langue : ' + tab[7];
-                devise.innerHTML = 'Devise : ' + tab[8];
+                nom.textContent = tab[i][0];
+                drapeau.innerHTML = '<img src="' + tab[i][2] + '" width="150" height="100">';
+                continent.innerHTML = 'Continent : ' + tab[i][3];
+                capitale.innerHTML = 'Capitale : ' + tab[i][4];
+                population.innerHTML = 'Population : ' + tab[i][5];
+                superficie.innerHTML = 'Superficie : ' + tab[i][6];
+                langue.innerHTML = 'Langue : ' + tab[i][7];
+                devise.innerHTML = 'Devise : ' + tab[i][8];
                 voisins.innerHTML = 'Pays voisins : ';
 
-                for (i = 0; i < tab[9].length; i++) {
+                for (i = 0; i < tab[i][9].length; i++) {
                     fetch(`https://restcountries.eu/rest/v2/alpha/` + tab[9][i])
                         .then((response) => {
                             return response.json();
@@ -90,12 +91,14 @@ leFetch(affichage);
 
 // Tri ordre alphabétique en français
 function afficheListe(tab) {
-    tab.sort();
-    let li = document.createElement("p");
-    li.innerHTML = tab[0];
-    li.classList.add("liste-pays", "text-center");
-    li.setAttribute('data-toggle', 'modal');
-    li.setAttribute('data-target', '#choix');
-    li.id = tab[1];
-    pays.appendChild(li);
+    tab.sort(Intl.Collator().compare);
+    for (i = 0; i < tab.length; i++) {
+        let li = document.createElement("p");
+        li.innerHTML = tab[i][0];
+        li.classList.add("liste-pays", "text-center");
+        li.setAttribute('data-toggle', 'modal');
+        li.setAttribute('data-target', '#choix');
+        li.id = tab[i][1];
+        pays.appendChild(li);
+    }
 }

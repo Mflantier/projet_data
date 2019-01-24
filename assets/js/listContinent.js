@@ -139,7 +139,7 @@ leFetch(affichageLightBox);
 
 // Tri ordre alphabétique en français
 function afficheListe(tab) {
-    tab.sort();
+    tab.sort(Intl.Collator().compare);
     z = 0;
     h = 0;
     for (t = 0; t < tab.length; t++) {

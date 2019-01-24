@@ -39,6 +39,7 @@ function affichage(tab) {
         currentAlpha = tab[i];
         node[i].addEventListener('click', function (e) {
             let aCode = e.target.id;
+            
             for (p = 0; p < tab.length; p++) {
                 if (aCode == tab[p][1]) {
                     while (choice.firstChild) {
@@ -79,9 +80,9 @@ function affichage(tab) {
                     } else {
                         voisins.innerHTML = 'Pays voisins : ';
                         console.log('Tableau avec éléments');
-                        console.log(tab[p][9]);
+                        border = tab[p][9];
                         for (n = 0; n < tab[p][9].length; n++) {
-                            fetch(`https://restcountries.eu/rest/v2/alpha/` + tab[p][9][n])
+                            fetch(`https://restcountries.eu/rest/v2/alpha/` + border[n])
                             .then((response) => {
                                 return response.json();
                             })

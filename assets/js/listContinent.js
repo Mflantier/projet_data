@@ -111,7 +111,7 @@ function affichageLightBox(tab) {
                     continent.innerHTML = '<strong>Continent : </strong>' + region;
                     capitale.innerHTML = '<strong>Capitale : </strong>' + tab[p][4];
                     population.innerHTML = '<strong>Population : </strong>' + tab[p][5];
-                    superficie.innerHTML = '<strong>Superficie : </strong>' + tab[p][6] + ' ' + 'km<sup>2</sup>';
+                    superficie.innerHTML = '<strong>Superficie : </strong>' + tab[p][6] + ' Km<sup>2</sup>';
                     langue.innerHTML = '<strong>Langue : </strong>' + tab[p][7];
                     devise.innerHTML = '<strong>Devise : </strong>' + tab[p][8];
                     voisins.innerHTML = '<strong>Pays voisins : </strong>';
@@ -154,12 +154,12 @@ function afficheListe(tab) {
     z = 0;
     h = 0;
     for (i = 0; i < tab.length; i++) {
-        let li = document.createElement("p");
-        li.innerHTML = tab[i][0];
-        li.classList.add("liste-pays", "text-left");
-        li.setAttribute('data-toggle', 'modal');
-        li.setAttribute('data-target', '#choix');
-        li.id = tab[i][1];
+        let newP = document.createElement("p");
+        newP.innerHTML = tab[i][0];
+        newP.classList.add("liste-pays", "text-left");
+        newP.setAttribute('data-toggle', 'modal');
+        newP.setAttribute('data-target', '#choix');
+        newP.id = tab[i][1];
 
         if (z === 0) {
             div = document.createElement('div');
@@ -169,7 +169,7 @@ function afficheListe(tab) {
             idcolonne = 'colonne-' + h;
         }
         theColonne = document.querySelector('#' + idcolonne);
-        theColonne.appendChild(li);
+        theColonne.appendChild(newP);
         if (z === Math.floor((tab.length) / 4)) {
             z = 0;
             h++;

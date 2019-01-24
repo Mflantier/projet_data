@@ -116,7 +116,7 @@ function loadInfo(aCode) {
 
             capitale.innerHTML = '<strong>Capitale : </strong>' + response['capital'];
             population.innerHTML = '<strong>Population : </strong>' + response['population'];
-            superficie.innerHTML = '<strong>Superficie : </strong>' + response['area'] + ' ' + 'km<sup>2</sup>';
+            superficie.innerHTML = '<strong>Superficie : </strong>' + response['area'] + ' Km<sup>2</sup>';
             langue.innerHTML = '<strong>Langue : </strong>' + response['languages'][0]['nativeName'];
             devise.innerHTML = '<strong>Devise : </strong>' + response['currencies'][0]['name'];
             voisins.innerHTML = '<strong>Pays voisins : </strong>';

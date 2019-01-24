@@ -18,7 +18,6 @@ function leFetch(callBack) {
                 newAPI.push(tableau);
                 tableau = [];
             };
-            console.log(newAPI.sort(Intl.Collator().compare));
             afficheListe(newAPI);
         })
         .catch((err) => {
@@ -37,52 +36,71 @@ function affichage(tab) {
     const choice = document.querySelector('.modal-body');
     const node = document.querySelectorAll('.liste-pays');
     for (i = 0; i < node.length; i++) {
-        currentAlpha = tab[i][1];
+        currentAlpha = tab[i];
         node[i].addEventListener('click', function (e) {
             let aCode = e.target.id;
-            console.log(aCode)
-            if (aCode == currentAlpha) {
-                while (choice.firstChild) {
-                    choice.removeChild(choice.firstChild);
-                }
-                let drapeau = document.createElement("p");
-                let continent = document.createElement("p");
-                let capitale = document.createElement("p");
-                let population = document.createElement("p");
-                let superficie = document.createElement("p");
-                let langue = document.createElement("p");
-                let devise = document.createElement("p");
-                let voisins = document.createElement("ul");
+            for (p = 0; p < tab.length; p++) {
+                if (aCode == tab[p][1]) {
+                    while (choice.firstChild) {
+                        choice.removeChild(choice.firstChild);
+                    }
+                    let drapeau = document.createElement("p");
+                    let continent = document.createElement("p");
+                    let capitale = document.createElement("p");
+                    let population = document.createElement("p");
+                    let superficie = document.createElement("p");
+                    let langue = document.createElement("p");
+                    let devise = document.createElement("p");
+                    let voisins = document.createElement("ul");
 
-                nom.textContent = tab[i][0];
-                drapeau.innerHTML = '<img src="' + tab[i][2] + '" width="150" height="100">';
-                continent.innerHTML = 'Continent : ' + tab[i][3];
-                capitale.innerHTML = 'Capitale : ' + tab[i][4];
-                population.innerHTML = 'Population : ' + tab[i][5];
-                superficie.innerHTML = 'Superficie : ' + tab[i][6];
-                langue.innerHTML = 'Langue : ' + tab[i][7];
-                devise.innerHTML = 'Devise : ' + tab[i][8];
-                voisins.innerHTML = 'Pays voisins : ';
+                        // tab[p][0] = Nom français du pays
+                        // tab[p][1] = Alpha3Code du pays
+                        // tab[p][2] = SVG du drapeau
+                        // tab[p][3] = Continent du pays
+                        // tab[p][4] = Capitale du pays
+                        // tab[p][5] = Population du pays
+                        // tab[p][6] = Superficie du pays
+                        // tab[p][7] = Langue du pays (en langue locale ex. Angleterre = English)
+                        // tab[p][8] = Devise du pays
+                        // tab[p][9] = Pays limitrophe du pays
 
-                for (i = 0; i < tab[i][9].length; i++) {
-                    fetch(`https://restcountries.eu/rest/v2/alpha/` + tab[9][i])
-                        .then((response) => {
-                            return response.json();
-                        })
-                        .then((response) => {
-                            let voisin = document.createElement("li");
-                            voisin.innerHTML = response['translations']['fr'];
-                            voisins.appendChild(voisin);
-                        })
+                    nom.textContent = tab[p][0];
+                    drapeau.innerHTML = '<img src="' + tab[p][2] + '" width="150" height="100">';
+                    continent.innerHTML = 'Continent : ' + tab[p][3];
+                    capitale.innerHTML = 'Capitale : ' + tab[p][4];
+                    population.innerHTML = 'Population : ' + tab[p][5];
+                    superficie.innerHTML = 'Superficie : ' + tab[p][6];
+                    langue.innerHTML = 'Langue : ' + tab[p][7];
+                    devise.innerHTML = 'Devise : ' + tab[p][8];
+                    if(tab[p][9].length == 0){
+                        voisins.innerHTML = 'Aucun pays voisins';
+                        console.log('Tableau vide');
+                        console.log(tab[p][9]);
+                    } else {
+                        voisins.innerHTML = 'Pays voisins : ';
+                        console.log('Tableau avec éléments');
+                        console.log(tab[p][9]);
+                        for (n = 0; n < tab[p][9].length; n++) {
+                            fetch(`https://restcountries.eu/rest/v2/alpha/` + tab[p][9][n])
+                            .then((response) => {
+                                return response.json();
+                            })
+                            .then((response) => {
+                                let voisin = document.createElement("li");
+                                voisin.innerHTML = response['translations']['fr'];
+                                voisins.appendChild(voisin);
+                            })
+                        }
+                    }
+                    choice.appendChild(drapeau);
+                    choice.appendChild(continent);
+                    choice.appendChild(capitale);
+                    choice.appendChild(population);
+                    choice.appendChild(superficie);
+                    choice.appendChild(langue);
+                    choice.appendChild(devise);
+                    choice.appendChild(voisins);
                 }
-                choice.appendChild(drapeau);
-                choice.appendChild(continent);
-                choice.appendChild(capitale);
-                choice.appendChild(population);
-                choice.appendChild(superficie);
-                choice.appendChild(langue);
-                choice.appendChild(devise);
-                choice.appendChild(voisins);
             }
         })
     }

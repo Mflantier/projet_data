@@ -23,8 +23,6 @@ function leFetch(callBack) {
                     } else {
                         tableau.push(res[i]['translations']['fr'], res[i]['alpha3Code'].toLowerCase(), res[i]['flag'], res[i]['region'], res[i]['capital'], res[i]['population'], res[i]['area'], res[i]['languages'][0]['nativeName'], res[i]['currencies'][0]['name'], res[i]['borders']);
                     }
-                    tableau.push(res[i]['translations']['fr'], res[i]['alpha3Code'].toLowerCase(), res[i]['flag'], res[i]['region'], res[i]['capital'], res[i]['population'], res[i]['area'], res[i]['languages'][0]['nativeName'], res[i]['currencies'][0]['name'], res[i]['borders']);
-
                 } else if (url == 'asie' && res[i]['region'] == 'Asia') {
                     // Asie
                     document.querySelector("h2").textContent = "Asie";
@@ -47,7 +45,11 @@ function leFetch(callBack) {
                 } else if (url == 'tous') {
                     // Tous les pays
                     document.querySelector("h2").textContent = "Tous les pays";
-                    tableau.push(res[i]['translations']['fr'], res[i]['alpha3Code'].toLowerCase(), res[i]['flag'], res[i]['region'], res[i]['capital'], res[i]['population'], res[i]['area'], res[i]['languages'][0]['nativeName'], res[i]['currencies'][0]['name'], res[i]['borders']);
+                    if (res[i]['alpha3Code'].toLowerCase() === "kos") {
+                        tableau.push('Kosovo', res[i]['alpha3Code'].toLowerCase(), res[i]['flag'], res[i]['region'], res[i]['capital'], res[i]['population'], res[i]['area'], res[i]['languages'][0]['nativeName'], res[i]['currencies'][0]['name'], res[i]['borders']);
+                    } else {
+                        tableau.push(res[i]['translations']['fr'], res[i]['alpha3Code'].toLowerCase(), res[i]['flag'], res[i]['region'], res[i]['capital'], res[i]['population'], res[i]['area'], res[i]['languages'][0]['nativeName'], res[i]['currencies'][0]['name'], res[i]['borders']);
+                    }
                 } else {
                     tableau.push(14);
                 }
@@ -55,7 +57,6 @@ function leFetch(callBack) {
 
                     tableau = [];
                 } else {
-
                     newAPI.push(tableau);
                     tableau = [];
                 }
@@ -67,11 +68,9 @@ function leFetch(callBack) {
                 console.log(err);
             };
         })
-
     setTimeout(function () {
         callBack(newAPI);
     }, 1000);
-
 }
 
 function affichageLightBox(tab) {
@@ -116,7 +115,7 @@ function affichageLightBox(tab) {
                     langue.innerHTML = '<strong>Langue : </strong>' + tab[p][7];
                     devise.innerHTML = '<strong>Devise : </strong>' + tab[p][8];
                     voisins.innerHTML = '<strong>Pays voisins : </strong>';
-                    
+
                     if (tab[p][9].length === 0) {
                         voisins.innerHTML = '<strong>Pays voisins : </strong> Aucun';
                     } else {

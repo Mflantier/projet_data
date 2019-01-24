@@ -117,11 +117,15 @@ function loadInfo(aCode) {
             capitale.innerHTML = '<strong>Capitale : </strong>' + response['capital'];
             population.innerHTML = '<strong>Population : </strong>' + response['population'];
             superficie.innerHTML = '<strong>Superficie : </strong>' + response['area'] + ' ' + 'km<sup>2</sup>';
-            langue.innerHTML = '<strong>Langue : </strong>' + response['languages'][0]['nativeName'];
+            langue.innerHTML = '<strong>Langue : </strong>' + response['languages'][0]['name'];
+            console.log(response['languages']);
             devise.innerHTML = '<strong>Devise : </strong>' + response['currencies'][0]['name'];
+
             voisins.innerHTML = '<strong>Pays voisins : </strong>';
             if (response['borders'].length === 0) {
-                voisins.innerHTML = '<strong>Pays voisins : </strong> Aucun';
+                voisins.innerHTML = '<strong>Pays voisin : </strong> Aucun';
+            } else if (response['borders'].length === 1) {
+                voisins.innerHTML = '<strong>Pays voisin : </strong>' + response['translations']['fr'];;
             } else {
                 for (i = 0; i < response['borders'].length; i++) {
                     fetch(`https://restcountries.eu/rest/v2/alpha/` + response['borders'][i])

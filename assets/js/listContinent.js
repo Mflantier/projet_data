@@ -97,7 +97,7 @@ function affichageLightBox(tab) {
                     } else if (tab[p][3] == "Oceania") {
                         region = "Océanie";
                     }
-                    let drapeau = document.createElement("p");
+                    let drapeau = document.createElement("img");
                     let continent = document.createElement("p");
                     let capitale = document.createElement("p");
                     let population = document.createElement("p");
@@ -107,7 +107,9 @@ function affichageLightBox(tab) {
                     let voisins = document.createElement("ul");
 
                     nom.textContent = tab[p][0];
-                    drapeau.innerHTML = '<img src="' + tab[p][2] + '" width="150" height="100">';
+                    drapeau.setAttribute("src", tab[p][2]);
+                    drapeau.setAttribute("width", "150");
+                    drapeau.setAttribute("heigth", "100");
                     continent.innerHTML = '<strong>Continent : </strong>' + region;
                     capitale.innerHTML = '<strong>Capitale : </strong>' + tab[p][4];
                     population.innerHTML = '<strong>Population : </strong>' + tab[p][5];

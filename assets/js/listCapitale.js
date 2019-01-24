@@ -36,7 +36,6 @@ function affichageLightBox(tab) {
     const choice = document.querySelector('.modal-body');
     const node = document.querySelectorAll('.liste-pays');
     for (i = 0; i < node.length; i++) {
-        currentAlpha = tab[i];
         node[i].addEventListener('click', function (e) {
             let aCode = e.target.id;
 
@@ -56,7 +55,7 @@ function affichageLightBox(tab) {
                     } else if (tab[p][3] == "Oceania") {
                         region = "Océanie";
                     }
-                    let drapeau = document.createElement("p");
+                    let drapeau = document.createElement("img");
                     let continent = document.createElement("p");
                     let capitale = document.createElement("p");
                     let population = document.createElement("p");
@@ -66,7 +65,9 @@ function affichageLightBox(tab) {
                     let voisins = document.createElement("ul");
 
                     nom.textContent = tab[p][0];
-                    drapeau.innerHTML = '<img src="' + tab[p][2] + '" width="150" height="100">';
+                    drapeau.setAttribute("src", tab[p][2]);
+                    drapeau.setAttribute("width", "150");
+                    drapeau.setAttribute("heigth", "100");
                     continent.innerHTML = 'Continent : ' + region;
                     capitale.innerHTML = 'Capitale : ' + tab[p][4];
                     population.innerHTML = 'Population : ' + tab[p][5];
@@ -113,7 +114,7 @@ function afficheListe(tab) {
     h = 0;
     for (i = 0; i < tab.length; i++) {
         let newP = document.createElement("p");
-        newP.innerHTML = tab[i][0];
+        newP.innerHTML = tab[i][0] + " - " + tab[i][4];
         newP.classList.add("liste-pays", "text-left");
         newP.setAttribute('data-toggle', 'modal');
         newP.setAttribute('data-target', '#choix');

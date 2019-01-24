@@ -5,6 +5,7 @@ body {
     overflow-x: hidden;
     font-family: 'Signika', sans-serif;
 
+
     header {
         // padding-top: 10vh;
         // padding-bottom: 10vh;
@@ -16,6 +17,8 @@ body {
         @media (max-width: 575px) {
             padding-top: 15vh;
             padding-bottom: 2vh;
+            padding-left: 5vw;
+            padding-right: 5vw;
         }
 
         @media (min-width: 576px) and (max-width: 767px) and (orientation: portrait) {
@@ -81,7 +84,8 @@ body {
                 }
 
                 @media (max-width: 575px) {
-                    font-size: 2.5rem;
+                    font-size: 3.5rem;
+                    letter-spacing: 4px;
                 }
 
 
@@ -99,6 +103,7 @@ body {
 
                     @media (max-width: 575px) {
                         font-size: 1rem;
+                        padding-top: 5vh;
                     }
 
 
@@ -108,45 +113,68 @@ body {
                 }
             }
 
-            .down {
-                font-size: 2.5rem;
-                padding-top: 5vh;
-                transition: .8s;
-                animation: go-down 1s cubic-bezier(0.5, 0, 0.5, 1) infinite;
-
-                @keyframes go-down {
-                    0% {
-                        transform: scale(1);
-                        opacity: 0;
-                    }
-
-                    50% {
-                        transform: scale(1.05);
-                        opacity: 1;
-                    }
-
-                    100% {
-                        transform: scale(1);
-                        opacity: 0;
-                    }
-                }
-
-            }
+           
         }
     }
-
-    .bg-filter {
+    // cubic-bezier(.22,.68,0,1.20)
+    .change-orientation {
         position: fixed;
-        top: 0;
-        right: 0;
-        height: 10vh;
-        width: 100%;
-        padding: 5rem;
-        z-index: -1;
-        // background: linear-gradient(217deg, rgba(255, 82, 0, 0.7), rgba(0, 73, 136, 0.18) 70.71%), linear-gradient(127deg, rgb(0, 173, 255), rgba(177, 177, 177, 0) 70.71%), linear-gradient(336deg, rgba(0, 234, 50, 0.19), rgba(255, 255, 255, 0.68) 70.71%);   
-        // background:linear-gradient(#0000004f, #00000021), url(img/bg-world.jpeg) no-repeat;
-        // background-position: center;
-        // background-size: cover;
+        top: -60vh;
+        right: calc(50% - 34vw);
+        height: 50vh;
+        width: 68vw;
+        padding: 1rem;
+        z-index: 3;
+        border-radius: 3%;
+        box-shadow: 0px 5px 16px #00000087;
+        transition: 1s ease-in;
+        background: linear-gradient(217deg, rgb(255, 255, 255), rgba(255, 255, 255, 0.22) 70.71%), linear-gradient(127deg, #cacaca, #00727df5 70.71%), linear-gradient(336deg, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.55) 70.71%);  
+        p{
+            font-size: 1.2rem;
+            color: #000000c4;
+            margin: 0;
+            @media (max-width: 575px) {
+                font-size: 1rem;
+            }
+            @media (min-width: 576px) and (max-width: 767px) and (orientation:landscape) {
+                font-size: 1.3rem;
+        }
+        }
+      
+        i{
+            font-size: 4rem;
+            animation: changeOrientation 2s infinite;
+            transition: transform 1s cubic-bezier(.22,.68,0,1.20);
+            text-shadow: -3px 5px 5px #0000005e;
+            @media (max-width: 575px) {
+                font-size: 3rem;
+            }
+            @media (min-width: 576px) and (max-width: 767px) and (orientation:landscape) {
+                font-size: 4rem;
+        }
+        }
+        @keyframes changeOrientation {
+            0% {
+               transform: rotate(0deg);
+               color: #000000c4;
+              }
+            
+              50% {
+                transform: rotate(90deg);
+                color: white;
+              }
+              100% {
+                transform: rotate(0deg);
+                color: #000000c4;
+               }
+            }
+        a{
+            margin-top: 10px;
+            text-decoration: none;
+            color: #000000b5;
+            font-size: .85rem;
+
+        }
     }
 
     .hamburger {
@@ -383,6 +411,10 @@ body {
         .map__image {
             width: 60%;
             float: left;
+            &.landscape {
+                width: 80%;
+              }
+              
 
             @media (max-width: 575px) {
                 width: 100%;

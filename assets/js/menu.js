@@ -5,6 +5,8 @@ const close = document.querySelector(".closeBtn");
 const btnContinent = document.querySelector(".btn-continent");
 const sousMenuContinents = document.querySelector(".sous-menu-continents");
 const appli = document.querySelector(".section-appli");
+const closeOrientation = document.querySelector(".close-paysage");
+const showMap = document.querySelector(".show-map");
 
 
 monHamburger.addEventListener("click", function(showmenu){
@@ -36,4 +38,16 @@ $(document).ready(function(){
    })
    // console.log("coucou");
  })
+
+ window.onresize = function(event) {
+   $(window).scroll(function(){
+      var scroll = $(window).scrollTop();
+      if (scroll > fullScreen) {
+        $(".btn-menu").css("backgroundColor" , "#dc3545");
+      }
+      else{
+         $(".btn-menu").css("backgroundColor" , "white");  	
+      }
+   })
+};
  

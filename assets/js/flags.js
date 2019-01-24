@@ -44,7 +44,7 @@ function leFetch() {
             };
             addEventImage();
             addEventButton();
-           
+
         })
         .catch((err) => {
             if (err) {
@@ -82,7 +82,7 @@ function loadInfo(aCode) {
             console.log(response);
             return response.json();
         })
-       
+
         .then((response) => {
             while (choice.firstChild) {
                 choice.removeChild(choice.firstChild);
@@ -97,33 +97,43 @@ function loadInfo(aCode) {
             let voisins = document.createElement("ul");
 
             nom.textContent = response['translations']['fr'];
-           
+
             drapeau.innerHTML = '<img src="' + response['flag'] + '" width="150" height="100">';
-            continent.innerHTML = '<strong>Continent : </strong>' + response['region'];
+
+            if (response['region'] == 'Asia') {
+                continent.innerHTML = '<strong>Continent : </strong> Asie';
+            } else if (response['region'] == 'Americas') {
+                continent.innerHTML = '<strong>Continent : </strong> Amérique';
+            } else if (response['region'] == 'Africa') {
+                continent.innerHTML = '<strong>Continent : </strong> Afrique';
+            } else if (response['region'] == 'Oceania') {
+                continent.innerHTML = '<strong>Continent : </strong> Océanie';
+            } else if (response['region'] == 'Polar') {
+                continent.innerHTML = '<strong>Continent : </strong> Antarctique';
+            } else {
+                continent.innerHTML = '<strong>Continent : </strong>' + response['region'];
+            }
+
             capitale.innerHTML = '<strong>Capitale : </strong>' + response['capital'];
             population.innerHTML = '<strong>Population : </strong>' + response['population'];
-            superficie.innerHTML = '<strong>Superficie : </strong>' + response['area'] +' '+ 'km<sup>2</sup>';
+            superficie.innerHTML = '<strong>Superficie : </strong>' + response['area'] + ' ' + 'km<sup>2</sup>';
             langue.innerHTML = '<strong>Langue : </strong>' + response['languages'][0]['nativeName'];
             devise.innerHTML = '<strong>Devise : </strong>' + response['currencies'][0]['name'];
             voisins.innerHTML = '<strong>Pays voisins : </strong>';
-
-            for (i = 0; i < response['borders'].length; i++) {
-                fetch(`https://restcountries.eu/rest/v2/alpha/` + response['borders'][i])
-                    .then((response) => {
-                        return response.json();
-                    })
-                    .then((response) => {
-
-                        if (response == []) {
+            if (response['borders'].length === 0) {
+                voisins.innerHTML = '<strong>Pays voisins : </strong> Aucun';
+            } else {
+                for (i = 0; i < response['borders'].length; i++) {
+                    fetch(`https://restcountries.eu/rest/v2/alpha/` + response['borders'][i])
+                        .then((response) => {
+                            return response.json();
+                        })
+                        .then((response) => {
                             let voisin = document.createElement("li");
-                        voisin.innerHTML = 'Aucun';
-                        voisins.appendChild(voisin);
-                          } 
-                          else { 
-                        let voisin = document.createElement("li");
-                        voisin.innerHTML = response['translations']['fr'];
-                        voisins.appendChild(voisin);
-                     } })
+                            voisin.innerHTML = response['translations']['fr'];
+                            voisins.appendChild(voisin);
+                        })
+                }
             }
             choice.appendChild(drapeau);
             choice.appendChild(continent);
@@ -157,37 +167,37 @@ function addEventImage() {
 }
 
 function loadImage(aCode) {
-   
+
     const name = document.querySelector('.modal-title');
     const choice = document.querySelector('.modal-body');
     const fenetre = document.querySelector('#choix');
 
     fetch(`https://restcountries.eu/rest/v2/alpha/` + aCode)
-    
+
         .then((response) => {
             return response.json();
-            
-        }) 
-        .then((response) => {
-                while (choice.firstChild) {
-                    choice.removeChild(choice.firstChild);
-                   
-                }
-                
-                let drapeau = document.createElement("p");
-               
-                name.textContent = response['translations']['fr'];
 
-                drapeau.innerHTML = '<img src="' + response['flag'] + '" width="100%" height="75%">';
-           
+        })
+        .then((response) => {
+            while (choice.firstChild) {
+                choice.removeChild(choice.firstChild);
+
+            }
+
+            let drapeau = document.createElement("p");
+
+            name.textContent = response['translations']['fr'];
+
+            drapeau.innerHTML = '<img src="' + response['flag'] + '" width="100%" height="75%">';
+
             choice.appendChild(drapeau);
 
         })
-.catch((err) => {
-    if (err) {
-        console.log(err);
-    };
-})
+        .catch((err) => {
+            if (err) {
+                console.log(err);
+            };
+        })
 
 
 }

@@ -104,7 +104,9 @@ function affichageLightBox() {
             langue.innerHTML = '<strong>Langue : </strong>' + response['languages'][0]['nativeName'];
             devise.innerHTML = '<strong>Devise : </strong>' + response['currencies'][0]['name'];
             voisins.innerHTML = '<strong>Pays voisins : </strong>';
-
+            if (response['borders'].length === 0) {
+                voisins.innerHTML = '<strong>Pays voisins : </strong> Aucun';
+            } else {
                     for (i = 0; i < response['borders'].length; i++) {
                         fetch(`https://restcountries.eu/rest/v2/alpha/` + response['borders'][i])
                             .then((response) => {
@@ -116,7 +118,7 @@ function affichageLightBox() {
                                 voisin.innerHTML = response['translations']['fr'];
                                 voisins.appendChild(voisin);
                            })
-                    }
+                    }}
                     choice.appendChild(drapeau);
                     choice.appendChild(continent);
                     choice.appendChild(capitale);
@@ -146,7 +148,7 @@ function afficheListe(tab) {
         let nomId = tab[t].split("#")
         let li = document.createElement("p");
         li.innerHTML = nomId[0];
-        li.classList.add("liste-pays", "text-center");
+        li.classList.add("liste-pays", "text-left");
         li.setAttribute('data-toggle', 'modal');
         li.setAttribute('data-target', '#choix');
         li.id = nomId[1];

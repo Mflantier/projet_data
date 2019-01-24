@@ -62,6 +62,9 @@ function affichage(tab) {
                 langue.innerHTML = 'Langue : ' + tab[7];
                 devise.innerHTML = 'Devise : ' + tab[8];
                 voisins.innerHTML = 'Pays voisins : ';
+                if (response['borders'].length === 0) {
+                    voisins.innerHTML = '<strong>Pays voisins : </strong> Aucun';
+                } else {
 
                 for (i = 0; i < tab[9].length; i++) {
                     fetch(`https://restcountries.eu/rest/v2/alpha/` + tab[9][i])
@@ -73,7 +76,7 @@ function affichage(tab) {
                             voisin.innerHTML = response['translations']['fr'];
                             voisins.appendChild(voisin);
                         })
-                }
+                }}
                 choice.appendChild(drapeau);
                 choice.appendChild(continent);
                 choice.appendChild(capitale);
@@ -93,7 +96,7 @@ function afficheListe(tab) {
     tab.sort();
     let li = document.createElement("p");
     li.innerHTML = tab[0];
-    li.classList.add("liste-pays", "text-center");
+    li.classList.add("liste-pays", "text-left");
     li.setAttribute('data-toggle', 'modal');
     li.setAttribute('data-target', '#choix');
     li.id = tab[1];

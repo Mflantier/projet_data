@@ -50,7 +50,6 @@ function leFetch(callBack) {
                     tableau.push(res[i]['translations']['fr'], res[i]['alpha3Code'].toLowerCase(), res[i]['flag'], res[i]['region'], res[i]['capital'], res[i]['population'], res[i]['area'], res[i]['languages'][0]['nativeName'], res[i]['currencies'][0]['name'], res[i]['borders']);
                 } else {
                     tableau.push(14);
-                    console.log(tableau)
                 }
                 if (tableau[0] === 14) {
 
@@ -117,11 +116,12 @@ function affichageLightBox(tab) {
                     langue.innerHTML = '<strong>Langue : </strong>' + tab[p][7];
                     devise.innerHTML = '<strong>Devise : </strong>' + tab[p][8];
                     voisins.innerHTML = '<strong>Pays voisins : </strong>';
+                    
                     if (tab[p][9].length === 0) {
                         voisins.innerHTML = '<strong>Pays voisins : </strong> Aucun';
                     } else {
                         for (n = 0; n < tab[p][9].length; n++) {
-                            fetch(`https://restcountries.eu/rest/v2/alpha/` + border[n])
+                            fetch(`https://restcountries.eu/rest/v2/alpha/` + tab[p][9][n])
                                 .then((response) => {
                                     return response.json();
                                 })
@@ -156,7 +156,7 @@ function afficheListe(tab) {
     h = 0;
     for (i = 0; i < tab.length; i++) {
         let li = document.createElement("p");
-        li.innerHTML = nomId[0];
+        li.innerHTML = tab[i][0];
         li.classList.add("liste-pays", "text-left");
         li.setAttribute('data-toggle', 'modal');
         li.setAttribute('data-target', '#choix');

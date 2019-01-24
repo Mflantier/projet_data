@@ -1,5 +1,6 @@
 // Affichage liste de tous les pays
 const pays = document.querySelector('#pays');
+let newAPI = [];
 let tableau = [];
 
 function leFetch(callBack) {
@@ -9,8 +10,10 @@ function leFetch(callBack) {
         })
         .then((res) => {
             for (i = 0; i < res.length; i++) {
-                tableau.push(res[i]['translations']['fr'] + "#" + res[i]['alpha3Code'].toLowerCase());
+                tableau.push(res[i]['translations']['fr'],res[i]['alpha3Code'].toLowerCase(),res[i]['population'],res[i]['area'],res[i]['languages']['fr'],res[i]['currencies']['name'],res[i]['borders']);
             };
+            newAPI.push(tableau);
+            console.log(newAPI)
             afficheListe(res)
         })
         .catch((err) => {

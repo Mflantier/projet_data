@@ -19,8 +19,7 @@ function leFetch(callBack) {
                     document.querySelector("h2").textContent = "Europe";
                     tableau.push(res[i]['translations']['fr'] + "#" + res[i]['alpha3Code'].toLowerCase());
                     region = "Europe";
-                }
-                if (url == 'asie' && res[i]['region'] == 'Asia') {
+                } else if (url == 'asie' && res[i]['region'] == 'Asia') {
                     // Asie
                     document.querySelector("h2").textContent = "Asie";
                     tableau.push(res[i]['translations']['fr'] + "#" + res[i]['alpha3Code'].toLowerCase());
@@ -75,6 +74,17 @@ function affichageLightBox() {
                 .then((response) => {
                     while (choice.firstChild) {
                         choice.removeChild(choice.firstChild);
+                    }
+                    if(response["region"] == "Europe"){
+                        region = "Europe";
+                    } else if(response["region"] == "Americas"){
+                        region = "Amérique";
+                    } else if(response["region"] == "Asia"){
+                        region = "Asie";
+                    } else if(response["region"] == "Africa"){
+                        region = "Afrique";
+                    } else if(response["region"] == "Oceania"){
+                        region = "Océanie";
                     }
                     let drapeau = document.createElement("p");
                     let continent = document.createElement("p");
@@ -155,5 +165,6 @@ function afficheListe(tab) {
         } else {
             z++
         }
+
     }
 }

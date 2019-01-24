@@ -4,6 +4,8 @@ const submenu = document.querySelectorAll(".continent");
 let url = (window.location['pathname'].split("/")).pop();
 let tableauReponseFetch = [];
 let region;
+tableau = [];
+newAPI = [];
 
 function leFetch(callBack) {
     fetch(`https://restcountries.eu/rest/v2/all`)
@@ -11,41 +13,54 @@ function leFetch(callBack) {
             return res.json();
         })
         .then((res) => {
-            tableau = [];
             for (i = 0; i < res.length; i++) {
                 // Tri par continent
                 // Europe
                 if (url == 'europe' && res[i]['region'] == 'Europe') {
                     document.querySelector("h2").textContent = "Europe";
-                    tableau.push(res[i]['translations']['fr'] + "#" + res[i]['alpha3Code'].toLowerCase());
-                    region = "Europe";
+                    if (res[i]['alpha3Code'].toLowerCase() === "kos") {
+                        tableau.push('Kosovo', res[i]['alpha3Code'].toLowerCase(), res[i]['flag'], res[i]['region'], res[i]['capital'], res[i]['population'], res[i]['area'], res[i]['languages'][0]['nativeName'], res[i]['currencies'][0]['name'], res[i]['borders']);
+                    } else {
+                        tableau.push(res[i]['translations']['fr'], res[i]['alpha3Code'].toLowerCase(), res[i]['flag'], res[i]['region'], res[i]['capital'], res[i]['population'], res[i]['area'], res[i]['languages'][0]['nativeName'], res[i]['currencies'][0]['name'], res[i]['borders']);
+                    }
+                    tableau.push(res[i]['translations']['fr'], res[i]['alpha3Code'].toLowerCase(), res[i]['flag'], res[i]['region'], res[i]['capital'], res[i]['population'], res[i]['area'], res[i]['languages'][0]['nativeName'], res[i]['currencies'][0]['name'], res[i]['borders']);
+
                 } else if (url == 'asie' && res[i]['region'] == 'Asia') {
                     // Asie
                     document.querySelector("h2").textContent = "Asie";
-                    tableau.push(res[i]['translations']['fr'] + "#" + res[i]['alpha3Code'].toLowerCase());
-                    region = "Asie";
+                    tableau.push(res[i]['translations']['fr'], res[i]['alpha3Code'].toLowerCase(), res[i]['flag'], res[i]['region'], res[i]['capital'], res[i]['population'], res[i]['area'], res[i]['languages'][0]['nativeName'], res[i]['currencies'][0]['name'], res[i]['borders']);
                 } else if (url == 'amerique' && res[i]['region'] == 'Americas') {
                     // Amérique
                     document.querySelector("h2").textContent = "Amérique";
-                    tableau.push(res[i]['translations']['fr'] + "#" + res[i]['alpha3Code'].toLowerCase());
-                    region = "Amérique";
+                    tableau.push(res[i]['translations']['fr'], res[i]['alpha3Code'].toLowerCase(), res[i]['flag'], res[i]['region'], res[i]['capital'], res[i]['population'], res[i]['area'], res[i]['languages'][0]['nativeName'], res[i]['currencies'][0]['name'], res[i]['borders']);
+
                 } else if (url == 'afrique' && res[i]['region'] == 'Africa') {
                     // Afrique
                     document.querySelector("h2").textContent = "Afrique";
-                    tableau.push(res[i]['translations']['fr'] + "#" + res[i]['alpha3Code'].toLowerCase());
-                    region = "Afrique";
+                    tableau.push(res[i]['translations']['fr'], res[i]['alpha3Code'].toLowerCase(), res[i]['flag'], res[i]['region'], res[i]['capital'], res[i]['population'], res[i]['area'], res[i]['languages'][0]['nativeName'], res[i]['currencies'][0]['name'], res[i]['borders']);
+
                 } else if (url == 'oceanie' && res[i]['region'] == 'Oceania') {
                     // Océanie
                     document.querySelector("h2").textContent = "Océanie";
-                    tableau.push(res[i]['translations']['fr'] + "#" + res[i]['alpha3Code'].toLowerCase());
-                    region = "Océanie";
+                    tableau.push(res[i]['translations']['fr'], res[i]['alpha3Code'].toLowerCase(), res[i]['flag'], res[i]['region'], res[i]['capital'], res[i]['population'], res[i]['area'], res[i]['languages'][0]['nativeName'], res[i]['currencies'][0]['name'], res[i]['borders']);
+
                 } else if (url == 'tous') {
                     // Tous les pays
                     document.querySelector("h2").textContent = "Tous les pays";
-                    tableau.push(res[i]['translations']['fr'] + "#" + res[i]['alpha3Code'].toLowerCase());
+                    tableau.push(res[i]['translations']['fr'], res[i]['alpha3Code'].toLowerCase(), res[i]['flag'], res[i]['region'], res[i]['capital'], res[i]['population'], res[i]['area'], res[i]['languages'][0]['nativeName'], res[i]['currencies'][0]['name'], res[i]['borders']);
+                } else {
+                    tableau.push(14);
+                }
+                if (tableau[0] === 14) {
+
+                    tableau = [];
+                } else {
+
+                    newAPI.push(tableau);
+                    tableau = [];
                 }
             }
-            afficheListe(tableau);
+            afficheListe(newAPI);
         })
         .catch((err) => {
             if (err) {
@@ -54,12 +69,12 @@ function leFetch(callBack) {
         })
 
     setTimeout(function () {
-        callBack();
+        callBack(newAPI);
     }, 1000);
 
 }
 
-function affichageLightBox() {
+function affichageLightBox(tab) {
     const nom = document.querySelector('.modal-title');
     const choice = document.querySelector('.modal-body');
     const node = document.querySelectorAll('.liste-pays');
@@ -67,23 +82,20 @@ function affichageLightBox() {
         node[i].addEventListener('click', function (e) {
             let aCode = e.target.id;
 
-            fetch(`https://restcountries.eu/rest/v2/alpha/` + aCode)
-                .then((response) => {
-                    return response.json();
-                })
-                .then((response) => {
+            for (p = 0; p < tab.length; p++) {
+                if (aCode == tab[p][1]) {
                     while (choice.firstChild) {
                         choice.removeChild(choice.firstChild);
                     }
-                    if(response["region"] == "Europe"){
+                    if (tab[p][3] == "Europe") {
                         region = "Europe";
-                    } else if(response["region"] == "Americas"){
+                    } else if (tab[p][3] == "Americas") {
                         region = "Amérique";
-                    } else if(response["region"] == "Asia"){
+                    } else if (tab[p][3] == "Asia") {
                         region = "Asie";
-                    } else if(response["region"] == "Africa"){
+                    } else if (tab[p][3] == "Africa") {
                         region = "Afrique";
-                    } else if(response["region"] == "Oceania"){
+                    } else if (tab[p][3] == "Oceania") {
                         region = "Océanie";
                     }
                     let drapeau = document.createElement("p");
@@ -95,30 +107,32 @@ function affichageLightBox() {
                     let devise = document.createElement("p");
                     let voisins = document.createElement("ul");
 
-                    nom.textContent = response['translations']['fr'];
-                    drapeau.innerHTML = '<img src="' + response['flag'] + '" width="150" height="100">';
-            continent.innerHTML = '<strong>Continent : </strong>' + response['region'];
-            capitale.innerHTML = '<strong>Capitale : </strong>' + response['capital'];
-            population.innerHTML = '<strong>Population : </strong>' + response['population'];
-            superficie.innerHTML = '<strong>Superficie : </strong>' + response['area'] +' '+ 'km<sup>2</sup>';
-            langue.innerHTML = '<strong>Langue : </strong>' + response['languages'][0]['nativeName'];
-            devise.innerHTML = '<strong>Devise : </strong>' + response['currencies'][0]['name'];
-            voisins.innerHTML = '<strong>Pays voisins : </strong>';
-            if (response['borders'].length === 0) {
-                voisins.innerHTML = '<strong>Pays voisins : </strong> Aucun';
-            } else {
-                    for (i = 0; i < response['borders'].length; i++) {
-                        fetch(`https://restcountries.eu/rest/v2/alpha/` + response['borders'][i])
-                            .then((response) => {
-                                return response.json();
-                            }) 
-                            .then((response) => {
-                                 
-                                let voisin = document.createElement("li");
-                                voisin.innerHTML = response['translations']['fr'];
-                                voisins.appendChild(voisin);
-                           })
-                    }}
+                    nom.textContent = tab[p][0];
+                    drapeau.innerHTML = '<img src="' + tab[p][2] + '" width="150" height="100">';
+                    continent.innerHTML = '<strong>Continent : </strong>' + region;
+                    capitale.innerHTML = '<strong>Capitale : </strong>' + tab[p][4];
+                    population.innerHTML = '<strong>Population : </strong>' + tab[p][5];
+                    superficie.innerHTML = '<strong>Superficie : </strong>' + tab[p][6] + ' ' + 'km<sup>2</sup>';
+                    langue.innerHTML = '<strong>Langue : </strong>' + tab[p][7];
+                    devise.innerHTML = '<strong>Devise : </strong>' + tab[p][8];
+                    voisins.innerHTML = '<strong>Pays voisins : </strong>';
+                    
+                    if (tab[p][9].length === 0) {
+                        voisins.innerHTML = '<strong>Pays voisins : </strong> Aucun';
+                    } else {
+                        for (n = 0; n < tab[p][9].length; n++) {
+                            fetch(`https://restcountries.eu/rest/v2/alpha/` + tab[p][9][n])
+                                .then((response) => {
+                                    return response.json();
+                                })
+                                .then((response) => {
+                                    let voisin = document.createElement("li");
+                                    voisin.innerHTML = response['translations']['fr'];
+                                    voisins.appendChild(voisin);
+                                })
+                        }
+                    }
+
                     choice.appendChild(drapeau);
                     choice.appendChild(continent);
                     choice.appendChild(capitale);
@@ -127,12 +141,8 @@ function affichageLightBox() {
                     choice.appendChild(langue);
                     choice.appendChild(devise);
                     choice.appendChild(voisins);
-                })
-                .catch((err) => {
-                    if (err) {
-                        console.log(err);
-                    };
-                })
+                }
+            }
         })
     }
 }
@@ -141,17 +151,16 @@ leFetch(affichageLightBox);
 
 // Tri ordre alphabétique en français
 function afficheListe(tab) {
-    tab.sort();
+    tab.sort(Intl.Collator().compare);
     z = 0;
     h = 0;
-    for (t = 0; t < tab.length; t++) {
-        let nomId = tab[t].split("#")
+    for (i = 0; i < tab.length; i++) {
         let li = document.createElement("p");
-        li.innerHTML = nomId[0];
+        li.innerHTML = tab[i][0];
         li.classList.add("liste-pays", "text-left");
         li.setAttribute('data-toggle', 'modal');
         li.setAttribute('data-target', '#choix');
-        li.id = nomId[1];
+        li.id = tab[i][1];
 
         if (z === 0) {
             div = document.createElement('div');

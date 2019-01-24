@@ -1,8 +1,10 @@
 const monMenu = document.querySelector(".showmenu");
 const monHamburger = document.querySelector(".hamburger");
+const btnMenu = document.querySelectorAll(".btn-menu");
 const close = document.querySelector(".closeBtn");
 const btnContinent = document.querySelector(".btn-continent");
 const sousMenuContinents = document.querySelector(".sous-menu-continents");
+const appli = document.querySelector(".section-appli");
 
 
 monHamburger.addEventListener("click", function(showmenu){
@@ -20,3 +22,18 @@ monMenu.addEventListener("click", function(event){
     
 })
 
+//change hambuger menu color on red when i'm on section-appli
+var fullScreen = $(window).height();  
+$(document).ready(function(){
+   $(window).scroll(function(){
+      var scroll = $(window).scrollTop();
+      if (scroll > fullScreen) {
+        $(".btn-menu").css("backgroundColor" , "#dc3545");
+      }
+      else{
+         $(".btn-menu").css("backgroundColor" , "white");  	
+      }
+   })
+   // console.log("coucou");
+ })
+ 

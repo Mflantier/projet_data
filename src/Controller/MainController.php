@@ -40,5 +40,5 @@ class MainController extends AbstractController{
     */
     public function listeContinent(){
         return $this->render('views/continent.html.twig', ['title' => 'Continent']);
-    }
+}
 }

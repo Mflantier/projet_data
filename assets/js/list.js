@@ -15,7 +15,7 @@ function leFetch(callBack) {
                 } else {
                     tableau.push(res[i]['translations']['fr'], res[i]['alpha3Code'].toLowerCase(), res[i]['flag'], res[i]['region'], res[i]['capital'], res[i]['population'], res[i]['area'], res[i]['languages'][0]['nativeName'], res[i]['currencies'][0]['name'], res[i]['borders']);
                 }
-                newAPI.push(tableau;
+                newAPI.push(tableau);
                 tableau = [];
             };
             console.log(newAPI.push());

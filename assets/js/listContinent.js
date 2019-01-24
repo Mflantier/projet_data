@@ -110,20 +110,16 @@ function affichageLightBox(tab) {
 
                     nom.textContent = tab[p][0];
                     drapeau.innerHTML = '<img src="' + tab[p][2] + '" width="150" height="100">';
-                    continent.innerHTML = 'Continent : ' + region;
-                    capitale.innerHTML = 'Capitale : ' + tab[p][4];
-                    population.innerHTML = 'Population : ' + tab[p][5];
-                    superficie.innerHTML = 'Superficie : ' + tab[p][6];
-                    langue.innerHTML = 'Langue : ' + tab[p][7];
-                    devise.innerHTML = 'Devise : ' + tab[p][8];
-                    if (tab[p][9].length == 0) {
-                        voisins.innerHTML = 'Aucun pays voisins';
-                        console.log('Tableau vide');
-                        console.log(tab[p][9]);
+                    continent.innerHTML = '<strong>Continent : </strong>' + region;
+                    capitale.innerHTML = '<strong>Capitale : </strong>' + tab[p][4];
+                    population.innerHTML = '<strong>Population : </strong>' + tab[p][5];
+                    superficie.innerHTML = '<strong>Superficie : </strong>' + tab[p][6] + ' ' + 'km<sup>2</sup>';
+                    langue.innerHTML = '<strong>Langue : </strong>' + tab[p][7];
+                    devise.innerHTML = '<strong>Devise : </strong>' + tab[p][8];
+                    voisins.innerHTML = '<strong>Pays voisins : </strong>';
+                    if (tab[p][9].length === 0) {
+                        voisins.innerHTML = '<strong>Pays voisins : </strong> Aucun';
                     } else {
-                        voisins.innerHTML = 'Pays voisins : ';
-                        console.log('Tableau avec éléments');
-                        border = tab[p][9];
                         for (n = 0; n < tab[p][9].length; n++) {
                             fetch(`https://restcountries.eu/rest/v2/alpha/` + border[n])
                                 .then((response) => {
@@ -136,6 +132,7 @@ function affichageLightBox(tab) {
                                 })
                         }
                     }
+
                     choice.appendChild(drapeau);
                     choice.appendChild(continent);
                     choice.appendChild(capitale);
@@ -159,8 +156,8 @@ function afficheListe(tab) {
     h = 0;
     for (i = 0; i < tab.length; i++) {
         let li = document.createElement("p");
-        li.innerHTML = tab[i][0];
-        li.classList.add("liste-pays", "text-center");
+        li.innerHTML = nomId[0];
+        li.classList.add("liste-pays", "text-left");
         li.setAttribute('data-toggle', 'modal');
         li.setAttribute('data-target', '#choix');
         li.id = tab[i][1];

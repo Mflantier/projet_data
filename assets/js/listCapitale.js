@@ -106,7 +106,7 @@ function afficheListe(tab) {
                 let capitale = res['capital'];
                 let newP = document.createElement("p");
                 newP.innerHTML = nomId[0] + " - " + capitale;
-                newP.classList.add("liste-capitale", "text-center");
+                newP.classList.add("liste-capitale", "text-left");
                 newP.setAttribute('data-toggle', 'modal');
                 newP.setAttribute('data-target', '#choix');
                 newP.id = nomId[1];

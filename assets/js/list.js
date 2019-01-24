@@ -39,7 +39,7 @@ function affichage(tab) {
         currentAlpha = tab[i];
         node[i].addEventListener('click', function (e) {
             let aCode = e.target.id;
-            
+
             for (p = 0; p < tab.length; p++) {
                 if (aCode == tab[p][1]) {
                     while (choice.firstChild) {

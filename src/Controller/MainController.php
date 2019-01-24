@@ -8,37 +8,37 @@ use Symfony\Component\Routing\Annotation\Route;
 class MainController extends AbstractController{
 
     /**
-     * @Route("/", name="home")
+     * @Route("/", name="accueil")
      */
     public function home(){
-        return $this->render('views/home.html.twig', ['title' => 'Home']);
+        return $this->render('views/home.html.twig', ['title' => 'Accueil']);
     }
     
     /**
-     * @Route("/flags", name="flags")
+     * @Route("/drapeaux", name="drapeaux")
      */
     public function flags(){
         return $this->render('views/flags.html.twig', ['title' => 'Drapeaux']);
     }
     
     /**
-     * @Route("/list", name="listePays")
+     * @Route("/pays", name="pays")
      */
     public function listePays(){
         return $this->render('views/listPays.html.twig', ['title' => 'Pays']);
     }
 
      /**
-    * @Route("/capital", name="listeCapitale")
+    * @Route("/capitales", name="capitales")
     */
     public function listeCapitale(){
         return $this->render('views/capitals.html.twig', ['title' => 'Capitales']);
     }
 
     /**
-    * @Route("/continent/{id}", name="listeContinent")
+    * @Route("/continents/{id}", name="continents")
     */
     public function listeContinent(){
-        return $this->render('views/continent.html.twig', ['title' => 'Continent']);
-}
+        return $this->render('views/continent.html.twig', ['title' => 'Continents']);
+    }
 }

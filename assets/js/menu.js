@@ -36,7 +36,6 @@ $(document).ready(function(){
          $(".btn-menu").css("backgroundColor" , "white");  	
       }
    })
-   // console.log("coucou");
  })
 
  window.onresize = function(event) {

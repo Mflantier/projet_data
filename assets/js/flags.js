@@ -38,7 +38,7 @@ function affichageLightBox(tab) {
         if (e.target.classList.contains("liste-pays") || e.target.classList.contains("bouton")) {
             let aCode = e.target.id;
 
-            for (p = 0; p < tab.length; p++) {
+            for (let p = 0; p < tab.length; p++) {
                 if (aCode == tab[p][1]) {
                     while (choice.firstChild) {
                         choice.removeChild(choice.firstChild);
@@ -65,12 +65,12 @@ function affichageLightBox(tab) {
 
                     nom.textContent = tab[p][0];
                     drapeau.innerHTML = '<img src="' + tab[p][2] + '" width="150" height="100">';
-                    continent.innerHTML = 'Continent : ' + region;
-                    capitale.innerHTML = 'Capitale : ' + tab[p][4];
-                    population.innerHTML = 'Population : ' + tab[p][5];
-                    superficie.innerHTML = 'Superficie : ' + tab[p][6] + ' Km<sup>2</sup>';
-                    langue.innerHTML = 'Langue : ' + tab[p][7];
-                    devise.innerHTML = 'Devise : ' + tab[p][8];
+                    continent.innerHTML = '<strong>Continent : </strong>' + region;
+                    capitale.innerHTML = '<strong>Capitale : </strong>' + tab[p][4];
+                    population.innerHTML = '<strong>Population : </strong>' + tab[p][5];
+                    superficie.innerHTML = '<strong>Superficie : </strong>' + tab[p][6] + ' Km<sup>2</sup>';
+                    langue.innerHTML = '<strong>Langue : </strong>' + tab[p][7];
+                    devise.innerHTML = '<strong>Devise : </strong>' + tab[p][8];
                     voisins.innerHTML = '<strong>Pays voisins : </strong>';
 
                     if (tab[p][9].length === 0) {

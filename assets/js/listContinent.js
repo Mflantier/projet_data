@@ -29,17 +29,14 @@ function leFetch(callBack) {
                     // Amérique
                     document.querySelector("h2").textContent = "Amérique";
                     tableau.push(res[i]['translations']['fr'], res[i]['alpha3Code'].toLowerCase(), res[i]['flag'], res[i]['region'], res[i]['capital'], res[i]['population'], res[i]['area'], res[i]['languages'][0]['nativeName'], res[i]['currencies'][0]['name'], res[i]['borders']);
-                    
                 } else if (url == 'afrique' && res[i]['region'] == 'Africa') {
                     // Afrique
                     document.querySelector("h2").textContent = "Afrique";
                     tableau.push(res[i]['translations']['fr'], res[i]['alpha3Code'].toLowerCase(), res[i]['flag'], res[i]['region'], res[i]['capital'], res[i]['population'], res[i]['area'], res[i]['languages'][0]['nativeName'], res[i]['currencies'][0]['name'], res[i]['borders']);
-                    
                 } else if (url == 'oceanie' && res[i]['region'] == 'Oceania') {
                     // Océanie
                     document.querySelector("h2").textContent = "Océanie";
                     tableau.push(res[i]['translations']['fr'], res[i]['alpha3Code'].toLowerCase(), res[i]['flag'], res[i]['region'], res[i]['capital'], res[i]['population'], res[i]['area'], res[i]['languages'][0]['nativeName'], res[i]['currencies'][0]['name'], res[i]['borders']);
-
                 } else if (url == 'tous') {
                     // Tous les pays
                     document.querySelector("h2").textContent = "Tous les pays";
@@ -49,10 +46,9 @@ function leFetch(callBack) {
                         tableau.push(res[i]['translations']['fr'], res[i]['alpha3Code'].toLowerCase(), res[i]['flag'], res[i]['region'], res[i]['capital'], res[i]['population'], res[i]['area'], res[i]['languages'][0]['nativeName'], res[i]['currencies'][0]['name'], res[i]['borders']);
                     }
                 } else {
-                    tableau.push(14);
+                    tableau.push(14); // Chiffre arbritaire, existe uniquement pour la remise à zero de la variable tableau
                 }
                 if (tableau[0] === 14) {
-
                     tableau = [];
                 } else {
                     newAPI.push(tableau);
@@ -70,8 +66,6 @@ function leFetch(callBack) {
         callBack(newAPI);
     }, 1000);
 }
-
-
 
 leFetch(affichageLightBox);
 

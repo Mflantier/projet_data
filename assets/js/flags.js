@@ -113,7 +113,6 @@ function affichageLightBox(tab) {
                     drapeau.setAttribute("src", tab[p][2]);
                     drapeau.setAttribute("width", "100%");
                     drapeau.setAttribute("heigth", "75%")
-                    choice.appendChild(nom);
                     choice.appendChild(drapeau);
                 }
             }

@@ -68,6 +68,21 @@ require('./infoPays.js');
     };
 })();
 
+// lightbox for mobile device orientation portrait 
+const closeOrientation = document.querySelector(".close-paysage");
+const showMap = document.querySelectorAll(".show-map");
+for (i = 0; i < 2; i++) {
+    showMap[i].addEventListener("click", function(showTheMap){
+        if(window.innerHeight > window.innerWidth && window.innerWidth <= 767){
+            // alert("Please use Landscape!");
+            document.querySelector(".change-orientation").style.top =  "20vh";
+            closeOrientation.addEventListener("click", function(close){
+                document.querySelector(".change-orientation").style.top = "-100vw";
+        })
+        }
+    })
+}
+
 // require('./list.js');
 // require('./listCapitale.js');
 

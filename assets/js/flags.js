@@ -79,7 +79,7 @@ function loadInfo(aCode) {
 
     fetch(`https://restcountries.eu/rest/v2/alpha/` + aCode)
         .then((response) => {
-            console.log(response);
+            
             return response.json();
         })
 
@@ -117,8 +117,9 @@ function loadInfo(aCode) {
             capitale.innerHTML = '<strong>Capitale : </strong>' + response['capital'];
             population.innerHTML = '<strong>Population : </strong>' + response['population'];
             superficie.innerHTML = '<strong>Superficie : </strong>' + response['area'] + ' ' + 'km<sup>2</sup>';
-            langue.innerHTML = '<strong>Langue : </strong>' + response['languages'][0]['name'];
-            console.log(response['languages']);
+            langue.innerHTML = '<strong>Langue : </strong>' + response['languages'][0]['Name']
+            
+
             devise.innerHTML = '<strong>Devise : </strong>' + response['currencies'][0]['name'];
 
             voisins.innerHTML = '<strong>Pays voisins : </strong>';
@@ -136,7 +137,9 @@ function loadInfo(aCode) {
                             let voisin = document.createElement("li");
                             voisin.innerHTML = response['translations']['fr'];
                             voisins.appendChild(voisin);
-                        })
+                        });
+
+                       
                 }
             }
             choice.appendChild(drapeau);
@@ -148,12 +151,14 @@ function loadInfo(aCode) {
             choice.appendChild(devise);
             choice.appendChild(voisins);
         })
+        
+
+
         .catch((err) => {
             if (err) {
                 console.log(err);
             };
-        })
-
+        });
 
 }
 
@@ -208,3 +213,33 @@ function loadImage(aCode) {
 
 
 leFetch();
+
+
+
+
+// fetch('langues.json')
+
+//             .then((res) => {
+//                 return res.json();
+                
+//             })
+//             .then((res) => {
+//                 console.log(res);
+//                 for (i = 0; i < response['languages'][0]['iso639_2'].length; i++) {
+//                     if (response['languages'][0]['iso639_2'][i] == res['alpha3-b']) {
+                        
+
+//                         langue.innerHTML = res['French'];
+//                     } else {
+//                         langue.innerHTML == response['languages'][0]['iso639_2'];
+//                     };
+
+//                 }
+//             })
+
+//     .catch((err) => {
+//         if (err) {
+//             console.log(err);
+//         };
+//     });
+            

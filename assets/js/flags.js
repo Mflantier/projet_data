@@ -179,3 +179,34 @@ function afficheListe(tab) {
 
     }
 }
+
+function langues(iso) {
+fetch ('/langues')
+
+            .then((res) => {
+                return res.json();
+                
+            })
+            .then((res) => {
+                console.log(res);
+                // for (i = 0; i < response['languages'][0]['iso639_2'].length; i++) {
+                //     if (response['languages'][0]['iso639_2'][i] == res['alpha3-b']) {
+                        
+
+                //         langue.innerHTML = res['French'];
+                //     } else {
+                //         langue.innerHTML == response['languages'][0]['iso639_2'];
+                //     };
+
+                // }
+                let french = res['alpha3b_Code'];
+            })
+
+    .catch((err) => {
+        if (err) {
+            console.log(err);
+        };
+    });
+}
+
+            

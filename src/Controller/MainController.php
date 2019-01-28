@@ -2,8 +2,10 @@
 
 namespace App\Controller;
 
+use Symfony\Component\Finder\Finder;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Component\HttpFoundation\JsonResponse;
 
 class MainController extends AbstractController{
 
@@ -41,4 +43,20 @@ class MainController extends AbstractController{
     public function listeContinent(){
         return $this->render('views/continent.html.twig', ['title' => 'Continents']);
     }
+
+    /**
+    * @Route("/langues", name="langues")
+    */
+    public function listeLangues(){
+      $finder = new finder();
+        
+      $finder->files()->in(__DIR__.'/../../assets/js/')->name('*.json');
+      foreach($finder as $file) {
+          $contents = $file->getContents();
+      }
+     $response = JsonResponse::fromJsonString($contents);
+     return $response;
+    }
+
+
 }

@@ -76,7 +76,10 @@ function affichageLightBox(tab) {
 
                     langue.innerHTML = '<strong>Langue : </strong><span id="valueLangue"></span> ';
                     
+
                     
+
+
                     devise.innerHTML = '<strong>Devise :  </strong>' + tab[p][8];
                     voisins.innerHTML = '<strong>Pays voisins : </strong>';
 
@@ -197,7 +200,8 @@ function langues(iso) {
 
             for (i = 0; i < res.length; i++) {
                 if (res[i]["Alpha3b_Code"] === iso) {
-                    document.getElementById("valueLangue").innerText = res[i]["French_Name"];
+                    document.getElementById("valueLangue").innerText = res[i]["French_Name"].charAt(0).toUpperCase() + res[i]["French_Name"].slice(1);
+
                     return;
                 }
             }

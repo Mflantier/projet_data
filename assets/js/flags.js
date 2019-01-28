@@ -9,11 +9,12 @@ function leFetch(callBack) {
             return res.json();
         })
         .then((res) => {
+
             for (i = 0; i < res.length; i++) {
                 if (res[i]['alpha3Code'].toLowerCase() === "kos") {
-                    tableau.push('Kosovo', res[i]['alpha3Code'].toLowerCase(), res[i]['flag'], res[i]['region'], res[i]['capital'], res[i]['population'], res[i]['area'], res[i]['languages'][0]['nativeName'], res[i]['currencies'][0]['name'], res[i]['borders']);
+                    tableau.push('Kosovo', res[i]['alpha3Code'].toLowerCase(), res[i]['flag'], res[i]['region'], res[i]['capital'], res[i]['population'], res[i]['area'], res[i]['languages'][0]['nativeName'], res[i]['currencies'][0]['name'], res[i]['borders'], res[i]['languages'][0]['iso639_2']);
                 } else {
-                    tableau.push(res[i]['translations']['fr'], res[i]['alpha3Code'].toLowerCase(), res[i]['flag'], res[i]['region'], res[i]['capital'], res[i]['population'], res[i]['area'], res[i]['languages'][0]['nativeName'], res[i]['currencies'][0]['name'], res[i]['borders']);
+                    tableau.push(res[i]['translations']['fr'], res[i]['alpha3Code'].toLowerCase(), res[i]['flag'], res[i]['region'], res[i]['capital'], res[i]['population'], res[i]['area'], res[i]['languages'][0]['nativeName'], res[i]['currencies'][0]['name'], res[i]['borders'], res[i]['languages'][0]['iso639_2']);
                 }
                 newAPI.push(tableau);
                 tableau = [];
@@ -40,6 +41,8 @@ function affichageLightBox(tab) {
 
             for (let p = 0; p < tab.length; p++) {
                 if (aCode == tab[p][1]) {
+
+                    langues(tab[p][10]);
                     while (choice.firstChild) {
                         choice.removeChild(choice.firstChild);
                     }
@@ -66,12 +69,12 @@ function affichageLightBox(tab) {
                     
                     nom.textContent = tab[p][0];
                     drapeau.innerHTML = '<img src="' + tab[p][2] + '" width="150" height="100">';
-                    continent.innerHTML = '<strong>Continent : </strong>' + region;
-                    capitale.innerHTML = '<strong>Capitale : </strong>' + tab[p][4];
-                    population.innerHTML = '<strong>Population : </strong>' + tab[p][5];
-                    superficie.innerHTML = '<strong>Superficie : </strong>' + tab[p][6] + ' Km<sup>2</sup>';
-                    langue.innerHTML = '<strong>Langue : </strong>' + tab[p][7];
-                    devise.innerHTML = '<strong>Devise : </strong>' + tab[p][8];
+                    continent.innerHTML = '<strong>Continent :  </strong>' + region;
+                    capitale.innerHTML = '<strong>Capitale :  </strong>' + tab[p][4];
+                    population.innerHTML = '<strong>Population :  </strong>' + tab[p][5];
+                    superficie.innerHTML = '<strong>Superficie :  </strong>' + tab[p][6] + ' Km<sup>2</sup>';
+                    langue.innerHTML = '<strong>Langue : </strong><span id="valueLangue"></span> ';
+                    devise.innerHTML = '<strong>Devise :  </strong>' + tab[p][8];
                     voisins.innerHTML = '<strong>Pays voisins : </strong>';
 
                     if (tab[p][9].length === 0) {
@@ -176,37 +179,30 @@ function afficheListe(tab) {
         } else {
             z++
         }
-
     }
 }
 
 function langues(iso) {
-fetch ('/langues')
+    fetch('/langues')
 
-            .then((res) => {
-                return res.json();
-                
-            })
-            .then((res) => {
-                console.log(res);
-                // for (i = 0; i < response['languages'][0]['iso639_2'].length; i++) {
-                //     if (response['languages'][0]['iso639_2'][i] == res['alpha3-b']) {
-                        
+        .then((res) => {
+            return res.json();
 
-                //         langue.innerHTML = res['French'];
-                //     } else {
-                //         langue.innerHTML == response['languages'][0]['iso639_2'];
-                //     };
+        })
+        .then((res) => {
 
-                // }
-                let french = res['alpha3b_Code'];
-            })
+            for (i = 0; i < res.length; i++) {
+                if (res[i]["Alpha3b_Code"] === iso) {
+                    document.getElementById("valueLangue").innerText = res[i]["French_Name"].charAt(0).toUpperCase() + res[i]["French_Name"].slice(1);
 
-    .catch((err) => {
-        if (err) {
-            console.log(err);
-        };
-    });
+                    return;
+                }
+            }
+        })
+
+        .catch((err) => {
+            if (err) {
+                console.log(err);
+            };
+        });
 }
-
-            

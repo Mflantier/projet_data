@@ -62,7 +62,8 @@ function affichageLightBox(tab) {
                     let langue = document.createElement("p");
                     let devise = document.createElement("p");
                     let voisins = document.createElement("ul");
-
+                    voisins.classList.add("p-0");
+                    
                     nom.textContent = tab[p][0];
                     drapeau.innerHTML = '<img src="' + tab[p][2] + '" width="150" height="100">';
                     continent.innerHTML = 'Continent : ' + region;

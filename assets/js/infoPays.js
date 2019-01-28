@@ -57,6 +57,8 @@ function affichageLightBox(tab) {
                     let langue = document.createElement("p");
                     let devise = document.createElement("p");
                     let voisins = document.createElement("ul");
+                    voisins.classList.add("p-0");
+
 
                     nom.textContent = tab[p][0];
                     drapeau.setAttribute("src", tab[p][2]);

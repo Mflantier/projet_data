@@ -13,10 +13,14 @@
     }
 
 
-   @media (min-width: 768px) and (max-width: 991px) { 
-        max-height: 65vh;
+   @media (min-width: 768px) and (max-width: 991px) and (orientation: portrait) { 
+        max-height: 95vh;
 
     }
+    @media (min-width: 768px) and (max-width: 991px) and (orientation: landscape) { 
+        max-height: 90vh;
+    }
+
 
 
    @media (min-width: 992px) and (max-width: 1199px) { 
@@ -26,7 +30,7 @@
 
     .liste-pays, .liste-capitale{
         list-style: none;
-        font-size: 1rem;
+        font-size: 1.5rem;
         // transition: .3s;
         border-bottom: 3px solid transparent;
         -webkit-transition: all ease-in-out 0.3s;
@@ -50,7 +54,7 @@
     
     
        @media (min-width: 992px) and (max-width: 1199px) { 
-            font-size: 1rem;
+            font-size: 1.5rem;
     
         }
         &:hover{

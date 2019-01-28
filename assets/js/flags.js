@@ -95,6 +95,7 @@ function loadInfo(aCode) {
             let langue = document.createElement("p");
             let devise = document.createElement("p");
             let voisins = document.createElement("ul");
+            voisins.classList.add("p-0");
 
             nom.textContent = response['translations']['fr'];
            

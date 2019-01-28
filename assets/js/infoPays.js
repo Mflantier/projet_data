@@ -24,6 +24,8 @@ document.addEventListener('DOMContentLoaded', function () {
                     let langue = document.createElement("p");
                     let devise = document.createElement("p");
                     let voisins = document.createElement("ul");
+                    voisins.classList.add("p-0");
+
 
                     nom.textContent = response['translations']['fr'];
                     drapeau.innerHTML = '<img src="' + response['flag'] + '" width="150" height="100">';
@@ -34,6 +36,7 @@ document.addEventListener('DOMContentLoaded', function () {
             langue.innerHTML = '<strong>Langue : </strong>' + response['languages'][0]['nativeName'];
             devise.innerHTML = '<strong>Devise : </strong>' + response['currencies'][0]['name'];
             voisins.innerHTML = '<strong>Pays voisins : </strong>';
+           
 
                     for (i = 0; i < response['borders'].length; i++) {
                         fetch(`https://restcountries.eu/rest/v2/alpha/` + response['borders'][i])
@@ -54,6 +57,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     choice.appendChild(langue);
                     choice.appendChild(devise);
                     choice.appendChild(voisins);
+                    
                 })
                 .catch((err) => {
                     if (err) {

@@ -65,7 +65,9 @@ function addEventButton() {
     for (i = 0; i < boutons.length; i++) {
         boutons[i].addEventListener('click', function (e) {
             let aCode = e.target.id;
+            let iso = 
             loadInfo(aCode);
+            langues(iso);
         });
     }
 
@@ -117,12 +119,23 @@ function loadInfo(aCode) {
             capitale.innerHTML = '<strong>Capitale : </strong>' + response['capital'];
             population.innerHTML = '<strong>Population : </strong>' + response['population'];
             superficie.innerHTML = '<strong>Superficie : </strong>' + response['area'] + ' ' + 'km<sup>2</sup>';
-            langue.innerHTML = '<strong>Langue : </strong>' + response['languages'][0]['Name']
-            
+            langue.innerHTML = '<strong>Langue : </strong>' + response['languages'][0]['iso639_2'];
+           
+            for (i = 0; i < response['languages'][0]['iso639_2'].length; i++) {
+                    if (response['languages'][0]['iso639_2'][i] == res['alpha3b_Code']) {
+                        
+ 
+           
+                        langue.innerHTML = res['French_Name'];
+                    } else {
+                        langue.innerHTML == response['languages'][0]['iso639_2'];
+                    }};
+
 
             devise.innerHTML = '<strong>Devise : </strong>' + response['currencies'][0]['name'];
 
             voisins.innerHTML = '<strong>Pays voisins : </strong>';
+
             if (response['borders'].length === 0) {
                 voisins.innerHTML = '<strong>Pays voisin : </strong> Aucun';
             } else if (response['borders'].length === 1) {
@@ -158,9 +171,9 @@ function loadInfo(aCode) {
             if (err) {
                 console.log(err);
             };
-        });
-
-}
+        })
+    
+    }
 
 // Images
 
@@ -216,30 +229,33 @@ leFetch();
 
 
 
+function langues(iso) {
+fetch ('/langues')
 
-// fetch('langues.json')
-
-//             .then((res) => {
-//                 return res.json();
+            .then((res) => {
+                return res.json();
                 
-//             })
-//             .then((res) => {
-//                 console.log(res);
-//                 for (i = 0; i < response['languages'][0]['iso639_2'].length; i++) {
-//                     if (response['languages'][0]['iso639_2'][i] == res['alpha3-b']) {
+            })
+            .then((res) => {
+                console.log(res);
+                // for (i = 0; i < response['languages'][0]['iso639_2'].length; i++) {
+                //     if (response['languages'][0]['iso639_2'][i] == res['alpha3-b']) {
                         
 
-//                         langue.innerHTML = res['French'];
-//                     } else {
-//                         langue.innerHTML == response['languages'][0]['iso639_2'];
-//                     };
+                //         langue.innerHTML = res['French'];
+                //     } else {
+                //         langue.innerHTML == response['languages'][0]['iso639_2'];
+                //     };
 
-//                 }
-//             })
+                // }
+                let french = res['alpha3b_Code'];
+            })
 
-//     .catch((err) => {
-//         if (err) {
-//             console.log(err);
-//         };
-//     });
+    .catch((err) => {
+        if (err) {
+            console.log(err);
+        };
+    });
+}
+
             

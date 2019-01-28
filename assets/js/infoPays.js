@@ -29,11 +29,11 @@ function affichageLightBox(tab) {
     const nom = document.querySelector('.modal-title');
     const choice = document.querySelector('.modal-body');
     const node = document.querySelectorAll('.land');
-    for (i = 0; i < node.length; i++) {
+    for (let i = 0; i < node.length; i++) {
         node[i].addEventListener('click', function (e) {
             let aCode = e.target.id;
-            console.log(aCode)
-            for (p = 0; p < tab.length; p++) {
+            let region;
+            for (let p = 0; p < tab.length; p++) {
                 if (aCode == tab[p][1]) {
                     while (choice.firstChild) {
                         choice.removeChild(choice.firstChild);

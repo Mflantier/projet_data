@@ -1,4 +1,4 @@
-import {affichageLightBox} from './infoLightBox.js';
+import affichageLightBox from './infoLightBox';
 
 // Affichage liste de tous les pays par continents
 const affiche = document.querySelector('#selectContinent');
@@ -78,8 +78,9 @@ leFetch(affichageLightBox);
 // Tri ordre alphabétique en français
 function afficheListe(tab) {
     tab.sort(Intl.Collator().compare);
-    z = 0;
-    h = 0;
+    let z = 0;
+    let h = 0;
+    let idcolonne;
     for (i = 0; i < tab.length; i++) {
         let newP = document.createElement("p");
         newP.innerHTML = tab[i][0];
@@ -89,13 +90,13 @@ function afficheListe(tab) {
         newP.id = tab[i][1];
 
         if (z === 0) {
-            div = document.createElement('div');
+            let div = document.createElement('div');
             div.classList.add("col-lg-3");
             div.setAttribute('id', 'colonne-' + h);
             affiche.appendChild(div);
             idcolonne = 'colonne-' + h;
         }
-        theColonne = document.querySelector('#' + idcolonne);
+        let theColonne = document.querySelector('#' + idcolonne);
         theColonne.appendChild(newP);
         if (z === Math.floor((tab.length) / 4)) {
             z = 0;
@@ -103,6 +104,5 @@ function afficheListe(tab) {
         } else {
             z++
         }
-
     }
 }

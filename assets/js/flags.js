@@ -2,8 +2,8 @@ import affichageLightBox from './infoLightBox';
 
 // Affichage des drapeaux
 const affiche = document.querySelector('#flag');
-newAPI = [];
-tableau = [];
+let newAPI = [];
+let tableau = [];
 
 function leFetch(callBack) {
     fetch(`https://restcountries.eu/rest/v2/all`)
@@ -12,7 +12,7 @@ function leFetch(callBack) {
         })
         .then((res) => {
 
-            for (i = 0; i < res.length; i++) {
+            for (let i = 0; i < res.length; i++) {
                 if (res[i]['alpha3Code'].toLowerCase() === "kos") {
                     tableau.push('Kosovo', res[i]['alpha3Code'].toLowerCase(), res[i]['flag'], res[i]['region'], res[i]['capital'], res[i]['population'], res[i]['area'], res[i]['languages'][0]['name'], res[i]['currencies'][0]['code'], res[i]['borders'], res[i]['languages'][0]['iso639_2']);
                 } else {
@@ -106,12 +106,12 @@ function leFetch(callBack) {
 //                 }
 //             }
 //         } else if (e.target.classList.contains("imagelb")) {
-//             let aCode = e.target.id;
+    //             let aCode = e.target.id;
 
 //             for (p = 0; p < tab.length; p++) {
 //                 if (aCode == tab[p][1]) {
-//                     while (choice.firstChild) {
-//                         choice.removeChild(choice.firstChild);
+    //                     while (choice.firstChild) {
+        //                         choice.removeChild(choice.firstChild);
 //                     }
 //                     let drapeau = document.createElement("img");
 
@@ -132,9 +132,10 @@ leFetch(affichageLightBox);
 // Tri ordre alphabétique en français
 function afficheListe(tab) {
     tab.sort(Intl.Collator().compare);
-    z = 0;
-    h = 0;
-    for (i = 0; i < tab.length; i++) {
+    let z = 0;
+    let h = 0;
+    let idcolonne;
+    for (let i = 0; i < tab.length; i++) {
         let contentDiv = document.createElement("div")
         let img = document.createElement("img");
         let newP = document.createElement("p");
@@ -165,13 +166,13 @@ function afficheListe(tab) {
         button.setAttribute("type", "button");
 
         if (z === 0) {
-            div = document.createElement('div');
+            let div = document.createElement('div');
             div.classList.add("col-lg-3");
             div.setAttribute('id', 'colonne-' + h);
             affiche.appendChild(div);
             idcolonne = 'colonne-' + h;
         }
-        theColonne = document.querySelector('#' + idcolonne);
+        let theColonne = document.querySelector('#' + idcolonne);
         contentDiv.appendChild(img);
         contentDiv.appendChild(newP);
         contentDiv.appendChild(button);

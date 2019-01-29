@@ -76,9 +76,10 @@ function langues(iso) {
             for (i = 0; i < res.length; i++) {
                 if (res[i]["Alpha3b_Code"] === iso) {
                     document.getElementById("valueLangue").innerText = res[i]["French_Name"].charAt(0).toUpperCase() + res[i]["French_Name"].slice(1);
-                    return;
+                } else if (res[i]["Alpha3t_Code"] === iso) {
+                document.getElementById("valueLangue").innerText = res[i]["French_Name"].charAt(0).toUpperCase() + res[i]["French_Name"].slice(1);
+                return;
                 }
-                else {}
             }
         })
         .catch((err) => {

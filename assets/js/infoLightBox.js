@@ -10,6 +10,7 @@ export default function affichageLightBox(tab) {
             for (let p = 0; p < tab.length; p++) {
                 let region = tab[p][3];
                 if (aCode == tab[p][1]) {
+                    
                     devises(tab[p][8]);
                     langues(tab[p][10]);
                     while (choice.firstChild) {
@@ -46,11 +47,8 @@ export default function affichageLightBox(tab) {
                     population.innerHTML = '<strong>Population : </strong>' + tab[p][5];
                     superficie.innerHTML = '<strong>Superficie : </strong>' + tab[p][6] + ' km<sup>2</sup>';
 
-                    if ("valueLangue" == 0) {
-                        langue.innerHTML = '<strong>Langue : </strong>' + tab[p][7];
-                    } else {
-                        langue.innerHTML = '<strong>Langue : </strong><span id="valueLangue"></span> ';
-                    }
+                    langue.innerHTML = '<strong>Langue : </strong><span id="valueLangue"></span> ';
+
                     devise.innerHTML = '<strong>Devise : </strong><span id="valueDevise"></span> ';
                     voisins.innerHTML = '<strong>Pays voisins : </strong>';
 
@@ -108,11 +106,18 @@ export default function affichageLightBox(tab) {
                 for (i = 0; i < res.length; i++) {
                     if (res[i]["Alpha3b_Code"] === iso) {
                         document.getElementById("valueLangue").innerText = res[i]["French_Name"].charAt(0).toUpperCase() + res[i]["French_Name"].slice(1);
+<<<<<<< HEAD
                         return;
                     }
                     else {}
                 }
                 
+=======
+                    } else if (res[i]["Alpha3t_Code"] === iso) {
+                        document.getElementById("valueLangue").innerText = res[i]["French_Name"].charAt(0).toUpperCase() + res[i]["French_Name"].slice(1);
+                        return;
+                    }
+                }
             })
             .catch((err) => {
                 if (err) {
@@ -120,6 +125,31 @@ export default function affichageLightBox(tab) {
                 };
             });
     }
+
+    function devises(currency) {
+        fetch('/devises')
+            .then((res) => {
+                return res.json();
+            })
+            .then((res) => {
+
+                for (i = 0; i < res.length; i++) {
+
+                    if (res[i]["ISO_devise"] === currency) {
+                        console.log(res[i]["ISO_devise"]);
+                        document.getElementById("valueDevise").innerText = res[i]["Devise"].charAt(0).toUpperCase() + res[i]["Devise"].slice(1);
+                        return;
+                    }
+                }
+>>>>>>> 8331fa0aeb4e26b8811b903ea9554ea8ae4e09a7
+            })
+            .catch((err) => {
+                if (err) {
+                    console.log(err);
+                };
+            });
+    }
+<<<<<<< HEAD
 
     function devises(currency) {
         fetch('/devises')
@@ -144,3 +174,6 @@ export default function affichageLightBox(tab) {
                 });
             }
     }
+=======
+}
+>>>>>>> 8331fa0aeb4e26b8811b903ea9554ea8ae4e09a7

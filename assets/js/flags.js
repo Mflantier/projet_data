@@ -149,7 +149,7 @@ function afficheListe(tab) {
 
         newP.innerHTML = tab[i][0];
         newP.id = tab[i][1];
-        newP.classList.add("liste-pays", "text-left", "m-0");
+        newP.classList.add("liste-pays", "text-center","text-lg-left", "m-0");
         newP.setAttribute('data-toggle', 'modal');
         newP.setAttribute('data-target', '#choix');
 

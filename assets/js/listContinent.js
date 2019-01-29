@@ -84,7 +84,7 @@ function afficheListe(tab) {
     for (i = 0; i < tab.length; i++) {
         let newP = document.createElement("p");
         newP.innerHTML = tab[i][0];
-        newP.classList.add("liste-pays", "text-left");
+        newP.classList.add("liste-pays", "text-center","text-lg-left");
         newP.setAttribute('data-toggle', 'modal');
         newP.setAttribute('data-target', '#choix');
         newP.id = tab[i][1];

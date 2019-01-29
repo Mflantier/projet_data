@@ -252,7 +252,7 @@ body {
         width: auto;
         background-color: #4d0000fa;
         transition: 1.5s;
-        box-shadow: 2px 0px 2px 1px rgba(88, 88, 88, 0.59);
+        box-shadow: 2px 0px 13px 5px rgba(0, 0, 0, 0.13);
         z-index: 2;
 
         @media (max-width: 575px) {
@@ -292,6 +292,11 @@ body {
             width: 100%;
             padding-top: 15vh;
             margin-right: 2vw;
+            @media (max-width: 575px) and (orientation: landscape) {
+                width: 100vw;
+                padding-top: 2vh;
+            }
+    
 
             .closeBtn {
                 font-size: 1.1rem;
@@ -312,7 +317,12 @@ body {
                     cursor: pointer;
                 }
             }
+            .show-map{
 
+            @media (max-width: 768px) { 
+                display: none !important;
+            }
+            }
             .option {
                 font-size: 1.15rem;
                 color: #ffffffc4;
@@ -323,9 +333,13 @@ body {
                 transition: 0.3s ease;
                 text-decoration: none;
 
-                @media (max-width: 575px) {
+                @media (max-width: 575px) and (orientation: portrait) {
                     padding: 10px 50px !important;
                     font-size: 1.2rem;
+                }
+                @media (max-width: 575px) and (orientation: landscape) {
+                    width: 100vw;
+                    padding: 5px 50px !important;
                 }
 
 
@@ -401,8 +415,9 @@ body {
     .section-appli{
         background: url(img/bg-appli.svg);       
         background-attachment: fixed;
+        background-position: center;
         background-size: cover;
-        min-height: 80vh;
+        min-height: 100vh;
     }
     .map {
         // width: 80vw;
@@ -410,9 +425,17 @@ body {
         padding-top: 5vh;
         padding-bottom: 5vh;
         min-height: 100vh;
+        // background: url(img/bg-appli-map.svg);       
+        // background-attachment: fixed;
+        // background-position: center;
+        // background-size: cover;
+        background-color: #000000e6;
+        @media (max-width: 768px) { 
+            display: none !important;
+        }
 
         .map__image {
-            width: 60%;
+            width: 70%;
             float: left;
             &.landscape {
                 width: 80%;
@@ -436,18 +459,18 @@ body {
 
         .map__image path {
 
-            fill: #000000ed;
+            fill: #00768ecc;
             stroke: #FFF;
             stroke-width: 1px;
-            transition: fill 0.3s;
+            transition: all 0.3s;
+  
         }
 
         .map__image path:hover {
 
-            fill: #005904;
+            fill: #a70000fa;
             stroke: #FFF;
-            stroke-width: 1px;
-            transition: fill 0.3s;
+            stroke-width: 1px;      
         }
 
         .map__list {

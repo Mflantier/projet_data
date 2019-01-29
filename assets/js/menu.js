@@ -30,7 +30,7 @@ $(document).ready(function(){
    $(window).scroll(function(){
       var scroll = $(window).scrollTop();
       if (scroll > fullScreen) {
-        $(".btn-menu").css("backgroundColor" , "#dc3545");
+        $(".btn-menu").css("backgroundColor" , "#a70000fa");
       }
       else{
          $(".btn-menu").css("backgroundColor" , "white");  	
@@ -42,7 +42,7 @@ $(document).ready(function(){
    $(window).scroll(function(){
       var scroll = $(window).scrollTop();
       if (scroll > fullScreen) {
-        $(".btn-menu").css("backgroundColor" , "#dc3545");
+        $(".btn-menu").css("backgroundColor" , "#a70000fa");
       }
       else{
          $(".btn-menu").css("backgroundColor" , "white");  	

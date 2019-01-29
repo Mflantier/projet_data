@@ -46,7 +46,7 @@ export default function affichageLightBox(tab) {
                         population.innerHTML = '<strong>Population : </strong>' + tab[p][5];
                         superficie.innerHTML = '<strong>Superficie : </strong>' + tab[p][6] + ' km<sup>2</sup>';
 
-if( "valueLangue" == 0) { 
+if( "valueLangue" == ""{  
     langue.innerHTML = '<strong>Langue : </strong>' + tab[p][7];
 } else { langue.innerHTML = '<strong>Langue : </strong><span id="valueLangue"></span> ';
                     }

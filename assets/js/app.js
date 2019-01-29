@@ -88,3 +88,26 @@ for (i = 0; i < 2; i++) {
 
 // Need jQuery? Install it with "yarn add jquery", then uncomment to require it.
 // const $ = require('jquery');
+
+const btnInfo = document.querySelector(".btn-infos");
+const showInfo = document.querySelector(".show-info");
+
+
+$(document).ready(function(){
+    document.querySelector(".t-info").classList.replace("t-info", "show-info");
+    console.log("load");
+    setTimeout(function(){
+       document.querySelector(".show-info").classList.replace("show-info","t-info");
+    }, 5000)
+   
+ })
+ 
+ btnInfo.addEventListener("click", function(showinfo){
+    document.querySelector(".t-info").classList.replace("t-info", "show-info");
+    setTimeout(function(){
+       document.querySelector(".show-info").classList.replace("show-info","t-info");
+ 
+    }, 5000)
+ 
+    console.log("infoooos");
+ })

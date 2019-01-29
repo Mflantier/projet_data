@@ -432,13 +432,36 @@ body {
             position: absolute;
             top: 14%;
             right: 10%;
-            i{
-                font-size: 3rem;
+
+                i{
+                font-size: 2.7rem;
                 color: white;
+                }
+
+            .show-info{
+                color: white;
+                animation: p-infos 5s cubic-bezier(0.5, 0, 0.5, 1)forwards;
             }
-            p{
-                color: white;
-                animation: go-down 1s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+            @keyframes p-infos {
+                0%{
+                    opacity: 0;
+                    transform: translateX(60vh);
+                }
+                25%{
+                    opacity: 1;
+                    transform: translateX(0vh);
+                }
+                90%{
+                    opacity: 1;
+                    transform: translateX(0vh);
+                }
+                100%{
+                    opacity: 0;
+                    transform: translateX(60vh);
+                }
+            }
+            .t-info{
+                color: transparent;
             }
         }
         .map__image {

@@ -141,6 +141,7 @@ function langues(iso) {
                     document.getElementById("valueLangue").innerText = res[i]["French_Name"].charAt(0).toUpperCase() + res[i]["French_Name"].slice(1);
                     return;
                 }
+                else {}
             }
         })
         .catch((err) => {
@@ -159,7 +160,7 @@ function devises(currency) {
             for (i = 0; i < res.length; i++) {
               
                 if (res[i]["ISO_devise"] === currency) {
-                    console.log(res[i]["ISO_devise"]);
+                   
                     document.getElementById("valueDevise").innerText = res[i]["Devise"].charAt(0).toUpperCase() + res[i]["Devise"].slice(1);
                     return;
                 }

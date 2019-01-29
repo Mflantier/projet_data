@@ -40,11 +40,16 @@ export default function affichageLightBox(tab) {
                         drapeau.setAttribute("src", tab[p][2]);
                         drapeau.setAttribute("width", "150");
                         drapeau.setAttribute("heigth", "100");
+                      
                         continent.innerHTML = '<strong>Continent : </strong>' + region;
                         capitale.innerHTML = '<strong>Capitale : </strong>' + tab[p][4];
                         population.innerHTML = '<strong>Population : </strong>' + tab[p][5];
-                        superficie.innerHTML = '<strong>Superficie : </strong>' + tab[p][6] + ' Km<sup>2</sup>';
-                        langue.innerHTML = '<strong>Langue : </strong><span id="valueLangue"></span> ';
+                        superficie.innerHTML = '<strong>Superficie : </strong>' + tab[p][6] + ' km<sup>2</sup>';
+
+if( "valueLangue" == 0) { 
+    langue.innerHTML = '<strong>Langue : </strong>' + tab[p][7];
+} else { langue.innerHTML = '<strong>Langue : </strong><span id="valueLangue"></span> ';
+                    }
                         devise.innerHTML = '<strong>Devise : </strong><span id="valueDevise"></span> ';
                         voisins.innerHTML = '<strong>Pays voisins : </strong>';
 
@@ -85,8 +90,9 @@ export default function affichageLightBox(tab) {
 
                     nom.textContent = tab[p][0];
                     drapeau.setAttribute("src", tab[p][2]);
-                    drapeau.setAttribute("width", "100%");
-                    drapeau.setAttribute("heigth", "75%")
+                    drapeau.setAttribute("width", "80%");
+                    drapeau.setAttribute("heigth", "50%");
+                    drapeau.setAttribute("align", "center");
                     choice.appendChild(drapeau);
                 }
         }
@@ -104,6 +110,7 @@ function langues(iso) {
                     document.getElementById("valueLangue").innerText = res[i]["French_Name"].charAt(0).toUpperCase() + res[i]["French_Name"].slice(1);
                     return;
                 }
+                else {}
             }
         })
         .catch((err) => {

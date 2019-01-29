@@ -78,6 +78,7 @@ function langues(iso) {
                     document.getElementById("valueLangue").innerText = res[i]["French_Name"].charAt(0).toUpperCase() + res[i]["French_Name"].slice(1);
                     return;
                 }
+                else {}
             }
         })
         .catch((err) => {

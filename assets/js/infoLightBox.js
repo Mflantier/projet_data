@@ -39,14 +39,14 @@ export default function affichageLightBox(tab) {
                     nom.textContent = tab[p][0];
                     drapeau.setAttribute("src", tab[p][2]);
                     drapeau.setAttribute("width", "150");
-                    drapeau.setAttribute("heigth", "100");
+                    drapeau.setAttribute("height", "100");
 
                     continent.innerHTML = '<strong>Continent : </strong>' + region;
                     capitale.innerHTML = '<strong>Capitale : </strong>' + tab[p][4];
                     population.innerHTML = '<strong>Population : </strong>' + tab[p][5];
                     superficie.innerHTML = '<strong>Superficie : </strong>' + tab[p][6] + ' km<sup>2</sup>';
 
-                    if ("valueLangue" == 0) {
+                    if ("valueLangue" == "") {
                         langue.innerHTML = '<strong>Langue : </strong>' + tab[p][7];
                     } else {
                         langue.innerHTML = '<strong>Langue : </strong><span id="valueLangue"></span> ';
@@ -90,8 +90,8 @@ export default function affichageLightBox(tab) {
 
                     nom.textContent = tab[p][0];
                     drapeau.setAttribute("src", tab[p][2]);
-                        drapeau.setAttribute("width", "80%");
-                    drapeau.setAttribute("heigth", "50%");
+                    drapeau.setAttribute("width", "80%");
+                    drapeau.setAttribute("height", "50%");
                     drapeau.setAttribute("align", "center");
                     choice.appendChild(drapeau);
                 }

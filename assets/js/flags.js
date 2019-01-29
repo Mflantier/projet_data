@@ -48,7 +48,7 @@ function afficheListe(tab) {
         let newP = document.createElement("p");
         let button = document.createElement("button");
 
-        contentDiv.classList.add("p-2", "contentDiv");
+        contentDiv.classList.add("d-flex", "flex-column", "align-items-center", "p-2", "contentDiv");
 
         img.id = tab[i][1];
         img.classList.add("imagelb");

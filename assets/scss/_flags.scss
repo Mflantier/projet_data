@@ -30,18 +30,17 @@ ul {
     color: #ffffffc4;
     border-color: #4D0000ed;
     margin-top: .5rem;
-
+    cursor: pointer;
+        &:active {
+        background-color: #ffffffc4;
+        color: #4D0000ed;
+    }
 }
-
-.bouton:active {
-    background-color: #ffffffc4;
-    color: #4D0000ed;
-}
-
 
 .imagelb{
     border-color: #4D0000ed;
     border-width: 5px;
     stroke: black;
+    cursor: pointer;
     
 }

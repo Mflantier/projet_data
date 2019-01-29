@@ -9,9 +9,9 @@ fetch(`https://restcountries.eu/rest/v2/all`)
     .then((response) => {
         for (i = 0; i < response.length; i++) {
             if (response[i]['alpha3Code'].toLowerCase() === "kos") {
-                tableau.push('Kosovo', response[i]['alpha2Code'].toUpperCase(), response[i]['flag'], response[i]['region'], response[i]['capital'], response[i]['population'], response[i]['area'], response[i]['languages'][0]['nativeName'], response[i]['currencies'][0]['name'], response[i]['borders']);
+                tableau.push('Kosovo', response[i]['alpha2Code'].toUpperCase(), response[i]['flag'], response[i]['region'], response[i]['capital'], response[i]['population'], response[i]['area'], response[i]['languages'][0]['nativeName'], response[i]['currencies'][0]['code'], response[i]['borders'], response[i]['languages'][0]['iso639_2']);
             } else {
-                tableau.push(response[i]['translations']['fr'], response[i]['alpha2Code'].toUpperCase(), response[i]['flag'], response[i]['region'], response[i]['capital'], response[i]['population'], response[i]['area'], response[i]['languages'][0]['nativeName'], response[i]['currencies'][0]['name'], response[i]['borders']);
+                tableau.push(response[i]['translations']['fr'], response[i]['alpha2Code'].toUpperCase(), response[i]['flag'], response[i]['region'], response[i]['capital'], response[i]['population'], response[i]['area'], response[i]['languages'][0]['nativeName'], response[i]['currencies'][0]['code'], response[i]['borders'], response[i]['languages'][0]['iso639_2']);
             }
             newAPI.push(tableau);
             tableau = [];
@@ -35,6 +35,8 @@ function affichageLightBox(tab) {
             let region;
             for (let p = 0; p < tab.length; p++) {
                 if (aCode == tab[p][1]) {
+                    devises(tab[p][8]);
+                    langues(tab[p][10]);
                     while (choice.firstChild) {
                         choice.removeChild(choice.firstChild);
                     }
@@ -66,8 +68,8 @@ function affichageLightBox(tab) {
                     capitale.innerHTML = 'Capitale : ' + tab[p][4];
                     population.innerHTML = 'Population : ' + tab[p][5];
                     superficie.innerHTML = 'Superficie : ' + tab[p][6] + ' Km<sup>2</sup>';
-                    langue.innerHTML = 'Langue : ' + tab[p][7];
-                    devise.innerHTML = 'Devise : ' + tab[p][8];
+                    langue.innerHTML = '<strong>Langue : </strong><span id="valueLangue"></span> ';
+                    devise.innerHTML =  '<strong>Devise : </strong><span id="valueDevise"></span> ';
                     voisins.innerHTML = '<strong>Pays voisins : </strong>';
 
                     if (tab[p][9].length === 0) {
@@ -97,4 +99,47 @@ function affichageLightBox(tab) {
             }
         })
     }
+}
+
+function langues(iso) {
+    fetch('/langues')
+        .then((res) => {
+            return res.json();
+        })
+        .then((res) => {
+            for (i = 0; i < res.length; i++) {
+                if (res[i]["Alpha3b_Code"] === iso) {
+                    document.getElementById("valueLangue").innerText = res[i]["French_Name"].charAt(0).toUpperCase() + res[i]["French_Name"].slice(1);
+                    return;
+                }
+            }
+        })
+        .catch((err) => {
+            if (err) {
+                console.log(err);
+            };
+        });
+}
+
+function devises(currency) {
+    fetch('/devises')
+        .then((res) => {
+            return res.json();
+        })
+        .then((res) => {
+           
+            for (i = 0; i < res.length; i++) {
+              
+                if (res[i]["ISO_devise"] === currency) {
+                    console.log(res[i]["ISO_devise"]);
+                    document.getElementById("valueDevise").innerText = res[i]["Devise"].charAt(0).toUpperCase() + res[i]["Devise"].slice(1);
+                    return;
+                }
+            }
+        })
+               .catch((err) => {
+            if (err) {
+                console.log(err);
+            };
+        });
 }

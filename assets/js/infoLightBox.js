@@ -8,6 +8,8 @@ export default function affichageLightBox(tab) {
                 let region;
                 for (let p = 0; p < tab.length; p++) {
                     if (aCode == tab[p][1]) {
+                        devises(tab[p][8]);
+                        langues(tab[p][10]);
                         while (choice.firstChild) {
                             choice.removeChild(choice.firstChild);
                         }
@@ -39,8 +41,8 @@ export default function affichageLightBox(tab) {
                         capitale.innerHTML = '<strong>Capitale : </strong>' + tab[p][4];
                         population.innerHTML = '<strong>Population : </strong>' + tab[p][5];
                         superficie.innerHTML = '<strong>Superficie : </strong>' + tab[p][6] + ' Km<sup>2</sup>';
-                        langue.innerHTML = '<strong>Langue : </strong>' + tab[p][7];
-                        devise.innerHTML = '<strong>Devise : </strong>' + tab[p][8];
+                        langue.innerHTML = '<strong>Langue : </strong><span id="valueLangue"></span> ';
+                        devise.innerHTML = '<strong>Devise : </strong><span id="valueDevise"></span> ';
                         voisins.innerHTML = '<strong>Pays voisins : </strong>';
 
                         if (tab[p][9].length === 0) {
@@ -71,4 +73,46 @@ export default function affichageLightBox(tab) {
                 }
         })
     }
+}
+
+function langues(iso) {
+    fetch('/langues')
+        .then((res) => {
+            return res.json();
+        })
+        .then((res) => {
+            for (i = 0; i < res.length; i++) {
+                if (res[i]["Alpha3b_Code"] === iso) {
+                    document.getElementById("valueLangue").innerText = res[i]["French_Name"].charAt(0).toUpperCase() + res[i]["French_Name"].slice(1);
+                    return;
+                }
+            }
+        })
+        .catch((err) => {
+            if (err) {
+                console.log(err);
+            };
+        });
+}
+function devises(currency) {
+    fetch('/devises')
+        .then((res) => {
+            return res.json();
+        })
+        .then((res) => {
+           
+            for (i = 0; i < res.length; i++) {
+              
+                if (res[i]["ISO_devise"] === currency) {
+                    console.log(res[i]["ISO_devise"]);
+                    document.getElementById("valueDevise").innerText = res[i]["Devise"].charAt(0).toUpperCase() + res[i]["Devise"].slice(1);
+                    return;
+                }
+            }
+        })
+               .catch((err) => {
+            if (err) {
+                console.log(err);
+            };
+        });
 }

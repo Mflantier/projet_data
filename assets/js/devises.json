@@ -1,0 +1,1205 @@
+[{
+    "ISO_devise": "AED",
+    "ISO_num": 784,
+    "Symbol_devise": "DH",
+    "Devise": "Dirham des Émirats arabes unis",
+    "Pays": "Émirats arabes unis",
+    "ISO_pays": "AE"
+}, {
+    "ISO_devise": "AFN",
+    "ISO_num": 971,
+    "Symbol_devise": "",
+    "Devise": "Afghani afghan",
+    "Pays": "Afghanistan",
+    "ISO_pays": "AF"
+}, {
+    "ISO_devise": "ALL",
+    "ISO_num": 8,
+    "Symbol_devise": "Lek",
+    "Devise": "Lek albanais",
+    "Pays": "Albanie",
+    "ISO_pays": "AL"
+}, {
+    "ISO_devise": "AMD",
+    "ISO_num": 51,
+    "Symbol_devise": "",
+    "Devise": "Dram arménien",
+    "Pays": "Arménie",
+    "ISO_pays": "AM"
+}, {
+    "ISO_devise": "ANG",
+    "ISO_num": 532,
+    "Symbol_devise": "NAƒ",
+    "Devise": "Florin des Antilles néerlandaises",
+    "Pays": "Antilles Néerlandaises",
+    "ISO_pays": "AN"
+}, {
+    "ISO_devise": "AOA",
+    "ISO_num": 973,
+    "Symbol_devise": "Kz",
+    "Devise": "Kwanza angolais",
+    "Pays": "Angola",
+    "ISO_pays": "AO"
+}, {
+    "ISO_devise": "ARS",
+    "ISO_num": 32,
+    "Symbol_devise": "$",
+    "Devise": "Peso argentin",
+    "Pays": "Argentine",
+    "ISO_pays": "AR"
+}, {
+    "ISO_devise": "AUD",
+    "ISO_num": 36,
+    "Symbol_devise": "$",
+    "Devise": "Dollar australien",
+    "Pays": "Australie",
+    "ISO_pays": "AU"
+}, {
+    "ISO_devise": "AWG",
+    "ISO_num": 533,
+    "Symbol_devise": "",
+    "Devise": "Florin arubais",
+    "Pays": "Aruba",
+    "ISO_pays": "AW"
+}, {
+    "ISO_devise": "AZN",
+    "ISO_num": 944,
+    "Symbol_devise": "",
+    "Devise": "Manat azerbaïdjanais",
+    "Pays": "Azerbaïdjan",
+    "ISO_pays": "AZ"
+}, {
+    "ISO_devise": "BAM",
+    "ISO_num": 977,
+    "Symbol_devise": "KM",
+    "Devise": "Mark convertible de Bosnie-Herzégovine",
+    "Pays": "Bosnie-Herzégovine",
+    "ISO_pays": "BA"
+}, {
+    "ISO_devise": "BBD",
+    "ISO_num": 52,
+    "Symbol_devise": "$",
+    "Devise": "Dollar barbadien",
+    "Pays": "Barbade",
+    "ISO_pays": "BB"
+}, {
+    "ISO_devise": "BDT",
+    "ISO_num": 50,
+    "Symbol_devise": "",
+    "Devise": "Taka bangladais",
+    "Pays": "Bangladesh",
+    "ISO_pays": "BD"
+}, {
+    "ISO_devise": "BGN",
+    "ISO_num": 975,
+    "Symbol_devise": "лв.",
+    "Devise": "Lev bulgare",
+    "Pays": "Bulgarie",
+    "ISO_pays": "BG"
+}, {
+    "ISO_devise": "BHD",
+    "ISO_num": 48,
+    "Symbol_devise": "BD",
+    "Devise": "Dinar bahreïni",
+    "Pays": "Bahreïn",
+    "ISO_pays": "BH"
+}, {
+    "ISO_devise": "BIF",
+    "ISO_num": 108,
+    "Symbol_devise": "FBu",
+    "Devise": "Franc burundais",
+    "Pays": "Burundi",
+    "ISO_pays": "BI"
+}, {
+    "ISO_devise": "BMD",
+    "ISO_num": 60,
+    "Symbol_devise": "$",
+    "Devise": "Dollar bermudien",
+    "Pays": "Bermudes",
+    "ISO_pays": "BM"
+}, {
+    "ISO_devise": "BND",
+    "ISO_num": 96,
+    "Symbol_devise": "B$",
+    "Devise": "Dollar de Brunei",
+    "Pays": "Brunei",
+    "ISO_pays": "BN"
+}, {
+    "ISO_devise": "BOB",
+    "ISO_num": 68,
+    "Symbol_devise": "$b",
+    "Devise": "Boliviano bolivien",
+    "Pays": "Bolivie",
+    "ISO_pays": "BO"
+}, {
+    "ISO_devise": "BOV",
+    "ISO_num": 984,
+    "Symbol_devise": "-",
+    "Devise": "MVDOL bolivien",
+    "Pays": "Bolivie",
+    "ISO_pays": "BO"
+}, {
+    "ISO_devise": "BRL",
+    "ISO_num": 986,
+    "Symbol_devise": "R$",
+    "Devise": "Réal bresilien",
+    "Pays": "Brésil",
+    "ISO_pays": "BR"
+}, {
+    "ISO_devise": "BSD",
+    "ISO_num": 44,
+    "Symbol_devise": "$",
+    "Devise": "Dollar bahaméen",
+    "Pays": "Bahamas",
+    "ISO_pays": "BS"
+}, {
+    "ISO_devise": "BTN",
+    "ISO_num": 64,
+    "Symbol_devise": "Nu.",
+    "Devise": "Ngultrum bhoutanais",
+    "Pays": "Bhoutan",
+    "ISO_pays": "BT"
+}, {
+    "ISO_devise": "BWP",
+    "ISO_num": 72,
+    "Symbol_devise": "P",
+    "Devise": "Pula botswanais",
+    "Pays": "Botswana",
+    "ISO_pays": "BW"
+}, {
+    "ISO_devise": "BYR",
+    "ISO_num": 974,
+    "Symbol_devise": "p.",
+    "Devise": "Rouble biélorusse",
+    "Pays": "Bielorussie",
+    "ISO_pays": "BY"
+}, {
+    "ISO_devise": "BZD",
+    "ISO_num": 84,
+    "Symbol_devise": "BZ$",
+    "Devise": "Dollar bélizien",
+    "Pays": "Belize",
+    "ISO_pays": "BZ"
+}, {
+    "ISO_devise": "CAD",
+    "ISO_num": 124,
+    "Symbol_devise": "$",
+    "Devise": "Dollar canadien",
+    "Pays": "Canada",
+    "ISO_pays": "CA"
+}, {
+    "ISO_devise": "CDF",
+    "ISO_num": 976,
+    "Symbol_devise": "FC",
+    "Devise": "Franc congolais",
+    "Pays": "République Démocratique du Congo",
+    "ISO_pays": "CD"
+}, {
+    "ISO_devise": "CHF",
+    "ISO_num": 756,
+    "Symbol_devise": "SFr.",
+    "Devise": "Franc suisse",
+    "Pays": "Suisse",
+    "ISO_pays": "CH"
+}, {
+    "ISO_devise": "CLF",
+    "ISO_num": 990,
+    "Symbol_devise": "UF",
+    "Devise": "Unidad de fomento chilienne",
+    "Pays": "Chili",
+    "ISO_pays": "CL"
+}, {
+    "ISO_devise": "CLP",
+    "ISO_num": 152,
+    "Symbol_devise": "",
+    "Devise": "Peso chilien",
+    "Pays": "Chili",
+    "ISO_pays": "CL"
+}, {
+    "ISO_devise": "CNH",
+    "ISO_num": null,
+    "Symbol_devise": "",
+    "Devise": "Yuan renminbi chinois (offshore)",
+    "Pays": "Chine",
+    "ISO_pays": "CN"
+}, {
+    "ISO_devise": "CNY",
+    "ISO_num": 156,
+    "Symbol_devise": "",
+    "Devise": "Yuan renminbi chinois",
+    "Pays": "Chine",
+    "ISO_pays": "CN"
+}, {
+    "ISO_devise": "COP",
+    "ISO_num": 170,
+    "Symbol_devise": "$",
+    "Devise": "Peso colombien",
+    "Pays": "Colombie",
+    "ISO_pays": "CO"
+}, {
+    "ISO_devise": "COU",
+    "ISO_num": 970,
+    "Symbol_devise": "-",
+    "Devise": "Unidad de Valor Real colombienne",
+    "Pays": "Colombie",
+    "ISO_pays": "CO"
+}, {
+    "ISO_devise": "CRC",
+    "ISO_num": 188,
+    "Symbol_devise": "₡",
+    "Devise": "Colón costaricien",
+    "Pays": "Costa Rica",
+    "ISO_pays": "CR"
+}, {
+    "ISO_devise": "CUC",
+    "ISO_num": 931,
+    "Symbol_devise": "CUC$",
+    "Devise": "Peso convertible cubain",
+    "Pays": "Cuba",
+    "ISO_pays": "CU"
+}, {
+    "ISO_devise": "CUP",
+    "ISO_num": 192,
+    "Symbol_devise": "$MN",
+    "Devise": "Peso cubain",
+    "Pays": "Cuba",
+    "ISO_pays": "CU"
+}, {
+    "ISO_devise": "CVE",
+    "ISO_num": 132,
+    "Symbol_devise": "",
+    "Devise": "Escudo cap-verdien",
+    "Pays": "Cap-Vert",
+    "ISO_pays": "CV"
+}, {
+    "ISO_devise": "CZK",
+    "ISO_num": 203,
+    "Symbol_devise": "Kč",
+    "Devise": "Couronne tchèque",
+    "Pays": "Tchéquie",
+    "ISO_pays": "CZ"
+}, {
+    "ISO_devise": "DJF",
+    "ISO_num": 262,
+    "Symbol_devise": "Fdj",
+    "Devise": "Franc Djibouti",
+    "Pays": "Djibouti",
+    "ISO_pays": "DJ"
+}, {
+    "ISO_devise": "DKK",
+    "ISO_num": 208,
+    "Symbol_devise": "kr.",
+    "Devise": "Couronne danoise",
+    "Pays": "Danemark",
+    "ISO_pays": "DK"
+}, {
+    "ISO_devise": "DOP",
+    "ISO_num": 214,
+    "Symbol_devise": "RD$",
+    "Devise": "Peso dominicain",
+    "Pays": "République Dominicaine",
+    "ISO_pays": "DO"
+}, {
+    "ISO_devise": "DZD",
+    "ISO_num": 12,
+    "Symbol_devise": "DA",
+    "Devise": "Dinar algérien",
+    "Pays": "Algérie",
+    "ISO_pays": "DZ"
+}, {
+    "ISO_devise": "EGP",
+    "ISO_num": 818,
+    "Symbol_devise": "E£",
+    "Devise": "Livre égyptienne",
+    "Pays": "Egypte",
+    "ISO_pays": "EG"
+}, {
+    "ISO_devise": "ERN",
+    "ISO_num": 232,
+    "Symbol_devise": "Nfk",
+    "Devise": "Nakfa érythréen",
+    "Pays": "Érythrée",
+    "ISO_pays": "ER"
+}, {
+    "ISO_devise": "ETB",
+    "ISO_num": 230,
+    "Symbol_devise": "Br",
+    "Devise": "Birr éthiopien",
+    "Pays": "Éthiopie",
+    "ISO_pays": "ET"
+}, {
+    "ISO_devise": "EUR",
+    "ISO_num": 978,
+    "Symbol_devise": "€",
+    "Devise": "Euro",
+    "Pays": "Membres de la zone Euro",
+    "ISO_pays": "N/A"
+}, {
+    "ISO_devise": "FJD",
+    "ISO_num": 242,
+    "Symbol_devise": "FJ$",
+    "Devise": "Dollar de Fidji",
+    "Pays": "Fidji",
+    "ISO_pays": "FJ"
+}, {
+    "ISO_devise": "FKP",
+    "ISO_num": 238,
+    "Symbol_devise": "FK£",
+    "Devise": "Livre des Îles Malouines",
+    "Pays": "Îles Malouines",
+    "ISO_pays": "FK"
+}, {
+    "ISO_devise": "GBP",
+    "ISO_num": 826,
+    "Symbol_devise": "£",
+    "Devise": "Livre sterling",
+    "Pays": "Royaume-Uni",
+    "ISO_pays": "GB"
+}, {
+    "ISO_devise": "GEL",
+    "ISO_num": 981,
+    "Symbol_devise": "",
+    "Devise": "Lari géorgien",
+    "Pays": "Géorgie",
+    "ISO_pays": "GE"
+}, {
+    "ISO_devise": "GGP",
+    "ISO_num": null,
+    "Symbol_devise": "£",
+    "Devise": "Livre",
+    "Pays": "Guernsey",
+    "ISO_pays": "GG"
+}, {
+    "ISO_devise": "GHS",
+    "ISO_num": 936,
+    "Symbol_devise": "₵",
+    "Devise": "Cedi ghanéen",
+    "Pays": "Ghana",
+    "ISO_pays": "GH"
+}, {
+    "ISO_devise": "GIP",
+    "ISO_num": 292,
+    "Symbol_devise": "£",
+    "Devise": "Livre de Gibraltar",
+    "Pays": "Gibraltar",
+    "ISO_pays": "GI"
+}, {
+    "ISO_devise": "GMD",
+    "ISO_num": 270,
+    "Symbol_devise": "D",
+    "Devise": "Dalasi gambien",
+    "Pays": "Gambie",
+    "ISO_pays": "GM"
+}, {
+    "ISO_devise": "GNF",
+    "ISO_num": 324,
+    "Symbol_devise": "FG",
+    "Devise": "Franc guinéen",
+    "Pays": "Guinée",
+    "ISO_pays": "GN"
+}, {
+    "ISO_devise": "GTQ",
+    "ISO_num": 320,
+    "Symbol_devise": "Q",
+    "Devise": "Quetzal guatémaltèque",
+    "Pays": "Guatemala",
+    "ISO_pays": "GT"
+}, {
+    "ISO_devise": "GYD",
+    "ISO_num": 328,
+    "Symbol_devise": "GY$",
+    "Devise": "Dollar du Guyana",
+    "Pays": "Guyana",
+    "ISO_pays": "GY"
+}, {
+    "ISO_devise": "HKD",
+    "ISO_num": 344,
+    "Symbol_devise": "HK$",
+    "Devise": "Dollar de Hong Kong",
+    "Pays": "Hong Kong",
+    "ISO_pays": "HK"
+}, {
+    "ISO_devise": "HNL",
+    "ISO_num": 340,
+    "Symbol_devise": "L",
+    "Devise": "Lempira hondurien",
+    "Pays": "Honduras",
+    "ISO_pays": "HN"
+}, {
+    "ISO_devise": "HRK",
+    "ISO_num": 191,
+    "Symbol_devise": "kn",
+    "Devise": "Kuna croate",
+    "Pays": "Croatie",
+    "ISO_pays": "HR"
+}, {
+    "ISO_devise": "HTG",
+    "ISO_num": 332,
+    "Symbol_devise": "G",
+    "Devise": "Gourde haïtienne",
+    "Pays": "Haïti",
+    "ISO_pays": "HT"
+}, {
+    "ISO_devise": "HUF",
+    "ISO_num": 348,
+    "Symbol_devise": "Ft",
+    "Devise": "Forint hongrois",
+    "Pays": "Hongrie",
+    "ISO_pays": "HU"
+}, {
+    "ISO_devise": "IDR",
+    "ISO_num": 360,
+    "Symbol_devise": "Rp",
+    "Devise": "Roupie indonésienne",
+    "Pays": "Indonésie",
+    "ISO_pays": "ID"
+}, {
+    "ISO_devise": "ILS",
+    "ISO_num": 376,
+    "Symbol_devise": "",
+    "Devise": "Nouveau shekel israélien",
+    "Pays": "Israël",
+    "ISO_pays": "IL"
+}, {
+    "ISO_devise": "IMP",
+    "ISO_num": null,
+    "Symbol_devise": "M£",
+    "Devise": "Livre mannoise",
+    "Pays": "Ile de Man",
+    "ISO_pays": "IM"
+}, {
+    "ISO_devise": "INR",
+    "ISO_num": 356,
+    "Symbol_devise": "",
+    "Devise": "Roupie indienne",
+    "Pays": "Inde",
+    "ISO_pays": "IN"
+}, {
+    "ISO_devise": "IQD",
+    "ISO_num": 368,
+    "Symbol_devise": "ID",
+    "Devise": "Dinar irakien",
+    "Pays": "Irak",
+    "ISO_pays": "IQ"
+}, {
+    "ISO_devise": "IRR",
+    "ISO_num": 364,
+    "Symbol_devise": "Rl.",
+    "Devise": "Rial iranien",
+    "Pays": "Iran",
+    "ISO_pays": "IR"
+}, {
+    "ISO_devise": "ISK",
+    "ISO_num": 352,
+    "Symbol_devise": "kr",
+    "Devise": "Couronne islandaise",
+    "Pays": "Islande",
+    "ISO_pays": "IS"
+}, {
+    "ISO_devise": "JEP",
+    "ISO_num": null,
+    "Symbol_devise": "£",
+    "Devise": "Livre de Jersey",
+    "Pays": "Jersey",
+    "ISO_pays": "JE"
+}, {
+    "ISO_devise": "JMD",
+    "ISO_num": 388,
+    "Symbol_devise": "$",
+    "Devise": "Dollar jamaïcain",
+    "Pays": "Jamaïque",
+    "ISO_pays": "JM"
+}, {
+    "ISO_devise": "JOD",
+    "ISO_num": 400,
+    "Symbol_devise": "JD",
+    "Devise": "Dinar jordanien",
+    "Pays": "Jordanie",
+    "ISO_pays": "JO"
+}, {
+    "ISO_devise": "JPY",
+    "ISO_num": 392,
+    "Symbol_devise": "¥",
+    "Devise": "Yen japonais",
+    "Pays": "Japon",
+    "ISO_pays": "JP"
+}, {
+    "ISO_devise": "KES",
+    "ISO_num": 404,
+    "Symbol_devise": "KSh",
+    "Devise": "Shilling kényan",
+    "Pays": "Kenya",
+    "ISO_pays": "KE"
+}, {
+    "ISO_devise": "KGS",
+    "ISO_num": 417,
+    "Symbol_devise": "K.S.",
+    "Devise": "Som kirghiz",
+    "Pays": "Kirghizistan",
+    "ISO_pays": "KG"
+}, {
+    "ISO_devise": "KHR",
+    "ISO_num": 116,
+    "Symbol_devise": "",
+    "Devise": "Riel cambodgien",
+    "Pays": "Cambodge",
+    "ISO_pays": "KH"
+}, {
+    "ISO_devise": "KMF",
+    "ISO_num": 174,
+    "Symbol_devise": "CF",
+    "Devise": "Franc comorien",
+    "Pays": "Comores",
+    "ISO_pays": "KM"
+}, {
+    "ISO_devise": "KPW",
+    "ISO_num": 408,
+    "Symbol_devise": "₩",
+    "Devise": "Won nord-coréen",
+    "Pays": "Corée du Nord",
+    "ISO_pays": "KP"
+}, {
+    "ISO_devise": "KRW",
+    "ISO_num": 410,
+    "Symbol_devise": "₩",
+    "Devise": "Won sud-coréen",
+    "Pays": "Corée du Sud",
+    "ISO_pays": "KR"
+}, {
+    "ISO_devise": "KWD",
+    "ISO_num": 414,
+    "Symbol_devise": "K.D.",
+    "Devise": "Dinar koweïtien",
+    "Pays": "Koweït",
+    "ISO_pays": "KW"
+}, {
+    "ISO_devise": "KYD",
+    "ISO_num": 136,
+    "Symbol_devise": "CI$",
+    "Devise": "Dollar des îles Caïmans",
+    "Pays": "Îles Caïmans",
+    "ISO_pays": "KY"
+}, {
+    "ISO_devise": "KZT",
+    "ISO_num": 398,
+    "Symbol_devise": "",
+    "Devise": "Tenge kazakh",
+    "Pays": "Kazakhstan",
+    "ISO_pays": "KZ"
+}, {
+    "ISO_devise": "LAK",
+    "ISO_num": 418,
+    "Symbol_devise": "",
+    "Devise": "Kip laotien",
+    "Pays": "Laos",
+    "ISO_pays": "LA"
+}, {
+    "ISO_devise": "LBP",
+    "ISO_num": 422,
+    "Symbol_devise": "L£",
+    "Devise": "Livre libanaise",
+    "Pays": "Liban",
+    "ISO_pays": "LB"
+}, {
+    "ISO_devise": "LKR",
+    "ISO_num": 144,
+    "Symbol_devise": "Rs",
+    "Devise": "Roupie srilankaise",
+    "Pays": "Sri Lanka",
+    "ISO_pays": "LK"
+}, {
+    "ISO_devise": "LRD",
+    "ISO_num": 430,
+    "Symbol_devise": "L$",
+    "Devise": "Dollar libérien",
+    "Pays": "Libéria",
+    "ISO_pays": "LR"
+}, {
+    "ISO_devise": "LSL",
+    "ISO_num": 426,
+    "Symbol_devise": "L",
+    "Devise": "Loti lesothan",
+    "Pays": "Lesotho",
+    "ISO_pays": "LS"
+}, {
+    "ISO_devise": "LYD",
+    "ISO_num": 434,
+    "Symbol_devise": "LD",
+    "Devise": "Dinar libyen",
+    "Pays": "Libye",
+    "ISO_pays": "LY"
+}, {
+    "ISO_devise": "MAD",
+    "ISO_num": 504,
+    "Symbol_devise": "Dh",
+    "Devise": "Dirham marocain",
+    "Pays": "Maroc",
+    "ISO_pays": "MA"
+}, {
+    "ISO_devise": "MDL",
+    "ISO_num": 498,
+    "Symbol_devise": "MDL",
+    "Devise": "Leu moldave",
+    "Pays": "Moldavie",
+    "ISO_pays": "MD"
+}, {
+    "ISO_devise": "MGA",
+    "ISO_num": 969,
+    "Symbol_devise": "Ar",
+    "Devise": "Ariary malgache",
+    "Pays": "Madagascar",
+    "ISO_pays": "MG"
+}, {
+    "ISO_devise": "MKD",
+    "ISO_num": 807,
+    "Symbol_devise": "ден",
+    "Devise": "Denar macédonien",
+    "Pays": "Macédoine",
+    "ISO_pays": "MK"
+}, {
+    "ISO_devise": "MMK",
+    "ISO_num": 104,
+    "Symbol_devise": "K",
+    "Devise": "Kyat",
+    "Pays": "Birmanie",
+    "ISO_pays": "MM"
+}, {
+    "ISO_devise": "MNT",
+    "ISO_num": 496,
+    "Symbol_devise": "",
+    "Devise": "Tugrik mongol",
+    "Pays": "Mongolie",
+    "ISO_pays": "MN"
+}, {
+    "ISO_devise": "MOP",
+    "ISO_num": 446,
+    "Symbol_devise": "MOP$",
+    "Devise": "Pataca de Macao",
+    "Pays": "Organisation des États de la Caraïbe orientale",
+    "ISO_pays": ""
+}, {
+    "ISO_devise": "MRO",
+    "ISO_num": 478,
+    "Symbol_devise": "UM",
+    "Devise": "Ouguiya mauritanien",
+    "Pays": "Mauritanie",
+    "ISO_pays": "MR"
+}, {
+    "ISO_devise": "MUR",
+    "ISO_num": 480,
+    "Symbol_devise": "Rs",
+    "Devise": "Roupie mauricienne",
+    "Pays": "Maurice",
+    "ISO_pays": "MU"
+}, {
+    "ISO_devise": "MVR",
+    "ISO_num": 462,
+    "Symbol_devise": "Rf",
+    "Devise": "Rufiyaa maldivienne",
+    "Pays": "Maldives",
+    "ISO_pays": "MV"
+}, {
+    "ISO_devise": "MWK",
+    "ISO_num": 454,
+    "Symbol_devise": "MK",
+    "Devise": "Kwacha malawien",
+    "Pays": "Malawi",
+    "ISO_pays": "MW"
+}, {
+    "ISO_devise": "MXN",
+    "ISO_num": 484,
+    "Symbol_devise": "Mex$",
+    "Devise": "Peso mexicain",
+    "Pays": "Mexique",
+    "ISO_pays": "MX"
+}, {
+    "ISO_devise": "MXV",
+    "ISO_num": 979,
+    "Symbol_devise": "-",
+    "Devise": "Mexican Unidad de Inversión",
+    "Pays": "Mexique",
+    "ISO_pays": "MX"
+}, {
+    "ISO_devise": "MYR",
+    "ISO_num": 458,
+    "Symbol_devise": "RM",
+    "Devise": "Ringgit malaisien",
+    "Pays": "Malaisie",
+    "ISO_pays": "MY"
+}, {
+    "ISO_devise": "MZN",
+    "ISO_num": 943,
+    "Symbol_devise": "MT",
+    "Devise": "Metical mozambicain",
+    "Pays": "Mozambique",
+    "ISO_pays": "MZ"
+}, {
+    "ISO_devise": "NAD",
+    "ISO_num": 516,
+    "Symbol_devise": "N$",
+    "Devise": "Dollar namibien",
+    "Pays": "Namibie",
+    "ISO_pays": "NA"
+}, {
+    "ISO_devise": "NGN",
+    "ISO_num": 566,
+    "Symbol_devise": "",
+    "Devise": "Naira nigérien",
+    "Pays": "Nigeria",
+    "ISO_pays": "NG"
+}, {
+    "ISO_devise": "NIO",
+    "ISO_num": 558,
+    "Symbol_devise": "C$",
+    "Devise": "Cordoba d'or nicaraguayen",
+    "Pays": "Nicaragua",
+    "ISO_pays": "NI"
+}, {
+    "ISO_devise": "NOK",
+    "ISO_num": 578,
+    "Symbol_devise": "kr",
+    "Devise": "Couronne norvégienne",
+    "Pays": "Norvège",
+    "ISO_pays": "NO"
+}, {
+    "ISO_devise": "NPR",
+    "ISO_num": 524,
+    "Symbol_devise": "Rps",
+    "Devise": "Roupie népalaise",
+    "Pays": "Népal",
+    "ISO_pays": "NP"
+}, {
+    "ISO_devise": "NZD",
+    "ISO_num": 554,
+    "Symbol_devise": "$",
+    "Devise": "Dollar néo-zélandais",
+    "Pays": "Nouvelle Zélande",
+    "ISO_pays": "NZ"
+}, {
+    "ISO_devise": "OMR",
+    "ISO_num": 512,
+    "Symbol_devise": "RO",
+    "Devise": "Rial omanais",
+    "Pays": "Oman",
+    "ISO_pays": "OM"
+}, {
+    "ISO_devise": "PAB",
+    "ISO_num": 590,
+    "Symbol_devise": "B/.",
+    "Devise": "Balboa panaméen",
+    "Pays": "Panama",
+    "ISO_pays": "PA"
+}, {
+    "ISO_devise": "PEN",
+    "ISO_num": 604,
+    "Symbol_devise": "S/.",
+    "Devise": "Sol péruvien",
+    "Pays": "Pérou",
+    "ISO_pays": "PE"
+}, {
+    "ISO_devise": "PGK",
+    "ISO_num": 598,
+    "Symbol_devise": "K",
+    "Devise": "Kina papou-néo-guinéen",
+    "Pays": "Papouasie-Nouvelle-Guinée",
+    "ISO_pays": "PG"
+}, {
+    "ISO_devise": "PHP",
+    "ISO_num": 608,
+    "Symbol_devise": "₱",
+    "Devise": "Peso philippin",
+    "Pays": "Philippines",
+    "ISO_pays": "PH"
+}, {
+    "ISO_devise": "PKR",
+    "ISO_num": 586,
+    "Symbol_devise": "Re.",
+    "Devise": "Roupie pakistanaise",
+    "Pays": "Pakistan",
+    "ISO_pays": "PK"
+}, {
+    "ISO_devise": "PLN",
+    "ISO_num": 985,
+    "Symbol_devise": "zł",
+    "Devise": "Zloty polonais",
+    "Pays": "Pologne",
+    "ISO_pays": "PL"
+}, {
+    "ISO_devise": "PYG",
+    "ISO_num": 600,
+    "Symbol_devise": "₲",
+    "Devise": "Guaraní paraguayen",
+    "Pays": "Paraguay",
+    "ISO_pays": "PY"
+}, {
+    "ISO_devise": "QAR",
+    "ISO_num": 634,
+    "Symbol_devise": "QR",
+    "Devise": "Riyal qatarien",
+    "Pays": "Qatar",
+    "ISO_pays": "QA"
+}, {
+    "ISO_devise": "RON",
+    "ISO_num": 946,
+    "Symbol_devise": "RON",
+    "Devise": "Leu roumain",
+    "Pays": "Roumanie",
+    "ISO_pays": "RO"
+}, {
+    "ISO_devise": "RSD",
+    "ISO_num": 941,
+    "Symbol_devise": "d./д.",
+    "Devise": "Dinar serbe",
+    "Pays": "Serbie",
+    "ISO_pays": "RS"
+}, {
+    "ISO_devise": "RUB",
+    "ISO_num": 643,
+    "Symbol_devise": "",
+    "Devise": "Rouble russe",
+    "Pays": "Russie",
+    "ISO_pays": "RU"
+}, {
+    "ISO_devise": "RWF",
+    "ISO_num": 646,
+    "Symbol_devise": "FRw",
+    "Devise": "Franc rwandais",
+    "Pays": "Rwanda",
+    "ISO_pays": "RW"
+}, {
+    "ISO_devise": "SAR",
+    "ISO_num": 682,
+    "Symbol_devise": "SR",
+    "Devise": "Riyal saoudien",
+    "Pays": "Arabie saoudite",
+    "ISO_pays": "SA"
+}, {
+    "ISO_devise": "SBD",
+    "ISO_num": 90,
+    "Symbol_devise": "SI$",
+    "Devise": "Dollar des Salomon",
+    "Pays": "Iles Salomon",
+    "ISO_pays": "SB"
+}, {
+    "ISO_devise": "SCR",
+    "ISO_num": 690,
+    "Symbol_devise": "SR",
+    "Devise": "Roupie seychelloise",
+    "Pays": "Seychelles",
+    "ISO_pays": "SC"
+}, {
+    "ISO_devise": "SDG",
+    "ISO_num": 938,
+    "Symbol_devise": "-",
+    "Devise": "Livre soudanaise",
+    "Pays": "Soudan",
+    "ISO_pays": "SD"
+}, {
+    "ISO_devise": "SEK",
+    "ISO_num": 752,
+    "Symbol_devise": "kr",
+    "Devise": "Couronne suédoise",
+    "Pays": "Suède",
+    "ISO_pays": "SE"
+}, {
+    "ISO_devise": "SGD",
+    "ISO_num": 702,
+    "Symbol_devise": "S$",
+    "Devise": "Dollar de Singapour",
+    "Pays": "Singapour",
+    "ISO_pays": "SG"
+}, {
+    "ISO_devise": "SHP",
+    "ISO_num": 654,
+    "Symbol_devise": "£",
+    "Devise": "Livre de Sainte-Hélène",
+    "Pays": "Sainte-Hélène",
+    "ISO_pays": "SH"
+}, {
+    "ISO_devise": "SLL",
+    "ISO_num": 694,
+    "Symbol_devise": "Le",
+    "Devise": "Leone sierra-léonais",
+    "Pays": "Sierra Leone",
+    "ISO_pays": "SL"
+}, {
+    "ISO_devise": "SOS",
+    "ISO_num": 706,
+    "Symbol_devise": "Sh.So.",
+    "Devise": "Shilling somalien",
+    "Pays": "Somalie",
+    "ISO_pays": "SO"
+}, {
+    "ISO_devise": "SPL",
+    "ISO_num": null,
+    "Symbol_devise": "-",
+    "Devise": "Luigino de Seborga",
+    "Pays": "Seborga",
+    "ISO_pays": "N/A"
+}, {
+    "ISO_devise": "SRD",
+    "ISO_num": 968,
+    "Symbol_devise": "$",
+    "Devise": "Dollar du Suriname",
+    "Pays": "Surinam",
+    "ISO_pays": "SR"
+}, {
+    "ISO_devise": "SSP",
+    "ISO_num": 728,
+    "Symbol_devise": "SSP",
+    "Devise": "Livre sud-soudanaise",
+    "Pays": "Soudan du Sud",
+    "ISO_pays": "SS"
+}, {
+    "ISO_devise": "STD",
+    "ISO_num": 678,
+    "Symbol_devise": "Db",
+    "Devise": "Dobra santoméen",
+    "Pays": "São Tomé-et-Principe",
+    "ISO_pays": "ST"
+}, {
+    "ISO_devise": "SVC",
+    "ISO_num": 222,
+    "Symbol_devise": "₡",
+    "Devise": "Colon salvadorien",
+    "Pays": "Salvador",
+    "ISO_pays": "SV"
+}, {
+    "ISO_devise": "SYP",
+    "ISO_num": 760,
+    "Symbol_devise": "£S",
+    "Devise": "Livre syrienne",
+    "Pays": "Syrie",
+    "ISO_pays": "SY"
+}, {
+    "ISO_devise": "SZL",
+    "ISO_num": 748,
+    "Symbol_devise": "L",
+    "Devise": "Lilangeni swazilandais",
+    "Pays": "Swaziland",
+    "ISO_pays": "SZ"
+}, {
+    "ISO_devise": "THB",
+    "ISO_num": 764,
+    "Symbol_devise": "฿",
+    "Devise": "Baht thaïlandais",
+    "Pays": "Thaïlande",
+    "ISO_pays": "TH"
+}, {
+    "ISO_devise": "TJS",
+    "ISO_num": 972,
+    "Symbol_devise": "-",
+    "Devise": "Somoni tadjik",
+    "Pays": "Tadjikistan",
+    "ISO_pays": "TJ"
+}, {
+    "ISO_devise": "TMT",
+    "ISO_num": 934,
+    "Symbol_devise": "T",
+    "Devise": "Nouveau manat turkmène",
+    "Pays": "Turkménistan",
+    "ISO_pays": "TM"
+}, {
+    "ISO_devise": "TND",
+    "ISO_num": 788,
+    "Symbol_devise": "DT",
+    "Devise": "Dinar tunisien",
+    "Pays": "Tunisie",
+    "ISO_pays": "TN"
+}, {
+    "ISO_devise": "TOP",
+    "ISO_num": 776,
+    "Symbol_devise": "T$",
+    "Devise": "Pa'anga des Tonga",
+    "Pays": "Tonga",
+    "ISO_pays": "TO"
+}, {
+    "ISO_devise": "TRY",
+    "ISO_num": 949,
+    "Symbol_devise": "₺",
+    "Devise": "Lire turque",
+    "Pays": "Turquie",
+    "ISO_pays": "TR"
+}, {
+    "ISO_devise": "TTD",
+    "ISO_num": 780,
+    "Symbol_devise": "TT$",
+    "Devise": "Dollar de Trinité-et-Tobago",
+    "Pays": "Trinité-et-Tobago",
+    "ISO_pays": "TT"
+}, {
+    "ISO_devise": "TVD",
+    "ISO_num": null,
+    "Symbol_devise": "TV$",
+    "Devise": "Dollar tuvaluan",
+    "Pays": "Tuvalu",
+    "ISO_pays": "TV"
+}, {
+    "ISO_devise": "TWD",
+    "ISO_num": 901,
+    "Symbol_devise": "NT$",
+    "Devise": "Nouveau dollar de Taïwan",
+    "Pays": "Taïwan",
+    "ISO_pays": "TW"
+}, {
+    "ISO_devise": "TZS",
+    "ISO_num": 834,
+    "Symbol_devise": "TSh",
+    "Devise": "Shilling tanzanien",
+    "Pays": "Tanzanie",
+    "ISO_pays": "TZ"
+}, {
+    "ISO_devise": "UAH",
+    "ISO_num": 980,
+    "Symbol_devise": "₴",
+    "Devise": "Hryvnia ukrainienne",
+    "Pays": "Ukraine",
+    "ISO_pays": "UA"
+}, {
+    "ISO_devise": "UGX",
+    "ISO_num": 800,
+    "Symbol_devise": "USh",
+    "Devise": "Shilling ougandais",
+    "Pays": "Ouganda",
+    "ISO_pays": "UG"
+}, {
+    "ISO_devise": "USD",
+    "ISO_num": 840,
+    "Symbol_devise": "$",
+    "Devise": "Dollar américain",
+    "Pays": "Etats-Unis d'Amérique",
+    "ISO_pays": "US"
+}, {
+    "ISO_devise": "UYU",
+    "ISO_num": 858,
+    "Symbol_devise": "$U",
+    "Devise": "Peso uruguayen",
+    "Pays": "Uruguay",
+    "ISO_pays": "UY"
+}, {
+    "ISO_devise": "UZS",
+    "ISO_num": 860,
+    "Symbol_devise": "U.S.",
+    "Devise": "Sum ouzbek",
+    "Pays": "Ouzbékistan",
+    "ISO_pays": "UZ"
+}, {
+    "ISO_devise": "VEF",
+    "ISO_num": 937,
+    "Symbol_devise": "Bs.",
+    "Devise": "Bolivar fuerte vénézuélien",
+    "Pays": "Vénézuéla",
+    "ISO_pays": "VE"
+}, {
+    "ISO_devise": "VND",
+    "ISO_num": 704,
+    "Symbol_devise": "₫",
+    "Devise": "Dong vietnamien",
+    "Pays": "Vietnam",
+    "ISO_pays": "VN"
+}, {
+    "ISO_devise": "VUV",
+    "ISO_num": 548,
+    "Symbol_devise": "VT",
+    "Devise": "Vatu du Vanuatu",
+    "Pays": "Vanuatu",
+    "ISO_pays": "VU"
+}, {
+    "ISO_devise": "WST",
+    "ISO_num": 882,
+    "Symbol_devise": "WS$",
+    "Devise": "Tala samoan",
+    "Pays": "Samoa",
+    "ISO_pays": "WS"
+}, {
+    "ISO_devise": "XAF",
+    "ISO_num": 950,
+    "Symbol_devise": "FCFA",
+    "Devise": "Franc CFA (CEMAC)",
+    "Pays": "Communauté Financière Africaine BEAC",
+    "ISO_pays": "N/A"
+}, {
+    "ISO_devise": "XAG",
+    "ISO_num": 961,
+    "Symbol_devise": "Ag",
+    "Devise": "Argent",
+    "Pays": "Non applicable",
+    "ISO_pays": "N/A"
+}, {
+    "ISO_devise": "XAU",
+    "ISO_num": 959,
+    "Symbol_devise": "Au",
+    "Devise": "Or",
+    "Pays": "Non applicable",
+    "ISO_pays": "N/A"
+}, {
+    "ISO_devise": "XBT",
+    "ISO_num": null,
+    "Symbol_devise": "BTC",
+    "Devise": "Bitcoin",
+    "Pays": "Non applicable",
+    "ISO_pays": "N/A"
+}, {
+    "ISO_devise": "XCD",
+    "ISO_num": 951,
+    "Symbol_devise": "$",
+    "Devise": "Dollar des Caraïbes orientales",
+    "Pays": "Organisation des États de la Caraïbe orientale",
+    "ISO_pays": ""
+}, {
+    "ISO_devise": "XDR",
+    "ISO_num": 960,
+    "Symbol_devise": "-",
+    "Devise": "Droit de Tirage Spécial",
+    "Pays": "Fonds Monétaire International",
+    "ISO_pays": "N/A"
+}, {
+    "ISO_devise": "XOF",
+    "ISO_num": 952,
+    "Symbol_devise": "F",
+    "Devise": "Franc CFA (UEMOA)",
+    "Pays": "Communauté Financière Africaine BCEAO",
+    "ISO_pays": "N/A"
+}, {
+    "ISO_devise": "XPD",
+    "ISO_num": 964,
+    "Symbol_devise": "Pd",
+    "Devise": "Palladium",
+    "Pays": "Non applicable",
+    "ISO_pays": "N/A"
+}, {
+    "ISO_devise": "XPF",
+    "ISO_num": 953,
+    "Symbol_devise": "F",
+    "Devise": "Franc CFP",
+    "Pays": "Comptoirs Français du Pacifique",
+    "ISO_pays": "N/A"
+}, {
+    "ISO_devise": "XPT",
+    "ISO_num": null,
+    "Symbol_devise": "PT",
+    "Devise": "Platine",
+    "Pays": "Non applicable",
+    "ISO_pays": "N/A"
+}, {
+    "ISO_devise": "YER",
+    "ISO_num": 886,
+    "Symbol_devise": "Rl",
+    "Devise": "Riyal yéménite",
+    "Pays": "Yémen",
+    "ISO_pays": "YE"
+}, {
+    "ISO_devise": "ZAR",
+    "ISO_num": 710,
+    "Symbol_devise": "R",
+    "Devise": "Rand sud-africain",
+    "Pays": "Afrique du Sud",
+    "ISO_pays": "ZA"
+}, {
+    "ISO_devise": "ZMW",
+    "ISO_num": 967,
+    "Symbol_devise": "K",
+    "Devise": "Kwacha zambien",
+    "Pays": "Zambie",
+    "ISO_pays": "ZM"
+}]

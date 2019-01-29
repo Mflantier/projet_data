@@ -42,12 +42,23 @@ function afficheListe(tab) {
     let idcolonne;
     for (let i = 0; i < tab.length; i++) {
         let newP = document.createElement("p");
+        let svg = document.createElement("img");
+        let content = document.createElement("div");
+
+        svg.classList.add("miniFlag");
+        svg.setAttribute("src", tab[i][2]);
+        svg.setAttribute("width","30");
+        svg.setAttribute("height","20");
+
         newP.innerHTML = tab[i][0] + " - " + tab[i][4];
-        newP.classList.add("liste-pays",  "text-center","text-lg-left");
+        newP.classList.add("liste-pays", "text-center", "text-lg-left", "pl-2", "m-0");
         newP.setAttribute('data-toggle', 'modal');
         newP.setAttribute('data-target', '#choix');
         newP.id = tab[i][1];
 
+        content.classList.add("d-flex", "align-items-top", "pb-4");
+        content.appendChild(svg);
+        content.appendChild(newP);
         if (z === 0) {
             let div = document.createElement('div');
             div.classList.add("col-lg-3");
@@ -56,7 +67,7 @@ function afficheListe(tab) {
             idcolonne = 'colonne-' + h;
         }
         let theColonne = document.querySelector('#' + idcolonne);
-        theColonne.appendChild(newP);
+        theColonne.appendChild(content);
         if (z === Math.floor((tab.length) / 4)) {
             z = 0;
             h++;

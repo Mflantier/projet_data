@@ -89,7 +89,7 @@ function afficheListe(tab) {
         svg.setAttribute("height","20");
 
         newP.innerHTML = tab[i][0];
-        newP.classList.add("liste-pays", "text-center","text-lg-left", "pl-2", "m-0");
+        newP.classList.add("liste-pays", "text-center", "text-lg-left", "pl-2", "m-0");
         newP.setAttribute('data-toggle', 'modal');
         newP.setAttribute('data-target', '#choix');
         newP.id = tab[i][1];

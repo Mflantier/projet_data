@@ -109,8 +109,9 @@ export default function affichageLightBox(tab) {
                     if (res[i]["Alpha3b_Code"] === iso) {
                         document.getElementById("valueLangue").innerText = res[i]["French_Name"].charAt(0).toUpperCase() + res[i]["French_Name"].slice(1);
                         return;
+                    } else {
+                        
                     }
-                    else {}
                 }
                 
             })

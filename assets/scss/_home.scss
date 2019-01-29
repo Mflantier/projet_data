@@ -403,6 +403,33 @@ body {
         background-attachment: fixed;
         background-size: cover;
         min-height: 80vh;
+        #appli{
+            padding: auto 0;
+
+            #selectContinent{
+
+                div{
+
+                    .miniFlag{
+                        margin: 7px 0px;
+                        width: 11%;
+                        height: 20px;
+                        @media (min-width: 768px) and (max-width: 991px) {
+                            margin: 13px 0px;
+                        }
+                        
+                        @media (min-width: 576px) and (max-width: 767px) {
+                            margin: 13px 0px;
+                        }
+
+                        @media (max-width: 575px) {
+                            margin: 7px 0px;
+                        }
+
+                    }
+                }
+            }
+        }
     }
     .map {
         // width: 80vw;

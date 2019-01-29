@@ -23,30 +23,3 @@ monMenu.addEventListener("click", function(event){
      }
     
 })
-
-//change hambuger menu color on red when i'm on section-appli
-var fullScreen = $(window).height();  
-$(document).ready(function(){
-   $(window).scroll(function(){
-      var scroll = $(window).scrollTop();
-      if (scroll > fullScreen) {
-        $(".btn-menu").css("backgroundColor" , "#a70000fa");
-      }
-      else{
-         $(".btn-menu").css("backgroundColor" , "white");  	
-      }
-   })
- })
-
- window.onresize = function(event) {
-   $(window).scroll(function(){
-      var scroll = $(window).scrollTop();
-      if (scroll > fullScreen) {
-        $(".btn-menu").css("backgroundColor" , "#a70000fa");
-      }
-      else{
-         $(".btn-menu").css("backgroundColor" , "white");  	
-      }
-   })
-};
- 

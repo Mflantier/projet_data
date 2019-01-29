@@ -418,6 +418,47 @@ body {
         background-position: center;
         background-size: cover;
         min-height: 100vh;
+        position: relative;
+    }
+    .infos{
+        position: absolute;
+        top: 14%;
+        right: 10%;
+
+            i{
+            font-size: 2.7rem;
+            color: white;
+            }
+
+        .show-info{
+            color: white;
+            animation: p-infos 5s cubic-bezier(0.5, 0, 0.5, 1)forwards;
+        }
+        @keyframes p-infos {
+            0%{
+                opacity: 0;
+                transform: translateX(60vh);
+            }
+            16%{
+                opacity: 1;
+                transform: translateX(0vh);
+            }
+            84%{
+                opacity: 1;
+                transform: translateX(0vh);
+            }
+            95%{
+                opacity: 0;
+                transform: translateX(30vh);
+            }
+            100%{
+                opacity: 0;
+                transform: translateX(60vh);
+            }
+        }
+        .t-info{
+            color: transparent;
+        }
     }
     .map {
         padding-top: 5vh;
@@ -427,42 +468,6 @@ body {
         position: relative;
         @media (max-width: 768px) { 
             display: none !important;
-        }
-        .infos{
-            position: absolute;
-            top: 14%;
-            right: 10%;
-
-                i{
-                font-size: 2.7rem;
-                color: white;
-                }
-
-            .show-info{
-                color: white;
-                animation: p-infos 5s cubic-bezier(0.5, 0, 0.5, 1)forwards;
-            }
-            @keyframes p-infos {
-                0%{
-                    opacity: 0;
-                    transform: translateX(60vh);
-                }
-                25%{
-                    opacity: 1;
-                    transform: translateX(0vh);
-                }
-                90%{
-                    opacity: 1;
-                    transform: translateX(0vh);
-                }
-                100%{
-                    opacity: 0;
-                    transform: translateX(60vh);
-                }
-            }
-            .t-info{
-                color: transparent;
-            }
         }
         .map__image {
             width: 70%;

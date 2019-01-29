@@ -98,7 +98,7 @@ $(document).ready(function(){
     console.log("load");
     setTimeout(function(){
        document.querySelector(".show-info").classList.replace("show-info","t-info");
-    }, 5000)
+    }, 6000)
    
  })
  

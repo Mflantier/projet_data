@@ -89,9 +89,9 @@ export default function affichageLightBox(tab) {
                     let rightContent = document.createElement("div");
                     let bottomContent = document.createElement("div");
                     bottomContent.classList.add("row", "w-100");
-                    topContent.classList.add("w-100","p-2", "d-flex", "justify-content-center");
-                    leftContent.classList.add("col-12", "col-sm-12", "col-md-12", "col-lg-6", "col-xl-6");
-                    rightContent.classList.add("col-12", "col-sm-12", "col-md-12", "col-lg-6", "col-xl-6");
+                    topContent.classList.add("w-100","p-2", "pb-4", "d-flex", "justify-content-center");
+                    leftContent.classList.add("col-12", "col-sm-12", "col-md-12", "col-lg-7", "col-xl-6");
+                    rightContent.classList.add("col-12", "col-sm-12", "col-md-12", "col-lg-5", "col-xl-6");
 
                     topContent.appendChild(drapeau);
                     leftContent.appendChild(capitale);
@@ -119,8 +119,8 @@ export default function affichageLightBox(tab) {
 
                     nom.textContent = tab[p][0];
                     drapeau.setAttribute("src", tab[p][2]);
-                    drapeau.setAttribute("width", "80%");
-                    drapeau.setAttribute("height", "50%");
+                    drapeau.setAttribute("width", "100%");
+                    drapeau.setAttribute("height", "75%");
                     drapeau.setAttribute("align", "center");
                     choice.appendChild(drapeau);
                 }

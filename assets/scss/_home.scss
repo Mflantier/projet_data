@@ -452,14 +452,18 @@ body {
 
                         @media (min-width: 768px) and (max-width: 991px) {
                             margin: 13px 0px;
+                            height: 50px;
+
                         }
 
                         @media (min-width: 576px) and (max-width: 767px) {
                             margin: 13px 0px;
+                            height: 40px;
                         }
 
                         @media (max-width: 575px) {
                             margin: 7px 0px;
+                            height: 35px;
                         }
 
                     }

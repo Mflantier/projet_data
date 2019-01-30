@@ -47,8 +47,11 @@ export default function affichageLightBox(tab) {
                     population.innerHTML = '<strong>Population : </strong>' + tab[p][5];
                     superficie.innerHTML = '<strong>Superficie : </strong>' + tab[p][6] + ' km<sup>2</sup>';
 
-                    langue.innerHTML = '<strong>Langue : </strong><span id="valueLangue"></span> ';
-
+                    if ("valueLangue" == "") {
+                        langue.innerHTML = '<strong>Langue : </strong>' + tab[p][7];
+                    } else {
+                        langue.innerHTML = '<strong>Langue : </strong><span id="valueLangue"></span> ';
+                    }
                     devise.innerHTML = '<strong>Devise : </strong><span id="valueDevise"></span> ';
                     voisins.innerHTML = '<strong>Pays voisins : </strong>';
 
@@ -67,14 +70,23 @@ export default function affichageLightBox(tab) {
                                 })
                         }
                     }
+
+                    let leftContent = document.createElement("div");
+                    let rightContent = document.createElement("div");
+                    leftContent.classList.add("w-50");
+                    rightContent.classList.add("w-50");
+
                     choice.appendChild(drapeau);
-                    choice.appendChild(continent);
-                    choice.appendChild(capitale);
-                    choice.appendChild(population);
-                    choice.appendChild(superficie);
-                    choice.appendChild(langue);
-                    choice.appendChild(devise);
-                    choice.appendChild(voisins);
+                    leftContent.appendChild(capitale);
+                    leftContent.appendChild(population);
+                    leftContent.appendChild(superficie);
+                    leftContent.appendChild(langue);
+                    leftContent.appendChild(devise);
+                    rightContent.appendChild(continent);
+                    rightContent.appendChild(voisins);
+                    choice.appendChild(leftContent);
+                    choice.appendChild(rightContent);
+
                 }
             }
         } else if (e.target.classList.contains("imagelb")) {
@@ -88,7 +100,7 @@ export default function affichageLightBox(tab) {
 
                     nom.textContent = tab[p][0];
                     drapeau.setAttribute("src", tab[p][2]);
-                        drapeau.setAttribute("width", "80%");
+                    drapeau.setAttribute("width", "80%");
                     drapeau.setAttribute("height", "50%");
                     drapeau.setAttribute("align", "center");
                     choice.appendChild(drapeau);
@@ -132,6 +144,8 @@ export default function affichageLightBox(tab) {
                         console.log(res[i]["ISO_devise"]);
                         document.getElementById("valueDevise").innerText = res[i]["Devise"].charAt(0).toUpperCase() + res[i]["Devise"].slice(1);
                         return;
+                    } else {
+                        
                     }
                 }
             })

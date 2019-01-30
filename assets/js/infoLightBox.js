@@ -44,7 +44,7 @@ export default function affichageLightBox(tab) {
 
                     continent.innerHTML = '<strong>Continent : </strong>' + region;
                     capitale.innerHTML = '<strong>Capitale : </strong>' + tab[p][4];
-                    population.innerHTML = '<strong>Population : </strong>' + tab[p][5];
+                    population.innerHTML = '<strong>Population : </strong>' + tab[p][5]+ ' habitants';
                     superficie.innerHTML = '<strong>Superficie : </strong>' + tab[p][6] + ' km<sup>2</sup>';
 
                     langue.innerHTML = '<strong>Langue : </strong><span id="valueLangue"></span> ';

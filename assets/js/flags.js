@@ -13,14 +13,14 @@ function leFetch(callBack) {
         .then((res) => {
 
             for (let i = 0; i < res.length; i++) {
-                    let population;
+                let population;
                 if (typeof (res[i]['population']) == "number") {
                     population = res[i]['population'];
                     population = population.toLocaleString('fr-FR');
                 } else {
                     population = res[i]['population'];
                 }
-                let area; 
+                let area;
                 if (typeof (res[i]['area']) == "number") {
                     area = res[i]['area'];
                     area = area.toLocaleString('fr-FR');

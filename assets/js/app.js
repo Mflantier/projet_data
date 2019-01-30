@@ -95,7 +95,6 @@ const showInfo = document.querySelector(".show-info");
 
 $(document).ready(function(){
     document.querySelector(".t-info").classList.replace("t-info", "show-info");
-    console.log("load");
     setTimeout(function(){
        document.querySelector(".show-info").classList.replace("show-info","t-info");
     }, 6000)

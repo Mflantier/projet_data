@@ -71,12 +71,14 @@ export default function affichageLightBox(tab) {
                         }
                     }
 
+                    let topContent = document.createElement("div");
                     let leftContent = document.createElement("div");
                     let rightContent = document.createElement("div");
+                    topContent.classList.add("w-100", "d-flex", "justify-content-center");
                     leftContent.classList.add("w-50");
                     rightContent.classList.add("w-50");
 
-                    choice.appendChild(drapeau);
+                    topContent.appendChild(drapeau);
                     leftContent.appendChild(capitale);
                     leftContent.appendChild(population);
                     leftContent.appendChild(superficie);
@@ -84,6 +86,7 @@ export default function affichageLightBox(tab) {
                     leftContent.appendChild(devise);
                     rightContent.appendChild(continent);
                     rightContent.appendChild(voisins);
+                    choice.appendChild(topContent);
                     choice.appendChild(leftContent);
                     choice.appendChild(rightContent);
 
@@ -141,7 +144,6 @@ export default function affichageLightBox(tab) {
                 for (i = 0; i < res.length; i++) {
 
                     if (res[i]["ISO_devise"] === currency) {
-                        console.log(res[i]["ISO_devise"]);
                         document.getElementById("valueDevise").innerText = res[i]["Devise"].charAt(0).toUpperCase() + res[i]["Devise"].slice(1);
                         return;
                     } else {
@@ -166,7 +168,6 @@ export default function affichageLightBox(tab) {
                     for (i = 0; i < res.length; i++) {
 
                         if (res[i]["ISO_devise"] === currency) {
-                            console.log(res[i]["ISO_devise"]);
                             document.getElementById("valueDevise").innerText = res[i]["Devise"].charAt(0).toUpperCase() + res[i]["Devise"].slice(1);
                             return;
                         }

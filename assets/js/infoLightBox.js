@@ -73,9 +73,11 @@ export default function affichageLightBox(tab) {
                     let topContent = document.createElement("div");
                     let leftContent = document.createElement("div");
                     let rightContent = document.createElement("div");
+                    let bottomContent = document.createElement("div");
+                    bottomContent.classList.add("row", "w-100");
                     topContent.classList.add("w-100","p-2", "d-flex", "justify-content-center");
-                    leftContent.classList.add("w-50");
-                    rightContent.classList.add("w-50");
+                    leftContent.classList.add("col-6");
+                    rightContent.classList.add("col-6");
 
                     topContent.appendChild(drapeau);
                     leftContent.appendChild(capitale);
@@ -85,9 +87,10 @@ export default function affichageLightBox(tab) {
                     leftContent.appendChild(devise);
                     rightContent.appendChild(continent);
                     rightContent.appendChild(voisins);
+                    bottomContent.appendChild(leftContent);
+                    bottomContent.appendChild(rightContent);
                     choice.appendChild(topContent);
-                    choice.appendChild(leftContent);
-                    choice.appendChild(rightContent);
+                    choice.appendChild(bottomContent);
 
                 }
             }

@@ -13,10 +13,22 @@ function leFetch(callBack) {
         .then((res) => {
 
             for (let i = 0; i < res.length; i++) {
-                if (res[i]['alpha3Code'].toLowerCase() === "kos") {
-                    tableau.push('Kosovo', res[i]['alpha3Code'].toLowerCase(), res[i]['flag'], res[i]['region'], res[i]['capital'], res[i]['population'], res[i]['area'], res[i]['languages'][0]['name'], res[i]['currencies'][0]['code'], res[i]['borders'], res[i]['languages'][0]['iso639_2']);
+                if (typeof (res[i]['population']) == "number") {
+                    let population = res[i]['population'];
+                    population = population.toLocaleString('fr-FR');
                 } else {
-                    tableau.push(res[i]['translations']['fr'], res[i]['alpha3Code'].toLowerCase(), res[i]['flag'], res[i]['region'], res[i]['capital'], res[i]['population'], res[i]['area'], res[i]['languages'][0]['name'], res[i]['currencies'][0]['code'], res[i]['borders'], res[i]['languages'][0]['iso639_2']);
+                    let population = res[i]['population'];
+                }
+                if (typeof (res[i]['area']) == "number") {
+                    let area = res[i]['area'];
+                    area = area.toLocaleString('fr-FR');
+                } else {
+                    let area = res[i]['area'];
+                }
+                if (res[i]['alpha3Code'].toLowerCase() === "kos") {
+                    tableau.push('Kosovo', res[i]['alpha3Code'].toLowerCase(), res[i]['flag'], res[i]['region'], res[i]['capital'], population, area, res[i]['languages'][0]['name'], res[i]['currencies'][0]['code'], res[i]['borders'], res[i]['languages'][0]['iso639_2']);
+                } else {
+                    tableau.push(res[i]['translations']['fr'], res[i]['alpha3Code'].toLowerCase(), res[i]['flag'], res[i]['region'], res[i]['capital'], population, area, res[i]['languages'][0]['name'], res[i]['currencies'][0]['code'], res[i]['borders'], res[i]['languages'][0]['iso639_2']);
                 }
                 newAPI.push(tableau);
                 tableau = [];
@@ -59,7 +71,7 @@ function afficheListe(tab) {
 
         newP.innerHTML = tab[i][0];
         newP.id = tab[i][1];
-        newP.classList.add("liste-pays", "text-center","text-lg-left", "m-0");
+        newP.classList.add("liste-pays", "text-center", "text-lg-left", "m-0");
         newP.setAttribute('data-toggle', 'modal');
         newP.setAttribute('data-target', '#choix');
 

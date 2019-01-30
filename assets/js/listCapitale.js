@@ -12,10 +12,24 @@ function leFetch(callBack) {
         })
         .then((res) => {
             for (i = 0; i < res.length; i++) {
-                if (res[i]['alpha3Code'].toLowerCase() === "kos") {
-                    tableau.push('Kosovo', res[i]['alpha3Code'].toLowerCase(), res[i]['flag'], res[i]['region'], res[i]['capital'], res[i]['population'], res[i]['area'], res[i]['languages'][0]['nativeName'], res[i]['currencies'][0]['code'], res[i]['borders'], res[i]['languages'][0]['iso639_2']);
+                let population;
+                if (typeof (res[i]['population']) == "number") {
+                    population = res[i]['population'];
+                    population = population.toLocaleString('fr-FR');
                 } else {
-                    tableau.push(res[i]['translations']['fr'], res[i]['alpha3Code'].toLowerCase(), res[i]['flag'], res[i]['region'], res[i]['capital'], res[i]['population'], res[i]['area'], res[i]['languages'][0]['nativeName'], res[i]['currencies'][0]['code'], res[i]['borders'], res[i]['languages'][0]['iso639_2']);
+                    population = res[i]['population'];
+                }
+                let area;
+                if (typeof (res[i]['area']) == "number") {
+                    area = res[i]['area'];
+                    area = area.toLocaleString('fr-FR');
+                } else {
+                    area = res[i]['area'];
+                }
+                if (res[i]['alpha3Code'].toLowerCase() === "kos") {
+                    tableau.push('Kosovo', res[i]['alpha3Code'].toLowerCase(), res[i]['flag'], res[i]['region'], res[i]['capital'], population, area, res[i]['languages'][0]['nativeName'], res[i]['currencies'][0]['code'], res[i]['borders'], res[i]['languages'][0]['iso639_2']);
+                } else {
+                    tableau.push(res[i]['translations']['fr'], res[i]['alpha3Code'].toLowerCase(), res[i]['flag'], res[i]['region'], res[i]['capital'], population, area, res[i]['languages'][0]['nativeName'], res[i]['currencies'][0]['code'], res[i]['borders'], res[i]['languages'][0]['iso639_2']);
                 }
                 newAPI.push(tableau);
                 tableau = [];

@@ -8,9 +8,23 @@ export default function affichageLightBox(tab) {
             let aCode = e.target.id;
 
             for (let p = 0; p < tab.length; p++) {
+                let area;
+                if (typeof (tab[p][6]) == "number") {
+                    area = tab[p][6];
+                    area = area.toLocaleString('fr-FR');
+                } else {
+                    area = tab[p][6];
+                }
+                let population;
+                if (typeof (tab[p][5]) == "number") {
+                    population = tab[p][5];
+                    population = population.toLocaleString('fr-FR');
+                } else {
+                    population = tab[p][5];
+                }
                 let region = tab[p][3];
                 if (aCode == tab[p][1]) {
-                    
+
                     devises(tab[p][8]);
                     langues(tab[p][10]);
                     while (choice.firstChild) {
@@ -44,8 +58,8 @@ export default function affichageLightBox(tab) {
 
                     continent.innerHTML = '<strong>Continent : </strong>' + region;
                     capitale.innerHTML = '<strong>Capitale : </strong>' + tab[p][4];
-                    population.innerHTML = '<strong>Population : </strong>' + tab[p][5]+ ' habitants';
-                    superficie.innerHTML = '<strong>Superficie : </strong>' + tab[p][6] + ' km<sup>2</sup>';
+                    population.innerHTML = '<strong>Population : </strong>' + tab[p][5] + ' habitants';
+                    superficie.innerHTML = '<strong>Superficie : </strong>' + area + ' km<sup>2</sup>';
 
                     langue.innerHTML = '<strong>Langue : </strong><span id="valueLangue"></span> ';
 

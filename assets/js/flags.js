@@ -13,12 +13,24 @@ function leFetch(callBack) {
         .then((res) => {
 
             for (let i = 0; i < res.length; i++) {
-                if (res[i]['alpha3Code'].toLowerCase() === "kos") {
-                    tableau.push('Kosovo', res[i]['alpha3Code'].toLowerCase(), res[i]['flag'], res[i]['region'], res[i]['capital'], res[i]['population'], res[i]['area'], res[i]['languages'][0]['name'], res[i]['currencies'][0]['code'], res[i]['borders'], res[i]['languages'][0]['iso639_2']);
+                if (typeof (res[i]['population']) == "number") {
+                    let population = res[i]['population'];
+                    population = population.toLocaleString('fr-FR');
                 } else {
-                    tableau.push(res[i]['translations']['fr'], res[i]['alpha3Code'].toLowerCase(), res[i]['flag'], res[i]['region'], res[i]['capital'], res[i]['population'], res[i]['area'], res[i]['languages'][0]['name'], res[i]['currencies'][0]['code'], res[i]['borders'], res[i]['languages'][0]['iso639_2']);
+                    let population = res[i]['population'];
                 }
-            
+                if (typeof (res[i]['area']) == "number") {
+                    let area = res[i]['area'];
+                    area = area.toLocaleString('fr-FR');
+                } else {
+                    let area = res[i]['area'];
+                }
+                if (res[i]['alpha3Code'].toLowerCase() === "kos") {
+                    tableau.push('Kosovo', res[i]['alpha3Code'].toLowerCase(), res[i]['flag'], res[i]['region'], res[i]['capital'], population, area, res[i]['languages'][0]['name'], res[i]['currencies'][0]['code'], res[i]['borders'], res[i]['languages'][0]['iso639_2']);
+                } else {
+                    tableau.push(res[i]['translations']['fr'], res[i]['alpha3Code'].toLowerCase(), res[i]['flag'], res[i]['region'], res[i]['capital'], population, area, res[i]['languages'][0]['name'], res[i]['currencies'][0]['code'], res[i]['borders'], res[i]['languages'][0]['iso639_2']);
+                }
+
                 newAPI.push(tableau);
                 tableau = [];
             };
@@ -69,7 +81,7 @@ function leFetch(callBack) {
 //                     let devise = document.createElement("p");
 //                     let voisins = document.createElement("ul");
 //                     voisins.classList.add("p-0");
-                    
+
 //                     nom.textContent = tab[p][0];
 //                     drapeau.innerHTML = '<img src="' + tab[p][2] + '" width="150" height="100">';
 //                     continent.innerHTML = '<strong>Continent :  </strong>' + region;
@@ -106,12 +118,12 @@ function leFetch(callBack) {
 //                 }
 //             }
 //         } else if (e.target.classList.contains("imagelb")) {
-    //             let aCode = e.target.id;
+//             let aCode = e.target.id;
 
 //             for (p = 0; p < tab.length; p++) {
 //                 if (aCode == tab[p][1]) {
-    //                     while (choice.firstChild) {
-        //                         choice.removeChild(choice.firstChild);
+//                     while (choice.firstChild) {
+//                         choice.removeChild(choice.firstChild);
 //                     }
 //                     let drapeau = document.createElement("img");
 
@@ -153,7 +165,7 @@ function afficheListe(tab) {
 
         newP.innerHTML = tab[i][0];
         newP.id = tab[i][1];
-        newP.classList.add("liste-pays", "text-center","text-lg-left", "m-0");
+        newP.classList.add("liste-pays", "text-center", "text-lg-left", "m-0");
         newP.setAttribute('data-toggle', 'modal');
         newP.setAttribute('data-target', '#choix');
 
@@ -191,15 +203,15 @@ function afficheListe(tab) {
 //         .then((res) => {
 //             return res.json();
 //         })
-       
+
 //         .then((res) => {
 //             for (i = 0; i < res.length; i++) {
-               
+
 //                 if (res[i]["Alpha3b_Code"] === iso) {
 //                     console.log(res[i]["Alpha3b_Code"]);
 //                     document.getElementById("valueLangue").innerText = res[i]["French_Name"].charAt(0).toUpperCase() + res[i]["French_Name"].slice(1);
 //                     return;
-                   
+
 //                 }
 //             }
 //         })
@@ -215,9 +227,9 @@ function afficheListe(tab) {
 //             return res.json();
 //         })
 //         .then((res) => {
-           
+
 //             for (i = 0; i < res.length; i++) {
-              
+
 //                 if (res[i]["ISO_devise"] === currency) {
 //                     console.log(res[i]["ISO_devise"]);
 //                     document.getElementById("valueDevise").innerText = res[i]["Devise"].charAt(0).toUpperCase() + res[i]["Devise"].slice(1);

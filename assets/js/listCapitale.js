@@ -12,10 +12,24 @@ function leFetch(callBack) {
         })
         .then((res) => {
             for (i = 0; i < res.length; i++) {
-                if (res[i]['alpha3Code'].toLowerCase() === "kos") {
-                    tableau.push('Kosovo', res[i]['alpha3Code'].toLowerCase(), res[i]['flag'], res[i]['region'], res[i]['capital'], res[i]['population'], res[i]['area'], res[i]['languages'][0]['nativeName'], res[i]['currencies'][0]['code'], res[i]['borders'], res[i]['languages'][0]['iso639_2']);
+                let population;
+                if (typeof (res[i]['population']) == "number") {
+                    population = res[i]['population'];
+                    population = population.toLocaleString('fr-FR');
                 } else {
-                    tableau.push(res[i]['translations']['fr'], res[i]['alpha3Code'].toLowerCase(), res[i]['flag'], res[i]['region'], res[i]['capital'], res[i]['population'], res[i]['area'], res[i]['languages'][0]['nativeName'], res[i]['currencies'][0]['code'], res[i]['borders'], res[i]['languages'][0]['iso639_2']);
+                    population = res[i]['population'];
+                }
+                let area;
+                if (typeof (res[i]['area']) == "number") {
+                    area = res[i]['area'];
+                    area = area.toLocaleString('fr-FR');
+                } else {
+                    area = res[i]['area'];
+                }
+                if (res[i]['alpha3Code'].toLowerCase() === "kos") {
+                    tableau.push('Kosovo', res[i]['alpha3Code'].toLowerCase(), res[i]['flag'], res[i]['region'], res[i]['capital'], population, area, res[i]['languages'][0]['nativeName'], res[i]['currencies'][0]['code'], res[i]['borders'], res[i]['languages'][0]['iso639_2']);
+                } else {
+                    tableau.push(res[i]['translations']['fr'], res[i]['alpha3Code'].toLowerCase(), res[i]['flag'], res[i]['region'], res[i]['capital'], population, area, res[i]['languages'][0]['nativeName'], res[i]['currencies'][0]['code'], res[i]['borders'], res[i]['languages'][0]['iso639_2']);
                 }
                 newAPI.push(tableau);
                 tableau = [];
@@ -43,7 +57,7 @@ function afficheListe(tab) {
     for (let i = 0; i < tab.length; i++) {
         let newP = document.createElement("p");
         newP.innerHTML = tab[i][0] + " - " + tab[i][4];
-        newP.classList.add("liste-pays",  "text-center","text-lg-left");
+        newP.classList.add("liste-pays", "text-center", "text-lg-left");
         newP.setAttribute('data-toggle', 'modal');
         newP.setAttribute('data-target', '#choix');
         newP.id = tab[i][1];
@@ -77,8 +91,8 @@ function langues(iso) {
                 if (res[i]["Alpha3b_Code"] === iso) {
                     document.getElementById("valueLangue").innerText = res[i]["French_Name"].charAt(0).toUpperCase() + res[i]["French_Name"].slice(1);
                 } else if (res[i]["Alpha3t_Code"] === iso) {
-                document.getElementById("valueLangue").innerText = res[i]["French_Name"].charAt(0).toUpperCase() + res[i]["French_Name"].slice(1);
-                return;
+                    document.getElementById("valueLangue").innerText = res[i]["French_Name"].charAt(0).toUpperCase() + res[i]["French_Name"].slice(1);
+                    return;
                 }
             }
         })
@@ -88,15 +102,16 @@ function langues(iso) {
             };
         });
 }
+
 function devises(currency) {
     fetch('/devises')
         .then((res) => {
             return res.json();
         })
         .then((res) => {
-           
+
             for (i = 0; i < res.length; i++) {
-              
+
                 if (res[i]["ISO_devise"] === currency) {
                     console.log(res[i]["ISO_devise"]);
                     document.getElementById("valueDevise").innerText = res[i]["Devise"].charAt(0).toUpperCase() + res[i]["Devise"].slice(1);
@@ -104,7 +119,7 @@ function devises(currency) {
                 }
             }
         })
-               .catch((err) => {
+        .catch((err) => {
             if (err) {
                 console.log(err);
             };

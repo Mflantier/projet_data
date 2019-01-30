@@ -74,7 +74,7 @@ export default function affichageLightBox(tab) {
                     let topContent = document.createElement("div");
                     let leftContent = document.createElement("div");
                     let rightContent = document.createElement("div");
-                    topContent.classList.add("w-100", "d-flex", "justify-content-center");
+                    topContent.classList.add("w-100","p-2", "d-flex", "justify-content-center");
                     leftContent.classList.add("w-50");
                     rightContent.classList.add("w-50");
 

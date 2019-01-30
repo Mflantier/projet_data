@@ -1,10 +1,30 @@
 {% extends 'base.html.twig' %}
 
 {% block text %}Obtenez les informations sur le pays de votre choix en cliquant dessus{% endblock %}
+
 {% block body %}
-
+<div class="modal fade fichePays" id="choix" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+                aria-hidden="true">
+<div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+                <div class="modal-header d-flex flex-column justify-content-center align-items-center">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true"><a href="#appli">&times;</a></span>
+                        </button>
+                        <h5 class="modal-title text-center" id="exampleModalCenterTitle"></h5>
+                </div>
+                <div class="modal-body d-flex flex-wrap justify-content-center">
+                        <div class ="infos"></div>
+                        <div class="voisins"></div>
+                </div>
+                <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal"> <a href="#appli">Fermer</a></button>
+                </div>
+        </div>
+</div>
+</div>
 {# <h1>{{ title }}</h1> #}
-
+        <a href="#top-of-doc" class="top"><i class="fas fa-sort-up"></i></a>
        <header class="d-flex flex-column justify-content-around align-items-center" id="top-of-doc">
                 {# <span class="hamburger">
                         <div></div>

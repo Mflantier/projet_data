@@ -2,9 +2,28 @@
 
 {% block text %}Obtenez les informations sur le pays de votre choix en cliquant dessus{% endblock %}
 {% block body %}
-
-
-<div class="bgh2 d-flex flex-column justify-content-center align-items-center" id="top-of-doc">
+<div class="modal fade fichePays" id="choix" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+                aria-hidden="true">
+        <div class="modal-dialog modal-lg" role="document">
+                <div class="modal-content">
+                        <div class="modal-header d-flex flex-column justify-content-center align-items-center">
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                </button>
+                                <h5 class="modal-title text-center" id="exampleModalCenterTitle"></h5>
+                        </div>
+                        <div class="modal-body d-flex flex-wrap justify-content-center">
+                                <div class ="infos"></div>
+                                <div class="voisins"></div>
+                        </div>
+                        <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
+                        </div>
+                </div>
+        </div>
+</div>
+<a href="#appli" class="top"><i class="fas fa-sort-up"></i></a>
+<div class="bgh2 d-flex flex-column justify-content-center align-items-center">
        <h2 class="text-center">{{ title }}</h2>
        <a href="#appli" class="down2 show-map"><i class="fas fa-angle-double-down"></i></a>
 </div>

@@ -214,14 +214,10 @@
         .modal-body{
             padding-bottom: 0 !important;
             padding-top: 0 !important;
-            p {
-                width: 100%;
-                text-align: left;
-                font-size: 18px;
-            }
         
-            ul {
+            p, ul {
                 width: 100%;
+                padding-left: 35%;
                 text-align: left;
                 list-style: none;
                 font-size: 18px;

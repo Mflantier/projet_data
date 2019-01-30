@@ -29,8 +29,9 @@
               transform: scale(0,1);
         }
        &:hover{
-        color:#4D0000ed;
         cursor: pointer;
+        color: white;
+        transform: translateY(-5px);
        }
         &:hover:after {
             opacity: 1;

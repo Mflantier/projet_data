@@ -2,31 +2,6 @@
     // max-height: 80vh;
     overflow: auto;
     padding-top: 10px;
-    @media (max-width: 575px) { 
-        max-height: 100vh;
-    }
-
-
-   @media (min-width: 576px) and (max-width: 767px) { 
-        max-height: 100vh;
-
-    }
-
-
-   @media (min-width: 768px) and (max-width: 991px) and (orientation: portrait) { 
-        max-height: 95vh;
-
-    }
-    @media (min-width: 768px) and (max-width: 991px) and (orientation: landscape) { 
-        max-height: 90vh;
-    }
-
-
-
-   @media (min-width: 992px) and (max-width: 1199px) { 
-        max-height: 65vh;
-
-    }
 
     .liste-pays, .liste-capitale{
         list-style: none;

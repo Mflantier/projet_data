@@ -110,3 +110,4 @@ $(document).ready(function(){
  
     console.log("infoooos");
  })
+

@@ -225,6 +225,7 @@ body {
         &:hover div {
             background-color: #b600009d;
             transform: scale(1.2);
+            cursor: pointer;
             // transform: translateY(-10px);
         }
 
@@ -430,9 +431,8 @@ body {
             }
         }
     }
-
-    .section-appli {
-        background: linear-gradient(#0094b5c7, #00c5ffab), url(img/bg-appli.svg);
+    .section-appli{
+        background: linear-gradient(#0094b5bd, #00c5ff99), url(img/bg-appli.svg);       
         background-attachment: fixed;
         background-position: center;
         background-size: cover;
@@ -475,11 +475,16 @@ body {
         position: absolute;
         top: 14%;
         right: 10%;
-
-        i {
+            i{
             font-size: 2.7rem;
             color: white;
-        }
+            transition: .3s;
+            &:hover{
+                transform: translateX(10px);
+                color: #b600009d;
+                cursor: pointer;
+            }
+            }
 
         .show-info {
             color: white;

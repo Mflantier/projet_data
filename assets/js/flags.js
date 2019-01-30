@@ -13,17 +13,19 @@ function leFetch(callBack) {
         .then((res) => {
 
             for (let i = 0; i < res.length; i++) {
+                let population;
                 if (typeof (res[i]['population']) == "number") {
-                    let population = res[i]['population'];
+                    population = res[i]['population'];
                     population = population.toLocaleString('fr-FR');
                 } else {
-                    let population = res[i]['population'];
+                    population = res[i]['population'];
                 }
+                let area;
                 if (typeof (res[i]['area']) == "number") {
-                    let area = res[i]['area'];
+                    area = res[i]['area'];
                     area = area.toLocaleString('fr-FR');
                 } else {
-                    let area = res[i]['area'];
+                    area = res[i]['area'];
                 }
                 if (res[i]['alpha3Code'].toLowerCase() === "kos") {
                     tableau.push('Kosovo', res[i]['alpha3Code'].toLowerCase(), res[i]['flag'], res[i]['region'], res[i]['capital'], population, area, res[i]['languages'][0]['name'], res[i]['currencies'][0]['code'], res[i]['borders'], res[i]['languages'][0]['iso639_2']);

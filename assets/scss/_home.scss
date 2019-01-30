@@ -436,7 +436,6 @@ body {
         background-attachment: fixed;
         background-position: center;
         background-size: cover;
-
         #appli {
             padding: auto 0;
 
@@ -461,7 +460,7 @@ body {
                             height: 40px;
                         }
 
-                        @media (max-width: 575px) {
+                        @media (max-width: 575px) and (orientation: landscape) {
                             margin: 7px 0px;
                             height: 35px;
                         }
@@ -523,7 +522,7 @@ body {
         }
 
         .t-info {
-            color: transparent;
+            display: none;
         }
     }
 

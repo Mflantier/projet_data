@@ -40,7 +40,7 @@ export default function affichageLightBox(tab) {
                     nom.textContent = tab[p][0];
                     drapeau.setAttribute("src", tab[p][2]);
                     drapeau.setAttribute("width", "150");
-                    drapeau.setAttribute("heigth", "100");
+                    drapeau.setAttribute("height", "100");
 
                     continent.innerHTML = '<strong>Continent : </strong>' + region;
                     capitale.innerHTML = '<strong>Capitale : </strong>' + tab[p][4];
@@ -89,7 +89,7 @@ export default function affichageLightBox(tab) {
                     nom.textContent = tab[p][0];
                     drapeau.setAttribute("src", tab[p][2]);
                         drapeau.setAttribute("width", "80%");
-                    drapeau.setAttribute("heigth", "50%");
+                    drapeau.setAttribute("height", "50%");
                     drapeau.setAttribute("align", "center");
                     choice.appendChild(drapeau);
                 }
@@ -106,13 +106,6 @@ export default function affichageLightBox(tab) {
                 for (i = 0; i < res.length; i++) {
                     if (res[i]["Alpha3b_Code"] === iso) {
                         document.getElementById("valueLangue").innerText = res[i]["French_Name"].charAt(0).toUpperCase() + res[i]["French_Name"].slice(1);
-<<<<<<< HEAD
-                        return;
-                    }
-                    else {}
-                }
-                
-=======
                     } else if (res[i]["Alpha3t_Code"] === iso) {
                         document.getElementById("valueLangue").innerText = res[i]["French_Name"].charAt(0).toUpperCase() + res[i]["French_Name"].slice(1);
                         return;
@@ -141,7 +134,6 @@ export default function affichageLightBox(tab) {
                         return;
                     }
                 }
->>>>>>> 8331fa0aeb4e26b8811b903ea9554ea8ae4e09a7
             })
             .catch((err) => {
                 if (err) {
@@ -149,7 +141,6 @@ export default function affichageLightBox(tab) {
                 };
             });
     }
-<<<<<<< HEAD
 
     function devises(currency) {
         fetch('/devises')
@@ -174,6 +165,3 @@ export default function affichageLightBox(tab) {
                 });
             }
     }
-=======
-}
->>>>>>> 8331fa0aeb4e26b8811b903ea9554ea8ae4e09a7

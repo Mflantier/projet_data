@@ -1,3 +1,5 @@
+import { setTimeout } from "timers";
+
 const monMenu = document.querySelector(".showmenu");
 const monHamburger = document.querySelector(".hamburger");
 const btnMenu = document.querySelectorAll(".btn-menu");
@@ -7,6 +9,8 @@ const sousMenuContinents = document.querySelector(".sous-menu-continents");
 const appli = document.querySelector(".section-appli");
 const closeOrientation = document.querySelector(".close-paysage");
 const showMap = document.querySelector(".show-map");
+
+
 
 
 monHamburger.addEventListener("click", function(showmenu){

@@ -73,6 +73,7 @@ body {
                         @media (min-width: 576px) and (max-width: 767px) {
                             font-size: 2.1rem;
                         }
+
                         @media (max-width: 575px) {
                             font-size: 2.4rem;
                         }
@@ -113,9 +114,10 @@ body {
                 }
             }
 
-           
+
         }
     }
+
     // cubic-bezier(.22,.68,0,1.20)
     .change-orientation {
         position: fixed;
@@ -128,46 +130,55 @@ body {
         border-radius: 3%;
         box-shadow: 0px 5px 16px #00000087;
         transition: 1s ease-in;
-        background: linear-gradient(217deg, white, rgba(166, 219, 254, 0.6) 70.71%), linear-gradient(127deg, #ffffff, #fffffff5 70.71%), linear-gradient(336deg, rgba(255, 0, 0, 0), rgba(255, 48, 48, 0.43) 70.71%);        p{
+        background: linear-gradient(217deg, white, rgba(166, 219, 254, 0.6) 70.71%), linear-gradient(127deg, #ffffff, #fffffff5 70.71%), linear-gradient(336deg, rgba(255, 0, 0, 0), rgba(255, 48, 48, 0.43) 70.71%);
+
+        p {
             font-size: 1.2rem;
             color: #000000c4;
             margin: 0;
+
             @media (max-width: 575px) {
                 font-size: 1rem;
             }
+
             @media (min-width: 576px) and (max-width: 767px) and (orientation:landscape) {
                 font-size: 1.3rem;
+            }
         }
-        }
-      
-        i{
+
+        i {
             font-size: 4rem;
             animation: changeOrientation 2s infinite;
-            transition: transform 1s cubic-bezier(.22,.68,0,1.20);
+            transition: transform 1s cubic-bezier(.22, .68, 0, 1.20);
             text-shadow: -3px 5px 5px #0000005e;
+
             @media (max-width: 575px) {
                 font-size: 3rem;
             }
+
             @media (min-width: 576px) and (max-width: 767px) and (orientation:landscape) {
                 font-size: 4rem;
+            }
         }
-        }
+
         @keyframes changeOrientation {
             0% {
-               transform: rotate(0deg);
-               color: #000000c4;
-              }
-            
-              50% {
-                transform: rotate(90deg);
-                color: white;
-              }
-              100% {
                 transform: rotate(0deg);
                 color: #000000c4;
-               }
             }
-        a{
+
+            50% {
+                transform: rotate(90deg);
+                color: white;
+            }
+
+            100% {
+                transform: rotate(0deg);
+                color: #000000c4;
+            }
+        }
+
+        a {
             margin-top: 10px;
             text-decoration: none;
             color: #000000b5;
@@ -216,32 +227,35 @@ body {
             transform: scale(1.2);
             // transform: translateY(-10px);
         }
+
+        @media (max-width: 575px) {
+            width: 32px;
+            height: 3px;
+            margin: 4px 0px;
+        }
+
+        .btn-menu {
+            width: 40px;
+            height: 5px;
+            background-color: white;
+            border-radius: 5px;
+            margin: 5px 0px;
+            transition: .2s ease-out;
+            box-shadow: 0px 5px 16px #00000087;
+
             @media (max-width: 575px) {
                 width: 32px;
                 height: 3px;
                 margin: 4px 0px;
             }
-            .btn-menu {
-                width: 40px;
-                height: 5px;
-                background-color: white;
-                border-radius: 5px;
-                margin: 5px 0px;
-                transition: .2s ease-out;
-                box-shadow: 0px 5px 16px #00000087;
-                @media (max-width: 575px) { 
-                    width: 32px;
-                    height: 3px; 
-                    margin: 4px 0px;
-                }
-            
-            
-                @media (min-width: 576px) and (max-width: 767px) { 
-                    width: 32px;
-                    height: 3px;
-                    margin: 4px 0px;
-                }
+
+
+            @media (min-width: 576px) and (max-width: 767px) {
+                width: 32px;
+                height: 3px;
+                margin: 4px 0px;
             }
+        }
     }
 
     .showmenu {
@@ -292,11 +306,12 @@ body {
             width: 100%;
             padding-top: 15vh;
             margin-right: 2vw;
+
             @media (max-width: 575px) and (orientation: landscape) {
                 width: 100vw;
                 padding-top: 2vh;
             }
-    
+
 
             .closeBtn {
                 font-size: 1.1rem;
@@ -317,12 +332,14 @@ body {
                     cursor: pointer;
                 }
             }
-            .show-map{
 
-            @media (max-width: 768px) { 
-                display: none !important;
+            .show-map {
+
+                @media (max-width: 768px) {
+                    display: none !important;
+                }
             }
-            }
+
             .option {
                 font-size: 1.15rem;
                 color: #ffffffc4;
@@ -337,6 +354,7 @@ body {
                     padding: 10px 50px !important;
                     font-size: 1.2rem;
                 }
+
                 @media (max-width: 575px) and (orientation: landscape) {
                     width: 100vw;
                     padding: 5px 50px !important;
@@ -412,27 +430,30 @@ body {
             }
         }
     }
-    .section-appli{
-        background: linear-gradient(#0094b5c7, #00c5ffab), url(img/bg-appli.svg);       
+
+    .section-appli {
+        background: linear-gradient(#0094b5c7, #00c5ffab), url(img/bg-appli.svg);
         background-attachment: fixed;
         background-position: center;
         background-size: cover;
-        min-height: 80vh;
-        #appli{
+
+        #appli {
             padding: auto 0;
 
-            #selectContinent, #pays{
+            #selectContinent,
+            #pays {
 
-                div{
+                div {
 
-                    .miniFlag{
+                    .miniFlag {
                         margin: 7px 0px;
                         width: 11%;
                         height: 20px;
+
                         @media (min-width: 768px) and (max-width: 991px) {
                             margin: 13px 0px;
                         }
-                        
+
                         @media (min-width: 576px) and (max-width: 767px) {
                             margin: 13px 0px;
                         }
@@ -444,37 +465,78 @@ body {
                     }
                 }
             }
+
+            min-height: 100vh;
+            position: relative;
         }
     }
+
+    .infos {
+        position: absolute;
+        top: 14%;
+        right: 10%;
+
+        i {
+            font-size: 2.7rem;
+            color: white;
+        }
+
+        .show-info {
+            color: white;
+            animation: p-infos 5s cubic-bezier(0.5, 0, 0.5, 1)forwards;
+        }
+
+        @keyframes p-infos {
+            0% {
+                opacity: 0;
+                transform: translateX(60vh);
+            }
+
+            16% {
+                opacity: 1;
+                transform: translateX(0vh);
+            }
+
+            84% {
+                opacity: 1;
+                transform: translateX(0vh);
+            }
+
+            95% {
+                opacity: 0;
+                transform: translateX(30vh);
+            }
+
+            100% {
+                opacity: 0;
+                transform: translateX(60vh);
+            }
+        }
+
+        .t-info {
+            color: transparent;
+        }
+    }
+
     .map {
         padding-top: 5vh;
         padding-bottom: 5vh;
         min-height: 100vh;
         background-color: #000000e6;
         position: relative;
-        @media (max-width: 768px) { 
+
+        @media (max-width: 768px) {
             display: none !important;
         }
-        .infos{
-            position: absolute;
-            top: 14%;
-            right: 10%;
-            i{
-                font-size: 3rem;
-                color: white;
-            }
-            p{
-                color: white;
-                animation: go-down 1s cubic-bezier(0.5, 0, 0.5, 1) infinite;
-            }
-        }
+
         .map__image {
             width: 70%;
             float: left;
+
             &.landscape {
                 width: 80%;
-              }
-              
+            }
+
 
             @media (max-width: 575px) {
                 width: 100%;
@@ -497,14 +559,14 @@ body {
             stroke: #FFF;
             stroke-width: 1px;
             transition: all 0.3s;
-  
+
         }
 
         .map__image path:hover {
 
             fill: #edede8;
             stroke: #FFF;
-            stroke-width: 1px;      
+            stroke-width: 1px;
         }
 
         .map__list {
@@ -521,4 +583,3 @@ body {
     }
 
 }
-

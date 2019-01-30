@@ -90,8 +90,8 @@ export default function affichageLightBox(tab) {
                     let bottomContent = document.createElement("div");
                     bottomContent.classList.add("row", "w-100");
                     topContent.classList.add("w-100","p-2", "d-flex", "justify-content-center");
-                    leftContent.classList.add("col-6");
-                    rightContent.classList.add("col-6");
+                    leftContent.classList.add("col-12", "col-sm-12", "col-md-12", "col-lg-6", "col-xl-6");
+                    rightContent.classList.add("col-12", "col-sm-12", "col-md-12", "col-lg-6", "col-xl-6");
 
                     topContent.appendChild(drapeau);
                     leftContent.appendChild(capitale);

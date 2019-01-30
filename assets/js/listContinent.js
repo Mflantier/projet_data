@@ -15,17 +15,19 @@ function leFetch(callBack) {
             for (let i = 0; i < res.length; i++) {
                 // Tri par continent
                 // Europe
+                let population;
                 if (typeof (res[i]['population']) == "number") {
-                    let population = res[i]['population'];
+                    population = res[i]['population'];
                     population = population.toLocaleString('fr-FR');
                 } else {
-                    let population = res[i]['population'];
+                    population = res[i]['population'];
                 }
+                let area;
                 if (typeof (res[i]['area']) == "number") {
-                    let area = res[i]['area'];
+                    area = res[i]['area'];
                     area = area.toLocaleString('fr-FR');
                 } else {
-                    let area = res[i]['area'];
+                    area = res[i]['area'];
                 }
                 if (url == 'europe' && res[i]['region'] == 'Europe') {
                     document.querySelector("h2").textContent = "Europe";

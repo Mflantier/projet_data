@@ -38,6 +38,24 @@
     #appli{
         padding-top: 5vh;
     }
+    .top{
+        position: fixed;
+        bottom: 10%;
+        right: 10%;
+        text-decoration: none;
+        color: white;
+        z-index: 2;
+        display: none;
+        transition: .3s;
+        &:hover{
+            color: #b600009d;
+            transform: translateY(-5px);
+            cursor: pointer;
+        }
+        i{
+            font-size: 3rem;
+        }
+    }
     .down {
         font-size: 2.5rem;
         padding-top: 5vh;

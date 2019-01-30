@@ -11,7 +11,6 @@ require('../scss/app.scss');
 require('./menu.js');
 require('./infoPays.js');
 
-
 // transition sur la redirection de mon liens d'ancrage
 
 (function() {

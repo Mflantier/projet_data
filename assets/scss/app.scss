@@ -40,28 +40,43 @@
     }
 }
 
-#appli {
+#appli{
     padding-top: 5vh;
 }
-
-.top {
+.top{
     position: fixed;
     bottom: 10%;
-    right: 10%;
+    right: 5%;
     text-decoration: none;
     color: white;
     z-index: 2;
     display: none;
     transition: .3s;
-
-    &:hover {
+    @media (max-width: 575px) { 
+        right: 1%;
+    }
+   @media (min-width: 576px) and (max-width: 767px) { 
+        right: 2%;
+    }
+   @media (min-width: 768px) and (max-width: 991px) and (orientation: portrait) { 
+    right: 3%;
+    }
+    &:hover{
         color: #b600009d;
         transform: translateY(-5px);
         cursor: pointer;
     }
-
-    i {
-        font-size: 3rem;
+    i{
+        font-size: 4rem;
+        @media (max-width: 575px) { 
+            font-size: 2.8rem;
+        }
+       @media (min-width: 576px) and (max-width: 767px) { 
+            font-size: 3rem;
+        }
+       @media (min-width: 768px) and (max-width: 991px) and (orientation: portrait) { 
+            font-size: 3.5rem;
+        }
     }
 }
 
@@ -82,44 +97,15 @@
             transform: scale(1);
             opacity: 0;
         }
-    }
-    #appli{
-        padding-top: 5vh;
-    }
-    .top{
-        position: fixed;
-        bottom: 10%;
-        right: 5%;
-        text-decoration: none;
-        color: white;
-        z-index: 2;
-        display: none;
-        transition: .3s;
-        @media (max-width: 575px) { 
-            right: 1%;
+
+        50% {
+            transform: scale(1.05);
+            opacity: 1;
         }
-       @media (min-width: 576px) and (max-width: 767px) { 
-            right: 2%;
-        }
-       @media (min-width: 768px) and (max-width: 991px) and (orientation: portrait) { 
-        right: 3%;
-        }
-        &:hover{
-            color: #b600009d;
-            transform: translateY(-5px);
-            cursor: pointer;
-        }
-        i{
-            font-size: 4rem;
-            @media (max-width: 575px) { 
-                font-size: 2.8rem;
-            }
-           @media (min-width: 576px) and (max-width: 767px) { 
-                font-size: 3rem;
-            }
-           @media (min-width: 768px) and (max-width: 991px) and (orientation: portrait) { 
-                font-size: 3.5rem;
-            }
+
+        100% {
+            transform: scale(1);
+            opacity: 0;
         }
     }
 
@@ -281,6 +267,9 @@
 
         h5 {
             font-size: 2rem;
+        }
+        .modal-title {
+            padding-bottom: 2rem;
         }
     }
 
